@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42EBF4651943CF95002569B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4641943CF95002569B8 /* Foundation.framework */; };
+		42EBF4671943CF95002569B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4661943CF95002569B8 /* CoreGraphics.framework */; };
+		42EBF4691943CF95002569B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4681943CF95002569B8 /* UIKit.framework */; };
+		42EBF46F1943CF95002569B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42EBF46D1943CF95002569B8 /* InfoPlist.strings */; };
+		42EBF4711943CF95002569B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBF4701943CF95002569B8 /* main.m */; };
+		42EBF4751943CF95002569B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBF4741943CF95002569B8 /* AppDelegate.m */; };
+		42EBF4781943CF95002569B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EBF4761943CF95002569B8 /* Main.storyboard */; };
+		42EBF47B1943CF95002569B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBF47A1943CF95002569B8 /* ViewController.m */; };
+		42EBF47D1943CF95002569B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EBF47C1943CF95002569B8 /* Images.xcassets */; };
+		42EBF4841943CF95002569B8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4831943CF95002569B8 /* XCTest.framework */; };
+		42EBF4851943CF95002569B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4641943CF95002569B8 /* Foundation.framework */; };
+		42EBF4861943CF95002569B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4681943CF95002569B8 /* UIKit.framework */; };
+		42EBF48E1943CF95002569B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42EBF48C1943CF95002569B8 /* InfoPlist.strings */; };
+		42EBF4901943CF95002569B8 /* Whole_Way_HouseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBF48F1943CF95002569B8 /* Whole_Way_HouseTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42EBF4871943CF95002569B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42EBF4591943CF95002569B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42EBF4601943CF95002569B8;
+			remoteInfo = "Whole Way House";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42EBF4611943CF95002569B8 /* Whole Way House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whole Way House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EBF4641943CF95002569B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		42EBF4661943CF95002569B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		42EBF4681943CF95002569B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		42EBF46C1943CF95002569B8 /* Whole Way House-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Whole Way House-Info.plist"; sourceTree = "<group>"; };
+		42EBF46E1943CF95002569B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		42EBF4701943CF95002569B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42EBF4721943CF95002569B8 /* Whole Way House-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Whole Way House-Prefix.pch"; sourceTree = "<group>"; };
+		42EBF4731943CF95002569B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42EBF4741943CF95002569B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42EBF4771943CF95002569B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42EBF4791943CF95002569B8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		42EBF47A1943CF95002569B8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		42EBF47C1943CF95002569B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		42EBF4821943CF95002569B8 /* Whole Way HouseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Whole Way HouseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EBF4831943CF95002569B8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		42EBF48B1943CF95002569B8 /* Whole Way HouseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Whole Way HouseTests-Info.plist"; sourceTree = "<group>"; };
+		42EBF48D1943CF95002569B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		42EBF48F1943CF95002569B8 /* Whole_Way_HouseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Whole_Way_HouseTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42EBF45E1943CF95002569B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EBF4671943CF95002569B8 /* CoreGraphics.framework in Frameworks */,
+				42EBF4691943CF95002569B8 /* UIKit.framework in Frameworks */,
+				42EBF4651943CF95002569B8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EBF47F1943CF95002569B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EBF4841943CF95002569B8 /* XCTest.framework in Frameworks */,
+				42EBF4861943CF95002569B8 /* UIKit.framework in Frameworks */,
+				42EBF4851943CF95002569B8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42EBF4581943CF95002569B8 = {
+			isa = PBXGroup;
+			children = (
+				42EBF46A1943CF95002569B8 /* Whole Way House */,
+				42EBF4891943CF95002569B8 /* Whole Way HouseTests */,
+				42EBF4631943CF95002569B8 /* Frameworks */,
+				42EBF4621943CF95002569B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42EBF4621943CF95002569B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42EBF4611943CF95002569B8 /* Whole Way House.app */,
+				42EBF4821943CF95002569B8 /* Whole Way HouseTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42EBF4631943CF95002569B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42EBF4641943CF95002569B8 /* Foundation.framework */,
+				42EBF4661943CF95002569B8 /* CoreGraphics.framework */,
+				42EBF4681943CF95002569B8 /* UIKit.framework */,
+				42EBF4831943CF95002569B8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42EBF46A1943CF95002569B8 /* Whole Way House */ = {
+			isa = PBXGroup;
+			children = (
+				42EBF4731943CF95002569B8 /* AppDelegate.h */,
+				42EBF4741943CF95002569B8 /* AppDelegate.m */,
+				42EBF4761943CF95002569B8 /* Main.storyboard */,
+				42EBF4791943CF95002569B8 /* ViewController.h */,
+				42EBF47A1943CF95002569B8 /* ViewController.m */,
+				42EBF47C1943CF95002569B8 /* Images.xcassets */,
+				42EBF46B1943CF95002569B8 /* Supporting Files */,
+			);
+			path = "Whole Way House";
+			sourceTree = "<group>";
+		};
+		42EBF46B1943CF95002569B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42EBF46C1943CF95002569B8 /* Whole Way House-Info.plist */,
+				42EBF46D1943CF95002569B8 /* InfoPlist.strings */,
+				42EBF4701943CF95002569B8 /* main.m */,
+				42EBF4721943CF95002569B8 /* Whole Way House-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42EBF4891943CF95002569B8 /* Whole Way HouseTests */ = {
+			isa = PBXGroup;
+			children = (
+				42EBF48F1943CF95002569B8 /* Whole_Way_HouseTests.m */,
+				42EBF48A1943CF95002569B8 /* Supporting Files */,
+			);
+			path = "Whole Way HouseTests";
+			sourceTree = "<group>";
+		};
+		42EBF48A1943CF95002569B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42EBF48B1943CF95002569B8 /* Whole Way HouseTests-Info.plist */,
+				42EBF48C1943CF95002569B8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42EBF4601943CF95002569B8 /* Whole Way House */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42EBF4931943CF95002569B8 /* Build configuration list for PBXNativeTarget "Whole Way House" */;
+			buildPhases = (
+				42EBF45D1943CF95002569B8 /* Sources */,
+				42EBF45E1943CF95002569B8 /* Frameworks */,
+				42EBF45F1943CF95002569B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Whole Way House";
+			productName = "Whole Way House";
+			productReference = 42EBF4611943CF95002569B8 /* Whole Way House.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42EBF4811943CF95002569B8 /* Whole Way HouseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42EBF4961943CF95002569B8 /* Build configuration list for PBXNativeTarget "Whole Way HouseTests" */;
+			buildPhases = (
+				42EBF47E1943CF95002569B8 /* Sources */,
+				42EBF47F1943CF95002569B8 /* Frameworks */,
+				42EBF4801943CF95002569B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42EBF4881943CF95002569B8 /* PBXTargetDependency */,
+			);
+			name = "Whole Way HouseTests";
+			productName = "Whole Way HouseTests";
+			productReference = 42EBF4821943CF95002569B8 /* Whole Way HouseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42EBF4591943CF95002569B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Devolution Studios";
+				TargetAttributes = {
+					42EBF4811943CF95002569B8 = {
+						TestTargetID = 42EBF4601943CF95002569B8;
+					};
+				};
+			};
+			buildConfigurationList = 42EBF45C1943CF95002569B8 /* Build configuration list for PBXProject "Whole Way House" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42EBF4581943CF95002569B8;
+			productRefGroup = 42EBF4621943CF95002569B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42EBF4601943CF95002569B8 /* Whole Way House */,
+				42EBF4811943CF95002569B8 /* Whole Way HouseTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42EBF45F1943CF95002569B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EBF47D1943CF95002569B8 /* Images.xcassets in Resources */,
+				42EBF46F1943CF95002569B8 /* InfoPlist.strings in Resources */,
+				42EBF4781943CF95002569B8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EBF4801943CF95002569B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EBF48E1943CF95002569B8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42EBF45D1943CF95002569B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EBF47B1943CF95002569B8 /* ViewController.m in Sources */,
+				42EBF4751943CF95002569B8 /* AppDelegate.m in Sources */,
+				42EBF4711943CF95002569B8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EBF47E1943CF95002569B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EBF4901943CF95002569B8 /* Whole_Way_HouseTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42EBF4881943CF95002569B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42EBF4601943CF95002569B8 /* Whole Way House */;
+			targetProxy = 42EBF4871943CF95002569B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42EBF46D1943CF95002569B8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42EBF46E1943CF95002569B8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		42EBF4761943CF95002569B8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42EBF4771943CF95002569B8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42EBF48C1943CF95002569B8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42EBF48D1943CF95002569B8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42EBF4911943CF95002569B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		42EBF4921943CF95002569B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42EBF4941943CF95002569B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Whole Way House/Whole Way House-Prefix.pch";
+				INFOPLIST_FILE = "Whole Way House/Whole Way House-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		42EBF4951943CF95002569B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Whole Way House/Whole Way House-Prefix.pch";
+				INFOPLIST_FILE = "Whole Way House/Whole Way House-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		42EBF4971943CF95002569B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Whole Way House.app/Whole Way House";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Whole Way House/Whole Way House-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Whole Way HouseTests/Whole Way HouseTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		42EBF4981943CF95002569B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Whole Way House.app/Whole Way House";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Whole Way House/Whole Way House-Prefix.pch";
+				INFOPLIST_FILE = "Whole Way HouseTests/Whole Way HouseTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42EBF45C1943CF95002569B8 /* Build configuration list for PBXProject "Whole Way House" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EBF4911943CF95002569B8 /* Debug */,
+				42EBF4921943CF95002569B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42EBF4931943CF95002569B8 /* Build configuration list for PBXNativeTarget "Whole Way House" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EBF4941943CF95002569B8 /* Debug */,
+				42EBF4951943CF95002569B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		42EBF4961943CF95002569B8 /* Build configuration list for PBXNativeTarget "Whole Way HouseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EBF4971943CF95002569B8 /* Debug */,
+				42EBF4981943CF95002569B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42EBF4591943CF95002569B8 /* Project object */;
+}
