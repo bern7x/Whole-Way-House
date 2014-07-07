@@ -1,0 +1,21 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "Mixpanel.h"
+#endif
+
+#define TWITTER_CONSUMER_KEY @"EskUJ8AYcsnFu1IGXLoVAEbZT"
+#define TWITTER_CONSUMER_SECRET @"YP06ovWBeJCSarYTDgDSRRkH3NnQvS22BzukDpIqWmBFBcsxkk"
+#define MIXPANEL_TOKEN @"4f5b2673f550d3f28d88cef1b9e194ba"
