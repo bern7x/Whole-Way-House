@@ -14,8 +14,13 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "Mixpanel.h"
+    #import "APIKeys.h"
 #endif
 
-#define TWITTER_CONSUMER_KEY @"EskUJ8AYcsnFu1IGXLoVAEbZT"
-#define TWITTER_CONSUMER_SECRET @"YP06ovWBeJCSarYTDgDSRRkH3NnQvS22BzukDpIqWmBFBcsxkk"
-#define MIXPANEL_TOKEN @"4f5b2673f550d3f28d88cef1b9e194ba"
+//  APIKeys.h/m are NOT included in the GitHub project
+//  To run the project successfully, you'll need to create your own APIKeys.h/m files
+//  Add the following defines with your own API Keys for Twitter and Mixpanel
+
+//  #define TWITTER_CONSUMER_KEY @"GET-YOUR-OWN-FROM-TWITTER"
+//  #define TWITTER_CONSUMER_SECRET @"GET-YOUR-OWN-FROM-TWITTER"
+//  #define MIXPANEL_TOKEN @"GET-YOUR-OWN-FROM-MIXPANEL"

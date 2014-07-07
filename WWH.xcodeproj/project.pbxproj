@@ -28,6 +28,7 @@
 		422804451950DD3500B5E071 /* ProgramsOpenDropIn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 422804441950DD3500B5E071 /* ProgramsOpenDropIn.jpg */; };
 		422804471950E07100B5E071 /* ProgramsWorkshops.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 422804461950E07100B5E071 /* ProgramsWorkshops.jpg */; };
 		422804491950F2DF00B5E071 /* ProgramsPaintProject.png in Resources */ = {isa = PBXBuildFile; fileRef = 422804481950F2DF00B5E071 /* ProgramsPaintProject.png */; };
+		42314F64196AFCD800814508 /* APIKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 42314F63196AFCD800814508 /* APIKeys.m */; };
 		42318DAE1951452800957992 /* SponsorsSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42318DAD1951452800957992 /* SponsorsSliderViewController.m */; };
 		42318DB11952024D00957992 /* TintedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42318DB01952024D00957992 /* TintedImageView.m */; };
 		42390223194CF37100AB83F2 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42390222194CF37100AB83F2 /* BoardViewController.m */; };
@@ -128,6 +129,8 @@
 		422804441950DD3500B5E071 /* ProgramsOpenDropIn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ProgramsOpenDropIn.jpg; sourceTree = "<group>"; };
 		422804461950E07100B5E071 /* ProgramsWorkshops.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ProgramsWorkshops.jpg; sourceTree = "<group>"; };
 		422804481950F2DF00B5E071 /* ProgramsPaintProject.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramsPaintProject.png; sourceTree = "<group>"; };
+		42314F62196AFCD800814508 /* APIKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKeys.h; sourceTree = "<group>"; };
+		42314F63196AFCD800814508 /* APIKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIKeys.m; sourceTree = "<group>"; };
 		42318DAC1951452800957992 /* SponsorsSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorsSliderViewController.h; sourceTree = "<group>"; };
 		42318DAD1951452800957992 /* SponsorsSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorsSliderViewController.m; sourceTree = "<group>"; };
 		42318DAF1952024D00957992 /* TintedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TintedImageView.h; sourceTree = "<group>"; };
@@ -442,6 +445,8 @@
 			children = (
 				42EBF4731943CF95002569B8 /* AppDelegate.h */,
 				42EBF4741943CF95002569B8 /* AppDelegate.m */,
+				42314F62196AFCD800814508 /* APIKeys.h */,
+				42314F63196AFCD800814508 /* APIKeys.m */,
 				42EBF46D1943CF95002569B8 /* InfoPlist.strings */,
 				42EBF4701943CF95002569B8 /* main.m */,
 				42725567194EB5C100B6FBA2 /* Sponsor.h */,
@@ -619,6 +624,7 @@
 				423A4A781958CCA700FD93DE /* STHTTPRequest.m in Sources */,
 				42318DAE1951452800957992 /* SponsorsSliderViewController.m in Sources */,
 				42EBF4711943CF95002569B8 /* main.m in Sources */,
+				42314F64196AFCD800814508 /* APIKeys.m in Sources */,
 				423A4A6C1958CCA700FD93DE /* NSDateFormatter+STTwitter.m in Sources */,
 				4240D926195A34E100F6D553 /* UIImage+MPImageEffects.m in Sources */,
 				4281AE55194E97BB004F4AF8 /* SponsorData.m in Sources */,
