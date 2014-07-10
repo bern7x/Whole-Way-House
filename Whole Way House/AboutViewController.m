@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *topImageView;
 @property (nonatomic) int imageNumber;
 @property (strong, nonatomic) IBOutlet UIPageControl *missionPageControl;
+@property (strong, nonatomic) IBOutlet UIWebView *breakfastTelevisionWebView;
 
 @end
 
@@ -55,10 +56,14 @@
     [self.scrollView addSubview:self.aboutRefreshControl];
     [self.scrollView sendSubviewToBack:self.aboutRefreshControl];
     
-    // Embedded YouTube video
+    // Embedded YouTube videos
     NSURL *url = [NSURL URLWithString:@"http://www.youtube.com/embed/VWElzESv0Q4?showinfo=0&modestbranding=1&rel=0&showsearch=0"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.youtubeWebView loadRequest:request];
+    
+    NSURL *url2 = [NSURL URLWithString:@"http://www.youtube.com/embed/9HNSlVfqt1w?showinfo=0&modestbranding=1&rel=0&showsearch=0"];
+    NSURLRequest *request2 = [NSURLRequest requestWithURL:url2];
+    [self.breakfastTelevisionWebView loadRequest:request2];
     
     // Mixpanel Analytics
     Mixpanel *mixpanel = [Mixpanel sharedInstance];

@@ -9,8 +9,9 @@
 #import "TwitterViewController.h"
 #import "STTwitter.h"
 #import "DSWebViewController.h"
+#import "SpecialEventsViewController.h"
 
-@interface TwitterViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface TwitterViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *twitterFeed;
@@ -51,6 +52,26 @@
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Latest News"];
     [mixpanel flush];
+    
+    // Show Special Events based on date
+    [self performSelector:@selector(showSpecialEvents) withObject:nil afterDelay:0.1];
+}
+
+- (void)showSpecialEvents
+{
+    NSString *dateString = @"24-Aug-14";
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"dd-MMM-yy";
+    NSDate *picnicDate = [dateFormatter dateFromString:dateString];
+    
+    NSDate *currentDate = [NSDate date];
+    
+    if (currentDate < picnicDate) {
+        [self performSegueWithIdentifier:@"toSpecialEventsViewControllerSegue" sender:nil];
+        NSLog(@"Yo");
+    } else {
+        NSLog(@"Yo No");
+    }
 }
 
 - (void)updateTwitterFeed
@@ -99,6 +120,15 @@
             nextViewController.url = (NSString *)sender;
         }
     }
+    
+//    if ([segue.identifier isEqualToString:@"toSpecialEventsViewControllerSegue"]) {
+//        if ([segue.destinationViewController isKindOfClass:[SpecialEventsViewController class]]) {
+//            SpecialEventsViewController *nextViewController = (SpecialEventsViewController *)segue.destinationViewController;
+//            nextViewController.transitioningDelegate = self;
+//            nextViewController.modalPresentationStyle = UIModalPresentationCustom;
+//        }
+//    }
+
 }
 
 #pragma mark - UITableViewDataSource
@@ -178,33 +208,43 @@
     [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:expandedURL];
 }
 
+#pragma mark - IB Actions
+
 - (IBAction)refreshBarButtonItemPressed:(UIBarButtonItem *)sender
 {
     [self handleRefresh:self.refreshControl];
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- (IBAction)alertBarButtonItemPressed:(UIBarButtonItem *)sender
+{
+//    //self.containerView.hidden = !self.containerView.hidden;
+//    if (self.containerView.hidden == YES) {
+//        self.containerView.hidden = NO;
+//        [UIView animateWithDuration:0.2f
+//                              delay:0.0f
+//                            options:UIViewAnimationOptionCurveEaseIn
+//                         animations:^{
+//                             self.containerView.frame = CGRectMake(0, 64, 320, 350);
+//                         }
+//                         completion:^(BOOL finished) {
+//                             //
+//                         }
+//         ];
+//    } else {
+//        [UIView animateWithDuration:0.2f
+//                              delay:0.0f
+//                            options:UIViewAnimationOptionCurveEaseIn
+//                         animations:^{
+//                             self.containerView.frame = CGRectMake(0, -286, 320, 350);
+//                         }
+//                         completion:^(BOOL finished) {
+//                             self.containerView.hidden = YES;
+//                         }
+//         ];
+//    }
+    [self performSegueWithIdentifier:@"toSpecialEventsViewControllerSegue" sender:nil];
+    
+}
 
 
 
