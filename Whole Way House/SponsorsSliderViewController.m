@@ -83,7 +83,7 @@
 
 - (IBAction)paypalButtonPressed:(UIButton *)sender
 {
-    NSString *urlString = @"http://chim.pn/1ph3lt3";
+    NSString *urlString = @"http://bit.ly/wwh-donate";
     NSURL *url =[NSURL URLWithString:urlString];
     if(![[UIApplication sharedApplication] openURL:url])
         NSLog(@"%@%@",@"Failed to open url:",[url description]);

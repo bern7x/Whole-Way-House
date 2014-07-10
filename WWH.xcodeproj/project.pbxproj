@@ -74,6 +74,7 @@
 		425197F61946942500A44737 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425197F51946942500A44737 /* MapKit.framework */; };
 		42725569194EB5C100B6FBA2 /* Sponsor.m in Sources */ = {isa = PBXBuildFile; fileRef = 42725568194EB5C100B6FBA2 /* Sponsor.m */; };
 		4272556C194EC43400B6FBA2 /* SponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4272556B194EC43400B6FBA2 /* SponsorsViewController.m */; };
+		427F81FC196ED4FD003CC580 /* SpecialEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427F81FB196ED4FD003CC580 /* SpecialEventsViewController.m */; };
 		4281AE55194E97BB004F4AF8 /* SponsorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4281AE54194E97BB004F4AF8 /* SponsorData.m */; };
 		42BCC006194E617A00ABC377 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BCC005194E617A00ABC377 /* UIImageViewAligned.m */; };
 		42E29F86194609E10004867F /* about1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E29F85194609E10004867F /* about1@2x.png */; };
@@ -208,6 +209,8 @@
 		42725568194EB5C100B6FBA2 /* Sponsor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sponsor.m; sourceTree = "<group>"; };
 		4272556A194EC43400B6FBA2 /* SponsorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorsViewController.h; sourceTree = "<group>"; };
 		4272556B194EC43400B6FBA2 /* SponsorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorsViewController.m; sourceTree = "<group>"; };
+		427F81FA196ED4FD003CC580 /* SpecialEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialEventsViewController.h; sourceTree = "<group>"; };
+		427F81FB196ED4FD003CC580 /* SpecialEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialEventsViewController.m; sourceTree = "<group>"; };
 		4281AE53194E97BB004F4AF8 /* SponsorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorData.h; sourceTree = "<group>"; };
 		4281AE54194E97BB004F4AF8 /* SponsorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorData.m; sourceTree = "<group>"; };
 		42BCC004194E617A00ABC377 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
@@ -418,6 +421,8 @@
 				42EBF4761943CF95002569B8 /* Main.storyboard */,
 				420F5D201954FE19000CC89C /* TwitterViewController.h */,
 				420F5D211954FE19000CC89C /* TwitterViewController.m */,
+				427F81FA196ED4FD003CC580 /* SpecialEventsViewController.h */,
+				427F81FB196ED4FD003CC580 /* SpecialEventsViewController.m */,
 				42EBF49F1943D7B2002569B8 /* AboutViewController.h */,
 				42EBF4A01943D7B2002569B8 /* AboutViewController.m */,
 				4228042F1950C1E500B5E071 /* ProgramsViewController.h */,
@@ -528,6 +533,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Devolution Studios";
 				TargetAttributes = {
+					42EBF4601943CF95002569B8 = {
+						DevelopmentTeam = X5L7M38Y53;
+					};
 					42EBF4811943CF95002569B8 = {
 						TestTargetID = 42EBF4601943CF95002569B8;
 					};
@@ -640,6 +648,7 @@
 				4240D924195A34E100F6D553 /* UIColor+MPColor.m in Sources */,
 				4240D927195A34E100F6D553 /* UIView+MPSnapshotImage.m in Sources */,
 				4240D91D195A34E100F6D553 /* MPNotificationViewController.m in Sources */,
+				427F81FC196ED4FD003CC580 /* SpecialEventsViewController.m in Sources */,
 				423A4A6D1958CCA700FD93DE /* NSError+STTwitter.m in Sources */,
 				4240D923195A34E100F6D553 /* NSData+MPBase64.m in Sources */,
 				423A4A731958CCA700FD93DE /* STTwitterOAuth.m in Sources */,
@@ -770,9 +779,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Whole Way House/WWH-Prefix.pch";
 				INFOPLIST_FILE = "Whole Way House/WWH-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = WWH;
 				WRAPPER_EXTENSION = app;
 			};
@@ -783,9 +794,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Whole Way House/WWH-Prefix.pch";
 				INFOPLIST_FILE = "Whole Way House/WWH-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = WWH;
 				WRAPPER_EXTENSION = app;
 			};

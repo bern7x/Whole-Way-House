@@ -10,4 +10,6 @@
 
 @interface TwitterViewController : UIViewController
 
+- (IBAction)alertBarButtonItemPressed:(UIBarButtonItem *)sender;
+
 @end

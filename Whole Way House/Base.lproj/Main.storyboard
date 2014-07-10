@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2L0-nB-gI9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2L0-nB-gI9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -107,9 +107,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Whole Way House" id="EUC-c1-rBC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="nhs-Ed-Qyz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="nhs-Ed-Qyz">
                             <connections>
                                 <action selector="refreshBarButtonItemPressed:" destination="f8R-AJ-8oP" id="kri-8H-10g"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="BarButtonIconAlert" id="ELR-RO-SR1">
+                            <connections>
+                                <action selector="alertBarButtonItemPressed:" destination="f8R-AJ-8oP" id="mkl-Dt-gp2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -117,6 +122,7 @@
                         <outlet property="refreshBarButtonItem" destination="nhs-Ed-Qyz" id="qed-nl-TKb"/>
                         <outlet property="tableView" destination="iNZ-CZ-ZzH" id="UTw-Oa-gkW"/>
                         <segue destination="yof-HY-q7N" kind="modal" identifier="toWebViewControllerSegue" modalTransitionStyle="coverVertical" id="Nz0-4d-FfG"/>
+                        <segue destination="7bG-W0-y9d" kind="modal" identifier="toSpecialEventsViewControllerSegue" modalTransitionStyle="coverVertical" id="HPE-vP-Zl9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0nR-D9-huU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2574,8 +2580,46 @@ If you would like to make a financial contribution, we have the following option
                                         <rect key="frame" x="141" y="829" width="39" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </pageControl>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="273" translatesAutoresizingMaskIntoConstraints="NO" id="rLp-z6-fQI">
+                                        <rect key="frame" x="24" y="887" width="273" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Watch co-founder Jenny Konkin provide an overview of Whole Way House on CityTV in an interview with Breakfast Television host Riaz Meghji.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <webView autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anG-Pb-f5f">
+                                        <rect key="frame" x="0.0" y="983" width="320" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="10C-3g-Wmv"/>
+                                            <constraint firstAttribute="width" constant="320" id="7vf-Lv-x0l"/>
+                                        </constraints>
+                                    </webView>
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3B-5k-3GE" userLabel="BT Caption View">
+                                        <rect key="frame" x="0.0" y="1163" width="320" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenny Konkin on Breakfast Television" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elA-ea-QPr">
+                                                <rect key="frame" x="17" y="6" width="287" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="elA-ea-QPr" firstAttribute="leading" secondItem="V3B-5k-3GE" secondAttribute="leading" constant="17" id="16G-1d-nM0"/>
+                                            <constraint firstItem="elA-ea-QPr" firstAttribute="centerY" secondItem="V3B-5k-3GE" secondAttribute="centerY" id="Z9K-lU-EbL"/>
+                                            <constraint firstAttribute="height" constant="30" id="bcd-Zv-ztj"/>
+                                            <constraint firstItem="elA-ea-QPr" firstAttribute="centerX" secondItem="V3B-5k-3GE" secondAttribute="centerX" id="bgZ-ex-zlS"/>
+                                            <constraint firstAttribute="width" constant="320" id="nZh-LC-bKv"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="215" translatesAutoresizingMaskIntoConstraints="NO" id="KXX-QS-7LY">
-                                        <rect key="frame" x="53" y="882" width="215" height="49"/>
+                                        <rect key="frame" x="53" y="1213" width="215" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <string key="text">Our Family &amp; 
 the Avalon Hotel</string>
@@ -2584,7 +2628,7 @@ the Avalon Hotel</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="DCI-UC-Wfz">
-                                        <rect key="frame" x="20" y="939" width="280" height="141"/>
+                                        <rect key="frame" x="20" y="1270" width="280" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="141" id="Osn-ni-uEr"/>
@@ -2609,7 +2653,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kp3-TI-6Fq">
-                                        <rect key="frame" x="0.0" y="1095" width="320" height="215"/>
+                                        <rect key="frame" x="0.0" y="1426" width="320" height="215"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about1.png" translatesAutoresizingMaskIntoConstraints="NO" id="wkF-V0-znR">
@@ -2650,7 +2694,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                         </constraints>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="KyS-LF-mWA">
-                                        <rect key="frame" x="20" y="1325" width="280" height="141"/>
+                                        <rect key="frame" x="20" y="1656" width="280" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="141" id="NiE-zH-qBB"/>
@@ -2662,7 +2706,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="nGL-uY-SWE">
-                                        <rect key="frame" x="20" y="1474" width="280" height="101"/>
+                                        <rect key="frame" x="20" y="1805" width="280" height="101"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="101" id="HEF-qk-NCe"/>
@@ -2674,7 +2718,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tox-q8-XEz">
-                                        <rect key="frame" x="0.0" y="1590" width="320" height="238"/>
+                                        <rect key="frame" x="0.0" y="1921" width="320" height="238"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="95m-ct-fYG">
@@ -2716,7 +2760,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                         </constraints>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="hvf-Q4-dQc">
-                                        <rect key="frame" x="20" y="1843" width="280" height="121"/>
+                                        <rect key="frame" x="20" y="2174" width="280" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="121" id="d0x-bM-cSc"/>
@@ -2728,7 +2772,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="HvN-j0-UoY">
-                                        <rect key="frame" x="20" y="1972" width="280" height="201"/>
+                                        <rect key="frame" x="20" y="2303" width="280" height="201"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="201" id="fBG-yC-yhR"/>
@@ -2740,7 +2784,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <webView autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQQ-zU-xxZ">
-                                        <rect key="frame" x="0.0" y="2188" width="320" height="180"/>
+                                        <rect key="frame" x="0.0" y="2519" width="320" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -2749,7 +2793,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                         </constraints>
                                     </webView>
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQF-4v-Sku" userLabel="YouTube Caption View">
-                                        <rect key="frame" x="0.0" y="2368" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="2699" width="320" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ron Konkin &amp; WWH - Amazing Grace" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqh-q0-xMx">
@@ -2775,7 +2819,6 @@ We believe that when a person feels loved and valued, they are able to find purp
                                     <constraint firstAttribute="trailing" secondItem="DCI-UC-Wfz" secondAttribute="trailing" constant="20" symbolic="YES" id="2Ps-3N-zIg"/>
                                     <constraint firstItem="Lbw-2P-vra" firstAttribute="leading" secondItem="kIp-rv-GEl" secondAttribute="leading" id="3eJ-nC-x3K"/>
                                     <constraint firstItem="kIp-rv-GEl" firstAttribute="centerX" secondItem="RCg-vY-PMe" secondAttribute="centerX" id="4NZ-GJ-LMZ"/>
-                                    <constraint firstItem="KXX-QS-7LY" firstAttribute="top" secondItem="Hr3-OM-k1X" secondAttribute="bottom" constant="15" id="5Or-Ja-gSx"/>
                                     <constraint firstItem="Hr3-OM-k1X" firstAttribute="top" secondItem="dcA-M1-38U" secondAttribute="bottom" constant="8" id="8NT-Qd-O5X"/>
                                     <constraint firstAttribute="centerX" secondItem="15x-qr-0Gn" secondAttribute="centerX" id="8ZN-CN-WNH"/>
                                     <constraint firstItem="nGL-uY-SWE" firstAttribute="leading" secondItem="hvf-Q4-dQc" secondAttribute="leading" id="8nY-La-gqJ"/>
@@ -2797,19 +2840,26 @@ We believe that when a person feels loved and valued, they are able to find purp
                                     <constraint firstItem="DCI-UC-Wfz" firstAttribute="leading" secondItem="8LO-ZT-3BC" secondAttribute="leading" constant="20" symbolic="YES" id="VVP-5R-bDE"/>
                                     <constraint firstItem="Kp3-TI-6Fq" firstAttribute="top" secondItem="DCI-UC-Wfz" secondAttribute="bottom" constant="15" id="W0v-9w-dIa"/>
                                     <constraint firstItem="KyS-LF-mWA" firstAttribute="leading" secondItem="nGL-uY-SWE" secondAttribute="leading" id="X0X-M7-rK4"/>
+                                    <constraint firstItem="rLp-z6-fQI" firstAttribute="centerX" secondItem="anG-Pb-f5f" secondAttribute="centerX" constant="0.5" id="aEZ-UF-0FK"/>
                                     <constraint firstItem="Tox-q8-XEz" firstAttribute="leading" secondItem="Kp3-TI-6Fq" secondAttribute="leading" id="aQh-K3-oNq"/>
+                                    <constraint firstItem="KXX-QS-7LY" firstAttribute="top" secondItem="V3B-5k-3GE" secondAttribute="bottom" constant="20" id="bh8-rO-HhT"/>
+                                    <constraint firstItem="dcA-M1-38U" firstAttribute="centerX" secondItem="rLp-z6-fQI" secondAttribute="centerX" constant="-0.5" id="ePZ-YD-dcS"/>
                                     <constraint firstItem="KXX-QS-7LY" firstAttribute="centerX" secondItem="DCI-UC-Wfz" secondAttribute="centerX" id="gVz-kQ-cjs"/>
                                     <constraint firstItem="fNM-9Z-Ia4" firstAttribute="top" secondItem="dcA-M1-38U" secondAttribute="bottom" constant="170" id="gpy-aX-pnS"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="960" placeholder="YES" id="hfU-t6-11Z"/>
                                     <constraint firstItem="esU-n1-kit" firstAttribute="top" secondItem="15x-qr-0Gn" secondAttribute="bottom" constant="8" id="ibd-cA-k6O"/>
                                     <constraint firstItem="kIp-rv-GEl" firstAttribute="trailing" secondItem="Lbw-2P-vra" secondAttribute="trailing" id="jQM-8l-l2v"/>
                                     <constraint firstItem="SQQ-zU-xxZ" firstAttribute="top" secondItem="HvN-j0-UoY" secondAttribute="bottom" constant="15" id="lD5-jl-Dxx"/>
+                                    <constraint firstItem="V3B-5k-3GE" firstAttribute="top" secondItem="anG-Pb-f5f" secondAttribute="bottom" id="ljP-Jb-aXW"/>
                                     <constraint firstAttribute="bottom" secondItem="vQF-4v-Sku" secondAttribute="bottom" constant="70" id="m0n-De-9hL"/>
+                                    <constraint firstItem="anG-Pb-f5f" firstAttribute="centerX" secondItem="V3B-5k-3GE" secondAttribute="centerX" id="mLA-GA-oXt"/>
                                     <constraint firstItem="Kp3-TI-6Fq" firstAttribute="leading" secondItem="kIp-rv-GEl" secondAttribute="leading" id="n4N-mY-Vde"/>
+                                    <constraint firstItem="rLp-z6-fQI" firstAttribute="top" secondItem="Hr3-OM-k1X" secondAttribute="bottom" constant="20" id="nJz-z2-dA1"/>
                                     <constraint firstItem="15x-qr-0Gn" firstAttribute="top" secondItem="8LO-ZT-3BC" secondAttribute="top" constant="265" id="nuc-gk-Ki2"/>
                                     <constraint firstItem="DCI-UC-Wfz" firstAttribute="top" secondItem="KXX-QS-7LY" secondAttribute="bottom" constant="8" id="p9o-0A-Kqr"/>
                                     <constraint firstItem="vQF-4v-Sku" firstAttribute="top" secondItem="SQQ-zU-xxZ" secondAttribute="bottom" id="svd-8v-WRJ"/>
                                     <constraint firstItem="kIp-rv-GEl" firstAttribute="bottom" secondItem="Lbw-2P-vra" secondAttribute="bottom" id="tbJ-Ko-qrh"/>
+                                    <constraint firstItem="anG-Pb-f5f" firstAttribute="top" secondItem="rLp-z6-fQI" secondAttribute="bottom" constant="15" id="wva-6D-geE"/>
                                     <constraint firstItem="Lbw-2P-vra" firstAttribute="top" secondItem="8LO-ZT-3BC" secondAttribute="top" id="xAn-BM-fCm"/>
                                     <constraint firstItem="KyS-LF-mWA" firstAttribute="top" secondItem="Kp3-TI-6Fq" secondAttribute="bottom" constant="15" id="xFU-3T-YmK"/>
                                     <constraint firstItem="dcA-M1-38U" firstAttribute="top" secondItem="esU-n1-kit" secondAttribute="bottom" constant="15" id="z8j-Eq-9dP"/>
@@ -2825,8 +2875,9 @@ We believe that when a person feels loved and valued, they are able to find purp
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Our Story" image="TabBarIcon-About" id="8Bc-Eh-UWp"/>
-                    <size key="freeformSize" width="960" height="2500"/>
+                    <size key="freeformSize" width="960" height="3000"/>
                     <connections>
+                        <outlet property="breakfastTelevisionWebView" destination="anG-Pb-f5f" id="NfI-fI-6GL"/>
                         <outlet property="missionPageControl" destination="fNM-9Z-Ia4" id="5rh-79-d7C"/>
                         <outlet property="missionScrollView" destination="Hr3-OM-k1X" id="9dq-GE-Qbn"/>
                         <outlet property="scrollView" destination="8LO-ZT-3BC" id="fvf-30-13U"/>
@@ -3409,8 +3460,168 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
             </objects>
             <point key="canvasLocation" x="465" y="-619"/>
         </scene>
+        <!--Special Events View Controller - Special Events-->
+        <scene sceneID="1Qy-Dz-Q6Y">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="iC5-Ke-Ho3" customClass="SpecialEventsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SUZ-9i-EVe"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Pj-9e-Eyg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4I8-xg-Kkg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iz6-xi-554">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picnic in the Park" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIn-KN-jgm">
+                                        <rect key="frame" x="69" y="141" width="183" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WWHLogoTransparent" translatesAutoresizingMaskIntoConstraints="NO" id="u21-Bk-tzY" userLabel=" WWHLogoTransparent">
+                                        <rect key="frame" x="130" y="73" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="CQW-0z-g9b"/>
+                                            <constraint firstAttribute="width" constant="60" id="ObQ-NU-E0O"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeparatorLeft" translatesAutoresizingMaskIntoConstraints="NO" id="1ri-zj-RtO" customClass="TintedImageView">
+                                        <rect key="frame" x="20" y="93" width="100" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.19215688110000001" green="0.69019609689999994" blue="0.78823536630000002" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="01z-2q-E7b"/>
+                                            <constraint firstAttribute="width" constant="100" id="mN9-Tc-Or1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeparatorRight" translatesAutoresizingMaskIntoConstraints="NO" id="2hf-FA-7E3" customClass="TintedImageView">
+                                        <rect key="frame" x="200" y="93" width="100" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.19215688110000001" green="0.69019609689999994" blue="0.78823536630000002" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="6xD-Zf-nXD"/>
+                                            <constraint firstAttribute="height" constant="20" id="MJp-NK-cXI"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="e6P-Yh-hFT">
+                                        <rect key="frame" x="20" y="170" width="280" height="358"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">You're invited to our 2nd Annual Family Picnic in the Park!
+
+Sunday, August 24th 5:00-7:30pm at Prospect Point in Stanley Park
+
+FUN, GAMES, SILENT AUCTION &amp; delicious food grilled by the Chefs from EARLS KITCHEN!
+
+Tickets by donation!
+
+Proceeds go to funding our community-building programs in the Downtown Eastside.
+
+Watch co-founder Jenny Konkin provide an overview of Whole Way House on CityTV in an interview with Breakfast Television host Riaz Meghji.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hL-4R-0Kx">
+                                        <rect key="frame" x="0.0" y="543" width="320" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="UbD-Qi-8zE"/>
+                                            <constraint firstAttribute="height" constant="180" id="nQW-5m-FCX"/>
+                                        </constraints>
+                                    </webView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1ri-zj-RtO" firstAttribute="top" secondItem="iz6-xi-554" secondAttribute="top" constant="93" id="4bd-30-ARm"/>
+                                    <constraint firstItem="lIn-KN-jgm" firstAttribute="top" secondItem="u21-Bk-tzY" secondAttribute="bottom" constant="8" id="6TE-db-bvx"/>
+                                    <constraint firstItem="1ri-zj-RtO" firstAttribute="centerY" secondItem="u21-Bk-tzY" secondAttribute="centerY" id="6ee-Km-3G9"/>
+                                    <constraint firstItem="u21-Bk-tzY" firstAttribute="leading" secondItem="iz6-xi-554" secondAttribute="leading" constant="130" id="9Xs-PM-xiX"/>
+                                    <constraint firstItem="lIn-KN-jgm" firstAttribute="centerX" secondItem="e6P-Yh-hFT" secondAttribute="centerX" constant="0.5" id="Bev-kL-ihR"/>
+                                    <constraint firstAttribute="trailing" secondItem="2hf-FA-7E3" secondAttribute="trailing" constant="20" id="LEQ-Ww-ofw"/>
+                                    <constraint firstItem="e6P-Yh-hFT" firstAttribute="top" secondItem="lIn-KN-jgm" secondAttribute="bottom" constant="8" id="MY6-Ob-uyY"/>
+                                    <constraint firstItem="1ri-zj-RtO" firstAttribute="leading" secondItem="iz6-xi-554" secondAttribute="leading" constant="20" id="WJX-nN-QbU"/>
+                                    <constraint firstAttribute="bottom" secondItem="5hL-4R-0Kx" secondAttribute="bottom" constant="55" id="YU3-Ce-Z8e"/>
+                                    <constraint firstItem="5hL-4R-0Kx" firstAttribute="top" secondItem="e6P-Yh-hFT" secondAttribute="bottom" constant="15" id="YXS-Pt-hMx"/>
+                                    <constraint firstItem="2hf-FA-7E3" firstAttribute="trailing" secondItem="e6P-Yh-hFT" secondAttribute="trailing" id="his-zH-7kl"/>
+                                    <constraint firstAttribute="centerX" secondItem="u21-Bk-tzY" secondAttribute="centerX" id="i4o-NO-FgP"/>
+                                    <constraint firstItem="5hL-4R-0Kx" firstAttribute="leading" secondItem="iz6-xi-554" secondAttribute="leading" id="mhE-9z-3IU"/>
+                                    <constraint firstItem="e6P-Yh-hFT" firstAttribute="leading" secondItem="1ri-zj-RtO" secondAttribute="leading" id="qOh-kS-rb4"/>
+                                    <constraint firstItem="u21-Bk-tzY" firstAttribute="centerX" secondItem="lIn-KN-jgm" secondAttribute="centerX" constant="-0.5" id="u6Y-Wn-Aro"/>
+                                    <constraint firstItem="2hf-FA-7E3" firstAttribute="top" secondItem="iz6-xi-554" secondAttribute="top" constant="93" id="weJ-gy-EMd"/>
+                                </constraints>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6A-7D-4Ib">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Purchase Tickets" id="Vlq-gm-syU">
+                                        <connections>
+                                            <action selector="purchaseTicketsBarButtonItemPressed:" destination="iC5-Ke-Ho3" id="vGX-kH-szb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="l1B-w0-5Wd"/>
+                                    <barButtonItem title="More Details" id="cl1-pK-QXR">
+                                        <connections>
+                                            <action selector="moreDetailsBarButtonItemPressed:" destination="iC5-Ke-Ho3" id="saF-1e-c7j"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.098039224743843079" green="0.35686275362968445" blue="0.44705885648727417" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="iz6-xi-554" firstAttribute="bottom" secondItem="x6A-7D-4Ib" secondAttribute="bottom" id="Bkm-h8-Jsp"/>
+                            <constraint firstItem="iz6-xi-554" firstAttribute="leading" secondItem="x6A-7D-4Ib" secondAttribute="leading" id="Fn1-oa-JfL"/>
+                            <constraint firstItem="iz6-xi-554" firstAttribute="trailing" secondItem="x6A-7D-4Ib" secondAttribute="trailing" id="Jxu-Ph-Kfo"/>
+                            <constraint firstItem="iz6-xi-554" firstAttribute="top" secondItem="4I8-xg-Kkg" secondAttribute="top" id="KsB-sF-eYa"/>
+                            <constraint firstAttribute="bottom" secondItem="iz6-xi-554" secondAttribute="bottom" id="lgb-DN-fkR"/>
+                            <constraint firstItem="iz6-xi-554" firstAttribute="leading" secondItem="4I8-xg-Kkg" secondAttribute="leading" id="rSe-hR-cAX"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Special Events" id="KxY-8f-bc0">
+                        <barButtonItem key="leftBarButtonItem" image="MPCloseBtn" id="W5U-Oo-k9e">
+                            <connections>
+                                <action selector="closeBarButtonItemPressed:" destination="iC5-Ke-Ho3" id="7W5-cT-lJA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="320" height="1500"/>
+                    <connections>
+                        <outlet property="youTubeWebView" destination="5hL-4R-0Kx" id="6nJ-77-L9L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luv-EI-2Xa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861" y="-619"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tCx-1x-CoU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7bG-W0-y9d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wAZ-7Y-Reh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iC5-Ke-Ho3" kind="relationship" relationship="rootViewController" id="CRq-TU-LRb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTE-YP-Lp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413" y="-619"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="BarButtonIconAlert" width="22" height="22"/>
         <image name="BarButtonIconHelp" width="22" height="22"/>
         <image name="BoardProfileBillMollard.jpg" width="141" height="180"/>
         <image name="BoardProfileCameronHite.jpg" width="140" height="180"/>
@@ -3427,6 +3638,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
         <image name="JenIconMouse" width="40" height="40"/>
         <image name="JenIconPhone" width="40" height="40"/>
         <image name="JenIconTwitter" width="40" height="40"/>
+        <image name="MPCloseBtn" width="25" height="25"/>
         <image name="MissionPanel1" width="40" height="40"/>
         <image name="MissionPanel2" width="40" height="40"/>
         <image name="MissionPanel3" width="40" height="40"/>
