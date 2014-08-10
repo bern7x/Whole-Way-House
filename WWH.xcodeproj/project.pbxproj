@@ -418,6 +418,8 @@
 		42EBF46A1943CF95002569B8 /* Whole Way House */ = {
 			isa = PBXGroup;
 			children = (
+				42EBF4731943CF95002569B8 /* AppDelegate.h */,
+				42EBF4741943CF95002569B8 /* AppDelegate.m */,
 				42EBF4761943CF95002569B8 /* Main.storyboard */,
 				420F5D201954FE19000CC89C /* TwitterViewController.h */,
 				420F5D211954FE19000CC89C /* TwitterViewController.m */,
@@ -448,8 +450,6 @@
 		42EBF46B1943CF95002569B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				42EBF4731943CF95002569B8 /* AppDelegate.h */,
-				42EBF4741943CF95002569B8 /* AppDelegate.m */,
 				42314F62196AFCD800814508 /* APIKeys.h */,
 				42314F63196AFCD800814508 /* APIKeys.m */,
 				42EBF46D1943CF95002569B8 /* InfoPlist.strings */,

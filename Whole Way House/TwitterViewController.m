@@ -99,6 +99,10 @@
 // Pull to Refresh
 - (void)handleRefresh:(UIRefreshControl *)refreshControl
 {
+    // Switch the left UIBarButtonItem to an UIActivityIndicator that shows loading animation
+    [self leftItemButtonWithActivityIndicator];
+    
+    // Update pull-to-refresh section at the top of the view
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMM d, h:mm a"];
