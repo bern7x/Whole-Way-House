@@ -19,6 +19,8 @@
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *refreshBarButtonItem;
 
+- (void)scrollToTop;
+
 @end
 
 @implementation TwitterViewController
@@ -265,7 +267,12 @@
     
 }
 
-
+- (void)scrollToTop
+{
+    // Source: http://stackoverflow.com/questions/9450302/tell-uiscrollview-to-scroll-to-the-top?rq=1
+    
+    [self.tableView setContentOffset:CGPointMake(0, -self.tableView.contentInset.top) animated:YES];
+}
 
 
 

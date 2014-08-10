@@ -140,7 +140,15 @@
     [self randomTopImage:self.imageNumber];
 }
 
+#pragma mark - Helper Methods
 
+// Scroll-to-top (triggered by TabBarController)
+- (void)scrollToTop
+{
+    // Source: http://stackoverflow.com/questions/9450302/tell-uiscrollview-to-scroll-to-the-top?rq=1
+    
+    [self.scrollView setContentOffset:CGPointMake(0, -self.scrollView.contentInset.top) animated:YES];
+}
 
 
 @end

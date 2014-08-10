@@ -2371,6 +2371,7 @@ If you would like to make a financial contribution, we have the following option
                     <connections>
                         <outlet property="mapView" destination="Ocs-lx-hkZ" id="uSX-mV-GtQ"/>
                         <outlet property="pageControl" destination="5UW-f6-Ib0" id="DBf-4s-A7A"/>
+                        <outlet property="scrollView" destination="jpT-Wu-voI" id="pNt-H9-DUS"/>
                         <outlet property="versesScrollView" destination="fqb-te-QuF" id="MIs-bL-Gnx"/>
                         <outlet property="wwhLogoImageView" destination="ef5-av-C5Z" id="W3Q-tr-XFX"/>
                         <segue destination="yof-HY-q7N" kind="modal" identifier="fromContactToWebViewControllerSegue" id="nEf-dl-cut"/>
@@ -3676,6 +3677,6 @@ Watch co-founder Jenny Konkin provide an overview of Whole Way House on CityTV i
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Nz0-4d-FfG"/>
+        <segue reference="nEf-dl-cut"/>
     </inferredMetricsTieBreakers>
 </document>

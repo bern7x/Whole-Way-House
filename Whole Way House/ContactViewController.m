@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *wwhLogoImageView;
 @property (strong, nonatomic) IBOutlet UIScrollView *versesScrollView;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -230,7 +231,15 @@
     [self performSegueWithIdentifier:@"toBoardViewControllerSegue" sender:nil];
 }
 
+#pragma mark - Helper Methods
 
+// Scroll-to-top (triggered by TabBarController)
+- (void)scrollToTop
+{
+    // Source: http://stackoverflow.com/questions/9450302/tell-uiscrollview-to-scroll-to-the-top?rq=1
+    
+    [self.scrollView setContentOffset:CGPointMake(0, -self.scrollView.contentInset.top) animated:YES];
+}
 
 
 

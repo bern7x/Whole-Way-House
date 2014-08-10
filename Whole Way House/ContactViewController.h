@@ -10,4 +10,6 @@
 
 @interface ContactViewController : UIViewController
 
+- (void)scrollToTop;
+
 @end

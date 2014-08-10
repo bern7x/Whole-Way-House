@@ -10,4 +10,6 @@
 
 @interface AboutViewController : UIViewController
 
+- (void)scrollToTop;
+
 @end
