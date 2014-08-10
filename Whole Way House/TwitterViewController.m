@@ -223,6 +223,8 @@
 }
 
 // UIActivityIndicator used to show that the feed is being refreshed
+// Source: http://stackoverflow.com/questions/2965737/replace-uibarbuttonitem-with-uiactivityindicatorview
+
 - (void)leftItemButtonWithActivityIndicator
 {
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
