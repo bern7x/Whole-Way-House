@@ -83,6 +83,9 @@
         [twitter getUserTimelineWithScreenName:@"WholeWayHouse" successBlock:^(NSArray *statuses) {
             self.twitterFeed = [NSMutableArray arrayWithArray:statuses];
             [self.tableView reloadData];
+            
+            // Set the left UIBarButtonItem back to the refresh icon
+            self.navigationItem.leftBarButtonItem = self.refreshBarButtonItem;
         } errorBlock:^(NSError *error) {
             NSLog(@"%@", error.debugDescription);
         }];
@@ -212,7 +215,23 @@
 
 - (IBAction)refreshBarButtonItemPressed:(UIBarButtonItem *)sender
 {
+    // Switch the left UIBarButtonItem to an UIActivityIndicator that shows loading animation
+    [self leftItemButtonWithActivityIndicator];
+    
+    // Trigger the process to refresh the Twitter feed
     [self handleRefresh:self.refreshControl];
+}
+
+// UIActivityIndicator used to show that the feed is being refreshed
+// Source: http://stackoverflow.com/questions/2965737/replace-uibarbuttonitem-with-uiactivityindicatorview
+
+- (void)leftItemButtonWithActivityIndicator
+{
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    [activityIndicator startAnimating];
+    UIBarButtonItem *activityItem = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
+    self.navigationItem.leftBarButtonItem = activityItem;
 }
 
 - (IBAction)alertBarButtonItemPressed:(UIBarButtonItem *)sender
