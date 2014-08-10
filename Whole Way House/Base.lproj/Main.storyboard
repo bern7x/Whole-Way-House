@@ -112,7 +112,7 @@
                                 <action selector="refreshBarButtonItemPressed:" destination="f8R-AJ-8oP" id="kri-8H-10g"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="BarButtonIconAlert" id="ELR-RO-SR1">
+                        <barButtonItem key="rightBarButtonItem" title="Events" id="ELR-RO-SR1">
                             <connections>
                                 <action selector="alertBarButtonItemPressed:" destination="f8R-AJ-8oP" id="mkl-Dt-gp2"/>
                             </connections>
@@ -3621,7 +3621,6 @@ Watch co-founder Jenny Konkin provide an overview of Whole Way House on CityTV i
         </scene>
     </scenes>
     <resources>
-        <image name="BarButtonIconAlert" width="22" height="22"/>
         <image name="BarButtonIconHelp" width="22" height="22"/>
         <image name="BoardProfileBillMollard.jpg" width="141" height="180"/>
         <image name="BoardProfileCameronHite.jpg" width="140" height="180"/>
