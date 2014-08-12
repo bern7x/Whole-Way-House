@@ -58,7 +58,7 @@
     }
 */
     
-    // Load sponsors from Parse back-end
+    // Load sponsors from Parse back-end ** NEW FOR VERSION 1.2 **
     [self fetchSponsors];
     
     // Customize look of table cells

@@ -163,7 +163,7 @@
     
     NSString *tweetAuthor = tweet[@"user"][@"screen_name"];
     NSString *date = tweet[@"created_at"];
-    NSString *tweetText = tweet[@"text"];
+    NSString *tweetText= [tweet[@"text"] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
     
     //NSString *tweetClient = tweet[@"source"];
 
