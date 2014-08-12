@@ -12,6 +12,7 @@
 #import "SponsorsViewController.h"
 #import "AboutViewController.h"
 #import "ContactViewController.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -31,6 +32,11 @@
     
     UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
     tabController.delegate = self;
+    
+    // Initialize Parse integration & analytics
+    [Parse setApplicationId:@"TbrLNwhpeIqa3t5jDzottKMo07chJ54YQk4rvuwU"
+                  clientKey:@"8dmblwnEzP1ndWQG97anIupgAPNko71L94P8kgMS"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     return YES;
 }

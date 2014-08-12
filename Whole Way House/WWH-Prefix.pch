@@ -15,6 +15,7 @@
     #import <Foundation/Foundation.h>
     #import "Mixpanel.h"
     #import "APIKeys.h"
+    #import <Parse/Parse.h>
 #endif
 
 //  APIKeys.h/m are NOT included in the GitHub project

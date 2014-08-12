@@ -50,11 +50,18 @@
     
     self.containerView.hidden = YES;
     
+/*  
+    // Loading sponsors from locally stored data
     for (NSMutableDictionary *sponsorData in [SponsorData allSponsors]) {
         Sponsor *sponsor = [[Sponsor alloc] initWithData:sponsorData];
         [self.sponsors addObject:sponsor];
     }
+*/
     
+    // Load sponsors from Parse back-end
+    [self fetchSponsors];
+    
+    // Customize look of table cells
     self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg"]];
     self.tableView.backgroundColor = [UIColor clearColor];
     
@@ -213,5 +220,33 @@
     [self.tableView setContentOffset:CGPointMake(0, -self.tableView.contentInset.top) animated:YES];
 }
 
+- (void)fetchSponsors
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Sponsor"];
+    [query whereKey:@"status" equalTo:@"Active"];
+    [query orderByAscending:@"name"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // Start network activity indicator
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            
+            // The find was successful
+            for (PFObject *object in objects) {
+                Sponsor *sponsor = [[Sponsor alloc] init];
+                sponsor.name = object[@"name"];
+                sponsor.tagline = object[@"detail"];
+                sponsor.website = object[@"website"];
+                [self.sponsors addObject:sponsor];
+            }
+            // Stop network activity indicator
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            [self.tableView reloadData];
+        } else {
+            // Log details of error
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
 
 @end

@@ -70,9 +70,9 @@
     
     if (currentDate < picnicDate) {
         [self performSegueWithIdentifier:@"toSpecialEventsViewControllerSegue" sender:nil];
-        NSLog(@"Yo");
+        //NSLog(@"Special Events Triggered");
     } else {
-        NSLog(@"Yo No");
+        //NSLog(@"pecial Events -NOT- Triggered");
     }
 }
 
