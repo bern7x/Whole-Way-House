@@ -11,13 +11,13 @@
 #import "DSWebViewController.h"
 #import "SpecialEventsViewController.h"
 
-@interface TwitterViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate>
+@interface TwitterViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *twitterFeed;
 @property (strong, nonatomic) NSString *tweetURL;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *refreshBarButtonItem;
+//@property (strong, nonatomic) IBOutlet UIBarButtonItem *refreshBarButtonItem;
 
 - (void)scrollToTop;
 
@@ -85,9 +85,6 @@
         [twitter getUserTimelineWithScreenName:@"WholeWayHouse" successBlock:^(NSArray *statuses) {
             self.twitterFeed = [NSMutableArray arrayWithArray:statuses];
             [self.tableView reloadData];
-            
-            // Set the left UIBarButtonItem back to the refresh icon
-            self.navigationItem.leftBarButtonItem = self.refreshBarButtonItem;
         } errorBlock:^(NSError *error) {
             NSLog(@"%@", error.debugDescription);
         }];
@@ -99,8 +96,8 @@
 // Pull to Refresh
 - (void)handleRefresh:(UIRefreshControl *)refreshControl
 {
-    // Switch the left UIBarButtonItem to an UIActivityIndicator that shows loading animation
-    [self leftItemButtonWithActivityIndicator];
+//    // Switch the left UIBarButtonItem to an UIActivityIndicator that shows loading animation
+//    [self leftItemButtonWithActivityIndicator];
     
     // Update pull-to-refresh section at the top of the view
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
@@ -219,13 +216,20 @@
 
 #pragma mark - IB Actions
 
-- (IBAction)refreshBarButtonItemPressed:(UIBarButtonItem *)sender
+//- (IBAction)refreshBarButtonItemPressed:(UIBarButtonItem *)sender
+//{
+//    // Switch the left UIBarButtonItem to an UIActivityIndicator that shows loading animation
+//    [self leftItemButtonWithActivityIndicator];
+//    
+//    // Trigger the process to refresh the Twitter feed
+//    [self handleRefresh:self.refreshControl];
+//}
+
+- (IBAction)volunteerBarButtonItemPressed:(UIBarButtonItem *)sender
 {
-    // Switch the left UIBarButtonItem to an UIActivityIndicator that shows loading animation
-    [self leftItemButtonWithActivityIndicator];
-    
-    // Trigger the process to refresh the Twitter feed
-    [self handleRefresh:self.refreshControl];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Volunteer Sign-up Form", @"First-Time Questionnaire", nil];
+    actionSheet.tag = 1;
+    [actionSheet showInView:self.view];
 }
 
 // UIActivityIndicator used to show that the feed is being refreshed
@@ -278,6 +282,39 @@
     [self.tableView setContentOffset:CGPointMake(0, -self.tableView.contentInset.top) animated:YES];
 }
 
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Load Dynamic Link Library
+    LinkLibrary *links = [LinkLibrary sharedLinkLibrary];
+    NSString *signup = links.linkDictionary[@"signup"];
+    NSString *questionnaire = links.linkDictionary[@"questionnaire"];
+    
+    switch (actionSheet.tag) {
+        case 1: {
+            switch (buttonIndex) {
+                case 0:
+                    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:signup];
+                    //NSLog(@"Volunteer sign-up button pressed");
+                    break;
+                case 1:
+                    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:questionnaire];
+                    //NSLog(@"Open First-time Questionnaire button pressed");
+                    break;
+                    //                case 1:
+                    //                    [actionSheet dismissWithClickedButtonIndex:buttonIndex animated:YES];
+                    //                    NSLog(@"Cancel button pressed");
+                    //                    break;
+                default:
+                    break;
+            }
+            break;
+        }
+        default:
+            break;
+    }
+}
 
 
 @end
