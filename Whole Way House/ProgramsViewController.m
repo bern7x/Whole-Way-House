@@ -210,20 +210,33 @@
     }
 }
 
+// Scroll-to-top (triggered by TabBarController)
+- (void)scrollToTop
+{
+    // Source: http://stackoverflow.com/questions/9450302/tell-uiscrollview-to-scroll-to-the-top?rq=1
+    
+    [self.scrollView setContentOffset:CGPointMake(0, -self.scrollView.contentInset.top) animated:YES];
+}
+
 #pragma mark - UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    // Load Dynamic Link Library
+    LinkLibrary *links = [LinkLibrary sharedLinkLibrary];
+    NSString *signup = links.linkDictionary[@"signup"];
+    NSString *questionnaire = links.linkDictionary[@"questionnaire"];
+    
     switch (actionSheet.tag) {
         case 1: {
             switch (buttonIndex) {
                 case 0:
-                    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:VOLUNTEER_SIGN_UP_FORM];
-                    NSLog(@"Open in Safari button pressed");
+                    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:signup];
+                    //NSLog(@"Volunteer sign-up button pressed");
                     break;
                 case 1:
-                    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:VOLUNTEER_FIRST_TIME_QUESTIONNAIRE];
-                    NSLog(@"Open First-time Questionnaire button pressed");
+                    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:questionnaire];
+                    //NSLog(@"Open First-time Questionnaire button pressed");
                     break;
                     //                case 1:
                     //                    [actionSheet dismissWithClickedButtonIndex:buttonIndex animated:YES];

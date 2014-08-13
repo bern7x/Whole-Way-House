@@ -107,9 +107,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Whole Way House" id="EUC-c1-rBC">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="nhs-Ed-Qyz">
+                        <barButtonItem key="leftBarButtonItem" image="VolunteerIconSmall20x20" style="done" id="WSy-cy-UxA">
                             <connections>
-                                <action selector="refreshBarButtonItemPressed:" destination="f8R-AJ-8oP" id="kri-8H-10g"/>
+                                <action selector="volunteerBarButtonItemPressed:" destination="f8R-AJ-8oP" id="ie7-27-PkL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Events" id="ELR-RO-SR1">
@@ -119,7 +119,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="refreshBarButtonItem" destination="nhs-Ed-Qyz" id="qed-nl-TKb"/>
                         <outlet property="tableView" destination="iNZ-CZ-ZzH" id="UTw-Oa-gkW"/>
                         <segue destination="yof-HY-q7N" kind="modal" identifier="toWebViewControllerSegue" modalTransitionStyle="coverVertical" id="Nz0-4d-FfG"/>
                         <segue destination="7bG-W0-y9d" kind="modal" identifier="toSpecialEventsViewControllerSegue" modalTransitionStyle="coverVertical" id="HPE-vP-Zl9"/>
@@ -1523,7 +1522,7 @@ If you would like to get involved, please get in touch with us.</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Programs &amp; Activities" id="G6v-Pk-qMg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="FlM-u4-EPt">
+                        <barButtonItem key="leftBarButtonItem" image="VolunteerIconSmall20x20" id="FlM-u4-EPt">
                             <connections>
                                 <action selector="volunteerBarButtonItemPressed:" destination="a9s-AB-w4D" id="7y4-eJ-lvF"/>
                             </connections>
@@ -2371,6 +2370,7 @@ If you would like to make a financial contribution, we have the following option
                     <connections>
                         <outlet property="mapView" destination="Ocs-lx-hkZ" id="uSX-mV-GtQ"/>
                         <outlet property="pageControl" destination="5UW-f6-Ib0" id="DBf-4s-A7A"/>
+                        <outlet property="scrollView" destination="jpT-Wu-voI" id="pNt-H9-DUS"/>
                         <outlet property="versesScrollView" destination="fqb-te-QuF" id="MIs-bL-Gnx"/>
                         <outlet property="wwhLogoImageView" destination="ef5-av-C5Z" id="W3Q-tr-XFX"/>
                         <segue destination="yof-HY-q7N" kind="modal" identifier="fromContactToWebViewControllerSegue" id="nEf-dl-cut"/>
@@ -3676,6 +3676,6 @@ Watch co-founder Jenny Konkin provide an overview of Whole Way House on CityTV i
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Nz0-4d-FfG"/>
+        <segue reference="hMn-Tr-Kyb"/>
     </inferredMetricsTieBreakers>
 </document>

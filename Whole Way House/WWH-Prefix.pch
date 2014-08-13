@@ -15,9 +15,11 @@
     #import <Foundation/Foundation.h>
     #import "Mixpanel.h"
     #import "APIKeys.h"
+    #import <Parse/Parse.h>
+    #import "LinkLibrary.h"
 #endif
 
-//  APIKeys.h/m are NOT included in the GitHub project
+//  APIKeys.h/m files are NOT included in the GitHub project
 //  To run the project successfully, you'll need to create your own APIKeys.h/m files
 //  Add the following defines with your own API Keys for Twitter and Mixpanel
 

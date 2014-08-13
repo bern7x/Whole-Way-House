@@ -11,6 +11,7 @@
 @interface SpecialEventsViewController ()
 
 @property (strong, nonatomic) IBOutlet UIWebView *youTubeWebView;
+@property (strong, nonatomic) LinkLibrary *links;
 
 @end
 
@@ -30,10 +31,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // Initialize Link Library
+    self.links = [LinkLibrary sharedLinkLibrary];
+    
     // Embedded YouTube video
-    NSURL *url = [NSURL URLWithString:@"http://www.youtube.com/embed/9HNSlVfqt1w?showinfo=0&modestbranding=1&rel=0&showsearch=0"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [self.youTubeWebView loadRequest:request];
+    NSURL *url = [NSURL URLWithString:self.links.linkDictionary[@"interview"]];
+    if (url && url.scheme && url.host) {
+        // Check to see that a valid URL is contained within the dynamic link library retrieved url
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [self.youTubeWebView loadRequest:request];
+    } else {
+        // In case dynamic link library is too slow for the initial pop-up, use this hardcoded backup
+        NSURL *backup = [NSURL URLWithString:@"http://www.youtube.com/embed/9HNSlVfqt1w?showinfo=0&modestbranding=1&rel=0&showsearch=0"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:backup];
+        [self.youTubeWebView loadRequest:request];
+        NSLog(@"Backup used");
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +77,7 @@
 
 - (IBAction)purchaseTicketsBarButtonItemPressed:(UIBarButtonItem *)sender
 {
-    NSString *urlString = @"http://bit.ly/wwh-donate";
+    NSString *urlString = self.links.linkDictionary[@"donate"];
     NSURL *url =[NSURL URLWithString:urlString];
     if(![[UIApplication sharedApplication] openURL:url])
         NSLog(@"%@%@",@"Failed to open url:",[url description]);
@@ -71,7 +85,7 @@
 
 - (IBAction)moreDetailsBarButtonItemPressed:(UIBarButtonItem *)sender
 {
-    NSString *urlString = @"http://bit.ly/wwh-donate";
+    NSString *urlString = self.links.linkDictionary[@"donate"];
     NSURL *url =[NSURL URLWithString:urlString];
     if(![[UIApplication sharedApplication] openURL:url])
         NSLog(@"%@%@",@"Failed to open url:",[url description]);

@@ -10,4 +10,6 @@
 
 @interface ProgramsViewController : UIViewController
 
+- (void)scrollToTop;
+
 @end

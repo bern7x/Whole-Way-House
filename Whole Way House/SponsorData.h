@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+// No longer used as of VERSION 1.2 - switched to Parse for backend for loading sponsor data
+
 #define SPONSOR_NAME @"Sponsor Name"
 #define SPONSOR_TAGLINE @"Sponsor Tagline"
 #define SPONSOR_URL @"Sponsor Website"

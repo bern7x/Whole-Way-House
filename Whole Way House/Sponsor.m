@@ -15,9 +15,9 @@
 {
     self = [super init];
     
-    self.name = data[SPONSOR_NAME];
-    self.tagline = data[SPONSOR_TAGLINE];
-    self.website = data[SPONSOR_URL];
+//    self.name = data[SPONSOR_NAME];
+//    self.tagline = data[SPONSOR_TAGLINE];
+//    self.website = data[SPONSOR_URL];
     
     return self;
 }

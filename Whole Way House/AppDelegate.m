@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "TwitterViewController.h"
+#import "ProgramsViewController.h"
+#import "SponsorsViewController.h"
+#import "AboutViewController.h"
+#import "ContactViewController.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -14,10 +20,102 @@
 {
     // Override point for customization after application launch.
     
+    // Initialize Mixpanel analytics
     [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    
+/*  
+    Set App Delegate to be the delegate for UITabBarControllerDelegate
+    Want to use UITabBarControllerDelegate to detect tab selection and enable scroll-to-top on second tap on current tab
+    Source 1: http://stackoverflow.com/questions/8336997/storyboard-uitabbarcontroller
+    Source 2: http://stackoverflow.com/questions/22392151/tap-tab-bar-to-scroll-to-top-of-uitableviewcontroller
+*/
+    
+    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+    tabController.delegate = self;
+    
+    // Initialize Parse integration & analytics
+    [Parse setApplicationId:@"TbrLNwhpeIqa3t5jDzottKMo07chJ54YQk4rvuwU"
+                  clientKey:@"8dmblwnEzP1ndWQG97anIupgAPNko71L94P8kgMS"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    // Initialize Dynamic Link Library using a singleton
+    [LinkLibrary sharedLinkLibrary];
     
     return YES;
 }
+
+#pragma mark - UITabBarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    static UIViewController *previousController = nil;
+    
+    // Using this logic to test if the user is tapping on a tab for the currently opened tab
+    // If yes, then trigger a scroll-to-top method
+    
+    if (previousController == viewController) {
+        
+        // This one won't be used since I don't have any UITableViewControllers at the moment
+        if ([viewController isKindOfClass:[UITableViewController class]])
+        {
+            [[(UITableViewController *)viewController tableView] setContentOffset:CGPointZero animated:YES];
+        }
+        // Use this to handle tabs that are embedded within a Navigation Controller
+        else if ([viewController isKindOfClass:[UINavigationController class]])
+        {
+            // Not used
+            UINavigationController *nav = (UINavigationController *)viewController;
+            if ([nav.visibleViewController isKindOfClass:[UITableViewController class]]) {
+                [[(UITableViewController *)nav.visibleViewController tableView] setContentOffset:CGPointZero animated:YES];
+            }
+            
+            // Scroll to top of Latest News tab
+            else if ([nav.visibleViewController isKindOfClass:[TwitterViewController class]]) {
+                TwitterViewController *tabViewController = (TwitterViewController *)nav.visibleViewController;
+                [tabViewController scrollToTop];
+            }
+            
+            // Scroll to top of Programs tab
+            else if ([nav.visibleViewController isKindOfClass:[ProgramsViewController class]]) {
+                ProgramsViewController *tabViewController = (ProgramsViewController *)nav.visibleViewController;
+                [tabViewController scrollToTop];
+            }
+            
+            // Scroll to top of Sponsors tab
+            else if ([nav.visibleViewController isKindOfClass:[SponsorsViewController class]]) {
+                SponsorsViewController *tabViewController = (SponsorsViewController *)nav.visibleViewController;
+                [tabViewController scrollToTop];
+            }
+        }
+        // Use the following to handle tabs that are using plain UIViewControllers
+        else if ([viewController isKindOfClass:[AboutViewController class]]) {
+            AboutViewController *tabViewController = (AboutViewController *)viewController;
+            [tabViewController scrollToTop];
+        }
+        // Use the following to handle tabs that are using plain UIViewControllers
+        else if ([viewController isKindOfClass:[ContactViewController class]]) {
+            ContactViewController *tabViewController = (ContactViewController *)viewController;
+            [tabViewController scrollToTop];
+        }
+    }
+    
+    previousController = viewController;
+}
+
+//- (void)tabBarController:(UITabBarController *)tabBarController
+// didSelectViewController:(UIViewController *)viewController
+//{
+//    static UIViewController *previousController = nil;
+//    if (previousController == viewController) {
+//        // the same tab was tapped a second time
+//        if ([viewController respondsToSelector:@selector(scrollToTop)]) {
+//            [viewController scrollToTop];
+//        }
+//    }
+//    previousController = viewController;
+//}
+
+#pragma mark - Default Methods
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
