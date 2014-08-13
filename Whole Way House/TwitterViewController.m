@@ -56,7 +56,7 @@
     [mixpanel flush];
     
     // Show Special Events based on date
-    [self performSelector:@selector(showSpecialEvents) withObject:nil afterDelay:0.1];
+    [self performSelector:@selector(showSpecialEvents) withObject:nil afterDelay:1.0];
 }
 
 - (void)showSpecialEvents

@@ -11,16 +11,20 @@
 
 @interface AboutViewController () <UIScrollViewDelegate>
 
+// IB Outlets
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIScrollView *topScrollView;
 @property (strong, nonatomic) IBOutlet UIScrollView *missionScrollView;
 @property (strong, nonatomic) IBOutlet UIImageView *wwhLogoImageView;
 @property (strong, nonatomic) IBOutlet UIWebView *youtubeWebView;
-@property (strong, nonatomic) UIRefreshControl *aboutRefreshControl;
 @property (strong, nonatomic) IBOutlet UIImageView *topImageView;
-@property (nonatomic) int imageNumber;
 @property (strong, nonatomic) IBOutlet UIPageControl *missionPageControl;
 @property (strong, nonatomic) IBOutlet UIWebView *breakfastTelevisionWebView;
+
+// Instance Variables
+@property (strong, nonatomic) UIRefreshControl *aboutRefreshControl;
+@property (nonatomic) int imageNumber;
+@property (strong, nonatomic) LinkLibrary *links;
 
 @end
 
@@ -49,6 +53,9 @@
     // Set random image for topScrollView
     self.imageNumber = 1;
     
+    // Initialize Link Library
+    self.links = [LinkLibrary sharedLinkLibrary];
+    
     // Pull to Refresh
     UIRefreshControl *refreshControl =[[UIRefreshControl alloc] init];
     self.aboutRefreshControl = refreshControl;
@@ -57,11 +64,11 @@
     [self.scrollView sendSubviewToBack:self.aboutRefreshControl];
     
     // Embedded YouTube videos
-    NSURL *url = [NSURL URLWithString:@"http://www.youtube.com/embed/VWElzESv0Q4?showinfo=0&modestbranding=1&rel=0&showsearch=0"];
+    NSURL *url = [NSURL URLWithString:self.links.linkDictionary[@"amazing"]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.youtubeWebView loadRequest:request];
     
-    NSURL *url2 = [NSURL URLWithString:@"http://www.youtube.com/embed/9HNSlVfqt1w?showinfo=0&modestbranding=1&rel=0&showsearch=0"];
+    NSURL *url2 = [NSURL URLWithString:self.links.linkDictionary[@"interview"]];
     NSURLRequest *request2 = [NSURLRequest requestWithURL:url2];
     [self.breakfastTelevisionWebView loadRequest:request2];
     

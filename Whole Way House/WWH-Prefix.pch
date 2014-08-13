@@ -16,6 +16,7 @@
     #import "Mixpanel.h"
     #import "APIKeys.h"
     #import <Parse/Parse.h>
+    #import "LinkLibrary.h"
 #endif
 
 //  APIKeys.h/m files are NOT included in the GitHub project

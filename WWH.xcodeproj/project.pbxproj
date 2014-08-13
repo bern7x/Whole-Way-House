@@ -85,6 +85,7 @@
 		42BF655B1999AAFA005E7160 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BF655A1999AAFA005E7160 /* Security.framework */; };
 		42BF655D1999AB03005E7160 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BF655C1999AB03005E7160 /* StoreKit.framework */; };
 		42BF655F1999AB0C005E7160 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BF655E1999AB0C005E7160 /* SystemConfiguration.framework */; };
+		42C9AC2D1999F17F007AB49E /* LinkLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C9AC2C1999F17F007AB49E /* LinkLibrary.m */; };
 		42E29F86194609E10004867F /* about1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E29F85194609E10004867F /* about1@2x.png */; };
 		42EBF4651943CF95002569B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4641943CF95002569B8 /* Foundation.framework */; };
 		42EBF4671943CF95002569B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4661943CF95002569B8 /* CoreGraphics.framework */; };
@@ -231,6 +232,8 @@
 		42BF655A1999AAFA005E7160 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		42BF655C1999AB03005E7160 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		42BF655E1999AB0C005E7160 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		42C9AC2B1999F17F007AB49E /* LinkLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkLibrary.h; sourceTree = "<group>"; };
+		42C9AC2C1999F17F007AB49E /* LinkLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkLibrary.m; sourceTree = "<group>"; };
 		42E29F85194609E10004867F /* about1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about1@2x.png"; sourceTree = "<group>"; };
 		42EBF4611943CF95002569B8 /* WWH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WWH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EBF4641943CF95002569B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -506,9 +509,13 @@
 		42EBF46B1943CF95002569B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				42EBF46D1943CF95002569B8 /* InfoPlist.strings */,
+				42EBF46C1943CF95002569B8 /* WWH-Info.plist */,
+				42EBF4721943CF95002569B8 /* WWH-Prefix.pch */,
 				42314F62196AFCD800814508 /* APIKeys.h */,
 				42314F63196AFCD800814508 /* APIKeys.m */,
-				42EBF46D1943CF95002569B8 /* InfoPlist.strings */,
+				42C9AC2B1999F17F007AB49E /* LinkLibrary.h */,
+				42C9AC2C1999F17F007AB49E /* LinkLibrary.m */,
 				42EBF4701943CF95002569B8 /* main.m */,
 				42725567194EB5C100B6FBA2 /* Sponsor.h */,
 				42725568194EB5C100B6FBA2 /* Sponsor.m */,
@@ -518,8 +525,6 @@
 				42318DB01952024D00957992 /* TintedImageView.m */,
 				42BCC004194E617A00ABC377 /* UIImageViewAligned.h */,
 				42BCC005194E617A00ABC377 /* UIImageViewAligned.m */,
-				42EBF46C1943CF95002569B8 /* WWH-Info.plist */,
-				42EBF4721943CF95002569B8 /* WWH-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -706,6 +711,7 @@
 				4240D91D195A34E100F6D553 /* MPNotificationViewController.m in Sources */,
 				427F81FC196ED4FD003CC580 /* SpecialEventsViewController.m in Sources */,
 				423A4A6D1958CCA700FD93DE /* NSError+STTwitter.m in Sources */,
+				42C9AC2D1999F17F007AB49E /* LinkLibrary.m in Sources */,
 				4240D923195A34E100F6D553 /* NSData+MPBase64.m in Sources */,
 				423A4A731958CCA700FD93DE /* STTwitterOAuth.m in Sources */,
 				42390223194CF37100AB83F2 /* BoardViewController.m in Sources */,

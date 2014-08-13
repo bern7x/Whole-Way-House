@@ -38,6 +38,9 @@
                   clientKey:@"8dmblwnEzP1ndWQG97anIupgAPNko71L94P8kgMS"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    // Initialize Dynamic Link Library using a singleton
+    [LinkLibrary sharedLinkLibrary];
+    
     return YES;
 }
 
