@@ -82,6 +82,9 @@
 		4272556C194EC43400B6FBA2 /* SponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4272556B194EC43400B6FBA2 /* SponsorsViewController.m */; };
 		427F81FC196ED4FD003CC580 /* SpecialEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427F81FB196ED4FD003CC580 /* SpecialEventsViewController.m */; };
 		4281AE55194E97BB004F4AF8 /* SponsorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4281AE54194E97BB004F4AF8 /* SponsorData.m */; };
+		429C593A19AB8DCA006487C8 /* MediaCKNW.png in Resources */ = {isa = PBXBuildFile; fileRef = 429C593919AB8DCA006487C8 /* MediaCKNW.png */; };
+		429C593D19ABDA2C006487C8 /* THLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 429C593C19ABDA2C006487C8 /* THLabel.m */; };
+		429C593F19ABFF19006487C8 /* MediaCKNW2.png in Resources */ = {isa = PBXBuildFile; fileRef = 429C593E19ABFF19006487C8 /* MediaCKNW2.png */; };
 		42BCC006194E617A00ABC377 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BCC005194E617A00ABC377 /* UIImageViewAligned.m */; };
 		42BF65511999AA8A005E7160 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BF65501999AA8A005E7160 /* Parse.framework */; };
 		42BF65531999AABB005E7160 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BF65521999AABB005E7160 /* AudioToolbox.framework */; };
@@ -93,6 +96,7 @@
 		42BF655F1999AB0C005E7160 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BF655E1999AB0C005E7160 /* SystemConfiguration.framework */; };
 		42C9AC2D1999F17F007AB49E /* LinkLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C9AC2C1999F17F007AB49E /* LinkLibrary.m */; };
 		42E29F86194609E10004867F /* about1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E29F85194609E10004867F /* about1@2x.png */; };
+		42E776C219AA825200F44F1C /* MediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E776C119AA825200F44F1C /* MediaViewController.m */; };
 		42EBF4651943CF95002569B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4641943CF95002569B8 /* Foundation.framework */; };
 		42EBF4671943CF95002569B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4661943CF95002569B8 /* CoreGraphics.framework */; };
 		42EBF4691943CF95002569B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBF4681943CF95002569B8 /* UIKit.framework */; };
@@ -240,6 +244,10 @@
 		427F81FB196ED4FD003CC580 /* SpecialEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialEventsViewController.m; sourceTree = "<group>"; };
 		4281AE53194E97BB004F4AF8 /* SponsorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorData.h; sourceTree = "<group>"; };
 		4281AE54194E97BB004F4AF8 /* SponsorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorData.m; sourceTree = "<group>"; };
+		429C593919AB8DCA006487C8 /* MediaCKNW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MediaCKNW.png; sourceTree = "<group>"; };
+		429C593B19ABDA2C006487C8 /* THLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THLabel.h; sourceTree = "<group>"; };
+		429C593C19ABDA2C006487C8 /* THLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THLabel.m; sourceTree = "<group>"; };
+		429C593E19ABFF19006487C8 /* MediaCKNW2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MediaCKNW2.png; sourceTree = "<group>"; };
 		42BCC004194E617A00ABC377 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
 		42BCC005194E617A00ABC377 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
 		42BF65501999AA8A005E7160 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -253,6 +261,8 @@
 		42C9AC2B1999F17F007AB49E /* LinkLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkLibrary.h; sourceTree = "<group>"; };
 		42C9AC2C1999F17F007AB49E /* LinkLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkLibrary.m; sourceTree = "<group>"; };
 		42E29F85194609E10004867F /* about1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about1@2x.png"; sourceTree = "<group>"; };
+		42E776C019AA825200F44F1C /* MediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaViewController.h; sourceTree = "<group>"; };
+		42E776C119AA825200F44F1C /* MediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaViewController.m; sourceTree = "<group>"; };
 		42EBF4611943CF95002569B8 /* WWH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WWH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EBF4641943CF95002569B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42EBF4661943CF95002569B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -396,12 +406,22 @@
 		4290B9FE19441A24007748F2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				429C593819AB8DBE006487C8 /* Media */,
 				42FF88A4194B51FE005B042F /* Images.xcassets */,
 				42BF65621999AF7F005E7160 /* Our Story */,
 				42BF65611999AF64005E7160 /* Programs */,
 				42BF65601999AF54005E7160 /* Board Profiles */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		429C593819AB8DBE006487C8 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				429C593E19ABFF19006487C8 /* MediaCKNW2.png */,
+				429C593919AB8DCA006487C8 /* MediaCKNW.png */,
+			);
+			name = Media;
 			sourceTree = "<group>";
 		};
 		42BF65601999AF54005E7160 /* Board Profiles */ = {
@@ -504,6 +524,8 @@
 				421869CC19A06A27005EE5AB /* NewsViewController.m */,
 				4237E76A19A986A900BF28B3 /* NewsTableViewCell.h */,
 				4237E76B19A986A900BF28B3 /* NewsTableViewCell.m */,
+				42E776C019AA825200F44F1C /* MediaViewController.h */,
+				42E776C119AA825200F44F1C /* MediaViewController.m */,
 				421869CE19A06A6F005EE5AB /* EventsViewController.h */,
 				421869CF19A06A6F005EE5AB /* EventsViewController.m */,
 				422DDBEB19A06F1D00677C82 /* VolunteerViewController.h */,
@@ -555,6 +577,8 @@
 				42318DB01952024D00957992 /* TintedImageView.m */,
 				42BCC004194E617A00ABC377 /* UIImageViewAligned.h */,
 				42BCC005194E617A00ABC377 /* UIImageViewAligned.m */,
+				429C593B19ABDA2C006487C8 /* THLabel.h */,
+				429C593C19ABDA2C006487C8 /* THLabel.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -669,12 +693,14 @@
 				422804431950DB3400B5E071 /* ProgramsArtsCrafts.png in Resources */,
 				42EBF46F1943CF95002569B8 /* InfoPlist.strings in Resources */,
 				42188326194555AC009E07B3 /* about3.jpg in Resources */,
+				429C593F19ABFF19006487C8 /* MediaCKNW2.png in Resources */,
 				422804391950D20600B5E071 /* ProgramsBreakfast.jpg in Resources */,
 				422804491950F2DF00B5E071 /* ProgramsPaintProject.png in Resources */,
 				422804371950D0D000B5E071 /* ProgramsPetTherapy.jpg in Resources */,
 				4239022A194CF6CC00AB83F2 /* BoardProfileCameronHite.jpg in Resources */,
 				4239022D194CF6CC00AB83F2 /* BoardProfileWalterGiesbrecht.jpg in Resources */,
 				4240D917195A34E100F6D553 /* Media.xcassets in Resources */,
+				429C593A19AB8DCA006487C8 /* MediaCKNW.png in Resources */,
 				42390229194CF6CC00AB83F2 /* BoardProfileBillMollard.jpg in Resources */,
 				42188325194555AC009E07B3 /* about2.jpg in Resources */,
 				4240D91C195A34E100F6D553 /* MPNotification.storyboard in Resources */,
@@ -729,6 +755,7 @@
 				42314F64196AFCD800814508 /* APIKeys.m in Sources */,
 				423A4A6C1958CCA700FD93DE /* NSDateFormatter+STTwitter.m in Sources */,
 				4240D926195A34E100F6D553 /* UIImage+MPImageEffects.m in Sources */,
+				429C593D19ABDA2C006487C8 /* THLabel.m in Sources */,
 				4281AE55194E97BB004F4AF8 /* SponsorData.m in Sources */,
 				4240D925195A34E100F6D553 /* UIImage+MPAverageColor.m in Sources */,
 				4272556C194EC43400B6FBA2 /* SponsorsViewController.m in Sources */,
@@ -750,6 +777,7 @@
 				4237E76F19A9B29B00BF28B3 /* ShareSetting.m in Sources */,
 				4240D923195A34E100F6D553 /* NSData+MPBase64.m in Sources */,
 				423A4A731958CCA700FD93DE /* STTwitterOAuth.m in Sources */,
+				42E776C219AA825200F44F1C /* MediaViewController.m in Sources */,
 				42390223194CF37100AB83F2 /* BoardViewController.m in Sources */,
 				4240D91B195A34E100F6D553 /* MPNotification.m in Sources */,
 				423A4A771958CCA700FD93DE /* JSONSyntaxHighlight.m in Sources */,

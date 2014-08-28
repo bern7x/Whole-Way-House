@@ -12,7 +12,7 @@
 @interface ContainerViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *newsContainerView;
-@property (weak, nonatomic) IBOutlet UIView *eventsContainerView;
+@property (weak, nonatomic) IBOutlet UIView *mediaContainerView;
 @property (weak, nonatomic) IBOutlet UIView *volunteerContainerView;
 @property (strong, nonatomic) ShareSetting *shareSettings;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *containerSegmentedControl;
@@ -45,7 +45,7 @@
 {
     [super viewDidAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newsTapped) name:@"newsTapped" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsTapped) name:@"eventsTapped" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mediaTapped) name:@"mediaTapped" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volunteersTapped) name:@"volunteersTapped" object:nil];
 }
 
@@ -53,7 +53,7 @@
 {
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"newsTapped" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"eventsTapped" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"mediaTapped" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"volunteersTapped" object:nil];
 }
 
@@ -68,10 +68,10 @@
                                                       self.newsContainerView.frame.origin.y,
                                                       self.newsContainerView.frame.size.width,
                                                       self.newsContainerView.frame.size.height);
-            self.eventsContainerView.frame = CGRectMake(320,
-                                                        self.eventsContainerView.frame.origin.y,
-                                                        self.eventsContainerView.frame.size.width,
-                                                        self.eventsContainerView.frame.size.height);
+            self.mediaContainerView.frame = CGRectMake(320,
+                                                        self.mediaContainerView.frame.origin.y,
+                                                        self.mediaContainerView.frame.size.width,
+                                                        self.mediaContainerView.frame.size.height);
             self.volunteerContainerView.frame = CGRectMake(640,
                                                            self.volunteerContainerView.frame.origin.y,
                                                            self.volunteerContainerView.frame.size.width,
@@ -81,9 +81,9 @@
     self.shareSettings.currentView = @"News";
 }
 
-- (void)eventsTapped
+- (void)mediaTapped
 {
-    if ([self.shareSettings.currentView isEqualToString:@"Events"]) {
+    if ([self.shareSettings.currentView isEqualToString:@"Media"]) {
         // do nothing since the user is already in the Main view
     } else {
         // shift the menu view into the screen and shift main view off screen
@@ -92,10 +92,10 @@
                                                       self.newsContainerView.frame.origin.y,
                                                       self.newsContainerView.frame.size.width,
                                                       self.newsContainerView.frame.size.height);
-            self.eventsContainerView.frame = CGRectMake(0,
-                                                        self.eventsContainerView.frame.origin.y,
-                                                        self.eventsContainerView.frame.size.width,
-                                                        self.eventsContainerView.frame.size.height);
+            self.mediaContainerView.frame = CGRectMake(0,
+                                                        self.mediaContainerView.frame.origin.y,
+                                                        self.mediaContainerView.frame.size.width,
+                                                        self.mediaContainerView.frame.size.height);
             self.volunteerContainerView.frame = CGRectMake(320,
                                                            self.volunteerContainerView.frame.origin.y,
                                                            self.volunteerContainerView.frame.size.width,
@@ -103,7 +103,7 @@
         }];
     }
     
-    self.shareSettings.currentView = @"Events";
+    self.shareSettings.currentView = @"Media";
 }
 
 - (void)volunteersTapped
@@ -117,10 +117,10 @@
                                                       self.newsContainerView.frame.origin.y,
                                                       self.newsContainerView.frame.size.width,
                                                       self.newsContainerView.frame.size.height);
-            self.eventsContainerView.frame = CGRectMake(-320,
-                                                        self.eventsContainerView.frame.origin.y,
-                                                        self.eventsContainerView.frame.size.width,
-                                                        self.eventsContainerView.frame.size.height);
+            self.mediaContainerView.frame = CGRectMake(-320,
+                                                        self.mediaContainerView.frame.origin.y,
+                                                        self.mediaContainerView.frame.size.width,
+                                                        self.mediaContainerView.frame.size.height);
             self.volunteerContainerView.frame = CGRectMake(0,
                                                            self.volunteerContainerView.frame.origin.y,
                                                            self.volunteerContainerView.frame.size.width,
@@ -138,7 +138,7 @@
     if (self.containerSegmentedControl.selectedSegmentIndex == 0) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"newsTapped" object:nil];
     } else if (self.containerSegmentedControl.selectedSegmentIndex == 1){
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"eventsTapped" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"mediaTapped" object:nil];
     } else if (self.containerSegmentedControl.selectedSegmentIndex == 2) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"volunteersTapped" object:nil];
     }

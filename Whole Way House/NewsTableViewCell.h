@@ -14,6 +14,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *alphaLabel;
 @property (strong, nonatomic) IBOutlet UILabel *betaLabel;
-@property (strong, nonatomic) IBOutlet UILabel *charlieLabel;
+@property (strong, nonatomic) IBOutlet THLabel *charlieLabel;
 
 @end

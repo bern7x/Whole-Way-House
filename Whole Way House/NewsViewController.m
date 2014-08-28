@@ -119,6 +119,9 @@
     return [self.twitterFeed count];
 }
 
+#define FONT_NAME @"HelveticaNeue"
+#define FONT_SIZE 14.0
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NewsTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
@@ -130,7 +133,7 @@
     NSDictionary *tweet = self.twitterFeed[indexPath.row];
     NSString *tweetAuthor = tweet[@"user"][@"screen_name"];
     NSString *date = tweet[@"created_at"];
-    NSString *tweetText= [tweet[@"text"] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+    NSString *tweetText = [tweet[@"text"] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
     
     // Use STTwitter category to convert created_at date string into an NSDate
     NSDateFormatter *df = [NSDateFormatter st_TwitterDateFormatter];
@@ -145,15 +148,21 @@
     [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *timeFromDate = [timeFormatter stringFromDate:postedDate];
     
+    cell.alphaLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:FONT_SIZE];
     cell.alphaLabel.text = [NSString stringWithFormat:@"%@", stringFromDate];
+    
+    cell.betaLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:FONT_SIZE];
     cell.betaLabel.text = [NSString stringWithFormat:@"By @%@ at %@", tweetAuthor, timeFromDate];
+    
+    cell.charlieLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+    cell.charlieLabel.contentMode = UIViewContentModeTop;
+    cell.charlieLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.charlieLabel.text = tweetText;
    
     return cell;
 }
 
-#define FONT_NAME @"Helvetica Neue"
-#define FONT_SIZE 14.0
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -192,13 +201,15 @@
     [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *timeFromDate = [timeFormatter stringFromDate:postedDate];
     
-    self.customCell.alphaLabel.font = [UIFont fontWithName:FONT_NAME size:FONT_SIZE];
+    self.customCell.alphaLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:FONT_SIZE];
     self.customCell.alphaLabel.text = [NSString stringWithFormat:@"%@", stringFromDate];
     
-    self.customCell.betaLabel.font = [UIFont fontWithName:FONT_NAME size:FONT_SIZE];
+    self.customCell.betaLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:FONT_SIZE];
     self.customCell.betaLabel.text = [NSString stringWithFormat:@"By @%@ at %@", tweetAuthor, timeFromDate];
     
-    self.customCell.charlieLabel.font = [UIFont fontWithName:FONT_NAME size:16];
+    self.customCell.charlieLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16.5]; // can't figure out what is causing label to truncate ever so slightly early - therefore setting font size to be slightly larger to ensure no truncation
+    self.customCell.charlieLabel.contentMode = UIViewContentModeTop;
+    self.customCell.charlieLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.customCell.charlieLabel.text = tweetText;
     
     // layout the cell
@@ -211,7 +222,7 @@
     
     // padding of 1 point (cell separator) + CELL_PADDING
     
-    return height + 1 + 8 + 8 + 8;
+    return height + 1 + 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -233,6 +244,11 @@
     NSDictionary *tweetEntity = tweet[@"entities"];
     
     NSArray *urls = tweetEntity[@"urls"];
+    
+    // temp
+    NSString *tweetText= [tweet[@"text"] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+    NSLog(@"%@", tweetText);
+    
     
     if (urls.count > 0) {
         NSDictionary *url0 = urls[0];
