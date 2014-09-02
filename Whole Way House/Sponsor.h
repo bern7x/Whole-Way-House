@@ -14,6 +14,4 @@
 @property (strong, nonatomic) NSString *tagline;
 @property (strong, nonatomic) NSString *website;
 
-- (id)initWithData:(NSDictionary *)data;
-
 @end

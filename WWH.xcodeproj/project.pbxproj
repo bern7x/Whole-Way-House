@@ -11,6 +11,10 @@
 		4206AF7A1943E8F4007AD96E /* DSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4206AF791943E8F4007AD96E /* DSWebViewController.m */; };
 		420F2CBC19536D5900CEEA94 /* ProgramsCanteen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 420F2CBB19536D5900CEEA94 /* ProgramsCanteen.jpg */; };
 		420F5D221954FE19000CC89C /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420F5D211954FE19000CC89C /* TwitterViewController.m */; };
+		4215AB9C19B425C600E8789C /* BreakfastTelevisionCouch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4215AB9B19B425C600E8789C /* BreakfastTelevisionCouch.jpg */; };
+		4215ABE219B4351E00E8789C /* MediaPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4215ABE119B4351E00E8789C /* MediaPlaceholder.png */; };
+		4215ABE519B43A9400E8789C /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 4215ABE419B43A9400E8789C /* Media.m */; };
+		4215ABE819B447A000E8789C /* MediaPFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4215ABE719B447A000E8789C /* MediaPFTableViewCell.m */; };
 		421869CA19A067A1005EE5AB /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421869C919A067A1005EE5AB /* ContainerViewController.m */; };
 		421869CD19A06A27005EE5AB /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421869CC19A06A27005EE5AB /* NewsViewController.m */; };
 		421869D019A06A6F005EE5AB /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421869CF19A06A6F005EE5AB /* EventsViewController.m */; };
@@ -131,6 +135,12 @@
 		420F2CBB19536D5900CEEA94 /* ProgramsCanteen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ProgramsCanteen.jpg; sourceTree = "<group>"; };
 		420F5D201954FE19000CC89C /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
 		420F5D211954FE19000CC89C /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
+		4215AB9B19B425C600E8789C /* BreakfastTelevisionCouch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BreakfastTelevisionCouch.jpg; sourceTree = "<group>"; };
+		4215ABE119B4351E00E8789C /* MediaPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MediaPlaceholder.png; sourceTree = "<group>"; };
+		4215ABE319B43A9400E8789C /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
+		4215ABE419B43A9400E8789C /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
+		4215ABE619B447A000E8789C /* MediaPFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPFTableViewCell.h; sourceTree = "<group>"; };
+		4215ABE719B447A000E8789C /* MediaPFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPFTableViewCell.m; sourceTree = "<group>"; };
 		421869C819A067A1005EE5AB /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		421869C919A067A1005EE5AB /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		421869CB19A06A27005EE5AB /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -418,6 +428,8 @@
 		429C593819AB8DBE006487C8 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				4215ABE119B4351E00E8789C /* MediaPlaceholder.png */,
+				4215AB9B19B425C600E8789C /* BreakfastTelevisionCouch.jpg */,
 				429C593E19ABFF19006487C8 /* MediaCKNW2.png */,
 				429C593919AB8DCA006487C8 /* MediaCKNW.png */,
 			);
@@ -526,6 +538,8 @@
 				4237E76B19A986A900BF28B3 /* NewsTableViewCell.m */,
 				42E776C019AA825200F44F1C /* MediaViewController.h */,
 				42E776C119AA825200F44F1C /* MediaViewController.m */,
+				4215ABE619B447A000E8789C /* MediaPFTableViewCell.h */,
+				4215ABE719B447A000E8789C /* MediaPFTableViewCell.m */,
 				421869CE19A06A6F005EE5AB /* EventsViewController.h */,
 				421869CF19A06A6F005EE5AB /* EventsViewController.m */,
 				422DDBEB19A06F1D00677C82 /* VolunteerViewController.h */,
@@ -571,6 +585,8 @@
 				42EBF4701943CF95002569B8 /* main.m */,
 				42725567194EB5C100B6FBA2 /* Sponsor.h */,
 				42725568194EB5C100B6FBA2 /* Sponsor.m */,
+				4215ABE319B43A9400E8789C /* Media.h */,
+				4215ABE419B43A9400E8789C /* Media.m */,
 				4281AE53194E97BB004F4AF8 /* SponsorData.h */,
 				4281AE54194E97BB004F4AF8 /* SponsorData.m */,
 				42318DAF1952024D00957992 /* TintedImageView.h */,
@@ -682,8 +698,10 @@
 			files = (
 				4240D919195A34E100F6D553 /* MPCloseBtn.png in Resources */,
 				4239022B194CF6CC00AB83F2 /* BoardProfileJenny.jpg in Resources */,
+				4215ABE219B4351E00E8789C /* MediaPlaceholder.png in Resources */,
 				42188324194555AC009E07B3 /* about1.jpg in Resources */,
 				422804351950CD3600B5E071 /* ProgramsGamesNight.jpg in Resources */,
+				4215AB9C19B425C600E8789C /* BreakfastTelevisionCouch.jpg in Resources */,
 				4228043B1950D2F800B5E071 /* ProgramsHaircut.jpg in Resources */,
 				42FF88A5194B51FE005B042F /* Images.xcassets in Resources */,
 				4240D91F195A34E100F6D553 /* MPSurvey.storyboard in Resources */,
@@ -759,6 +777,7 @@
 				4281AE55194E97BB004F4AF8 /* SponsorData.m in Sources */,
 				4240D925195A34E100F6D553 /* UIImage+MPAverageColor.m in Sources */,
 				4272556C194EC43400B6FBA2 /* SponsorsViewController.m in Sources */,
+				4215ABE819B447A000E8789C /* MediaPFTableViewCell.m in Sources */,
 				423A4A741958CCA700FD93DE /* STTwitterOS.m in Sources */,
 				423A4A711958CCA700FD93DE /* STTwitterAppOnly.m in Sources */,
 				42725569194EB5C100B6FBA2 /* Sponsor.m in Sources */,
@@ -780,6 +799,7 @@
 				42E776C219AA825200F44F1C /* MediaViewController.m in Sources */,
 				42390223194CF37100AB83F2 /* BoardViewController.m in Sources */,
 				4240D91B195A34E100F6D553 /* MPNotification.m in Sources */,
+				4215ABE519B43A9400E8789C /* Media.m in Sources */,
 				423A4A771958CCA700FD93DE /* JSONSyntaxHighlight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
