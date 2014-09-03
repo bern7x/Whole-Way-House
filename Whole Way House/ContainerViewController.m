@@ -21,15 +21,6 @@
 
 @implementation ContainerViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,111 +29,146 @@
     self.shareSettings = [ShareSetting sharedSettings];
     self.shareSettings.currentView = @"News";
     
-    
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newsTapped) name:@"newsTapped" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mediaTapped) name:@"mediaTapped" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volunteersTapped) name:@"volunteersTapped" object:nil];
-}
+/*
+    Using tab bar navigation, when user returns to the "Latest" tab, the app always reverts back to the initial default position of the container 
+    views. Therefore, need to manually set the positions of the container views according to the current value of self.shareSettings.currentView 
+    or the segmented control.
+ */
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"newsTapped" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"mediaTapped" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"volunteersTapped" object:nil];
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    NSLog(@"viewWillAppear");
+//    NSLog(@"%f", self.mediaContainerView.frame.origin.x);
+//    if ((self.containerSegmentedControl.selectedSegmentIndex == 1) && (self.mediaContainerView.frame.origin.x != 0)) {
+//        NSLog(@"Need to shift views");
+//        [self.view bringSubviewToFront:self.mediaContainerView];
+//        self.mediaContainerView.frame = CGRectMake(0,
+//                                                   self.mediaContainerView.frame.origin.y,
+//                                                   self.mediaContainerView.frame.size.width,
+//                                                   self.mediaContainerView.frame.size.height);
+//    }
+//}
 
-- (void)newsTapped
-{
-    if ([self.shareSettings.currentView isEqualToString:@"News"]) {
-        // do nothing since the user is already in the Menu view
-    } else {
-        // shift the menu view into the screen and shift main view off screen
-        [UIView animateWithDuration:0.3 animations:^{
-            self.newsContainerView.frame = CGRectMake(0,
-                                                      self.newsContainerView.frame.origin.y,
-                                                      self.newsContainerView.frame.size.width,
-                                                      self.newsContainerView.frame.size.height);
-            self.mediaContainerView.frame = CGRectMake(320,
-                                                        self.mediaContainerView.frame.origin.y,
-                                                        self.mediaContainerView.frame.size.width,
-                                                        self.mediaContainerView.frame.size.height);
-            self.volunteerContainerView.frame = CGRectMake(640,
-                                                           self.volunteerContainerView.frame.origin.y,
-                                                           self.volunteerContainerView.frame.size.width,
-                                                           self.volunteerContainerView.frame.size.height);
-        }];
-    }
-    self.shareSettings.currentView = @"News";
-}
-
-- (void)mediaTapped
-{
-    if ([self.shareSettings.currentView isEqualToString:@"Media"]) {
-        // do nothing since the user is already in the Main view
-    } else {
-        // shift the menu view into the screen and shift main view off screen
-        [UIView animateWithDuration:0.3 animations:^{
-            self.newsContainerView.frame = CGRectMake(-320,
-                                                      self.newsContainerView.frame.origin.y,
-                                                      self.newsContainerView.frame.size.width,
-                                                      self.newsContainerView.frame.size.height);
-            self.mediaContainerView.frame = CGRectMake(0,
-                                                        self.mediaContainerView.frame.origin.y,
-                                                        self.mediaContainerView.frame.size.width,
-                                                        self.mediaContainerView.frame.size.height);
-            self.volunteerContainerView.frame = CGRectMake(320,
-                                                           self.volunteerContainerView.frame.origin.y,
-                                                           self.volunteerContainerView.frame.size.width,
-                                                           self.volunteerContainerView.frame.size.height);
-        }];
-    }
-    
-    self.shareSettings.currentView = @"Media";
-}
-
-- (void)volunteersTapped
-{
-    if ([self.shareSettings.currentView isEqualToString:@"Volunteers"]) {
-        // do nothing since the user is already in the Profile view
-    } else {
-        // shift the menu view into the screen and shift main view off screen
-        [UIView animateWithDuration:0.3 animations:^{
-            self.newsContainerView.frame = CGRectMake(-640,
-                                                      self.newsContainerView.frame.origin.y,
-                                                      self.newsContainerView.frame.size.width,
-                                                      self.newsContainerView.frame.size.height);
-            self.mediaContainerView.frame = CGRectMake(-320,
-                                                        self.mediaContainerView.frame.origin.y,
-                                                        self.mediaContainerView.frame.size.width,
-                                                        self.mediaContainerView.frame.size.height);
-            self.volunteerContainerView.frame = CGRectMake(0,
-                                                           self.volunteerContainerView.frame.origin.y,
-                                                           self.volunteerContainerView.frame.size.width,
-                                                           self.volunteerContainerView.frame.size.height);
-        }];
-    }
-    
-    self.shareSettings.currentView = @"Volunteers";
-}
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newsTapped) name:@"newsTapped" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mediaTapped) name:@"mediaTapped" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volunteersTapped) name:@"volunteersTapped" object:nil];
+//}
+//
+//- (void)viewDidDisappear:(BOOL)animated
+//{
+//    [super viewDidDisappear:animated];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"newsTapped" object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"mediaTapped" object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"volunteersTapped" object:nil];
+//}
+//
+//- (void)newsTapped
+//{
+//    if ([self.shareSettings.currentView isEqualToString:@"News"]) {
+//        // do nothing since the user is already in the Menu view
+//    } else {
+//        // shift the menu view into the screen and shift main view off screen
+//        [UIView animateWithDuration:0.3 animations:^{
+//            self.newsContainerView.frame = CGRectMake(0,
+//                                                      self.newsContainerView.frame.origin.y,
+//                                                      self.newsContainerView.frame.size.width,
+//                                                      self.newsContainerView.frame.size.height);
+//            self.mediaContainerView.frame = CGRectMake(320,
+//                                                        self.mediaContainerView.frame.origin.y,
+//                                                        self.mediaContainerView.frame.size.width,
+//                                                        self.mediaContainerView.frame.size.height);
+//            self.volunteerContainerView.frame = CGRectMake(640,
+//                                                           self.volunteerContainerView.frame.origin.y,
+//                                                           self.volunteerContainerView.frame.size.width,
+//                                                           self.volunteerContainerView.frame.size.height);
+//        }];
+//    }
+//    self.shareSettings.currentView = @"News";
+//}
+//
+//- (void)mediaTapped
+//{
+//    if ([self.shareSettings.currentView isEqualToString:@"Media"]) {
+//        // do nothing since the user is already in the Media view
+//        
+//    } else {
+//        // shift the menu view into the screen and shift main view off screen
+//        [UIView animateWithDuration:0.3 animations:^{
+//            self.newsContainerView.frame = CGRectMake(-320,
+//                                                      self.newsContainerView.frame.origin.y,
+//                                                      self.newsContainerView.frame.size.width,
+//                                                      self.newsContainerView.frame.size.height);
+//            self.mediaContainerView.frame = CGRectMake(0,
+//                                                        self.mediaContainerView.frame.origin.y,
+//                                                        self.mediaContainerView.frame.size.width,
+//                                                        self.mediaContainerView.frame.size.height);
+//            self.volunteerContainerView.frame = CGRectMake(320,
+//                                                           self.volunteerContainerView.frame.origin.y,
+//                                                           self.volunteerContainerView.frame.size.width,
+//                                                           self.volunteerContainerView.frame.size.height);
+//        }];
+//    }
+//    
+//    self.shareSettings.currentView = @"Media";
+//}
+//
+//- (void)volunteersTapped
+//{
+//    if ([self.shareSettings.currentView isEqualToString:@"Volunteers"]) {
+//        // do nothing since the user is already in the Profile view
+//    } else {
+//        // shift the menu view into the screen and shift main view off screen
+//        [UIView animateWithDuration:0.3 animations:^{
+//            self.newsContainerView.frame = CGRectMake(-640,
+//                                                      self.newsContainerView.frame.origin.y,
+//                                                      self.newsContainerView.frame.size.width,
+//                                                      self.newsContainerView.frame.size.height);
+//            self.mediaContainerView.frame = CGRectMake(-320,
+//                                                        self.mediaContainerView.frame.origin.y,
+//                                                        self.mediaContainerView.frame.size.width,
+//                                                        self.mediaContainerView.frame.size.height);
+//            self.volunteerContainerView.frame = CGRectMake(0,
+//                                                           self.volunteerContainerView.frame.origin.y,
+//                                                           self.volunteerContainerView.frame.size.width,
+//                                                           self.volunteerContainerView.frame.size.height);
+//        }];
+//    }
+//    
+//    self.shareSettings.currentView = @"Volunteers";
+//}
 
 #pragma mark - IB Actions
+
+//- (IBAction)containerSegmentedControlPressed:(UISegmentedControl *)sender
+//{
+//    if (self.containerSegmentedControl.selectedSegmentIndex == 0) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"newsTapped" object:nil];
+//    } else if (self.containerSegmentedControl.selectedSegmentIndex == 1){
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"mediaTapped" object:nil];
+//    } else if (self.containerSegmentedControl.selectedSegmentIndex == 2) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"volunteersTapped" object:nil];
+//    }
+//}
 
 - (IBAction)containerSegmentedControlPressed:(UISegmentedControl *)sender
 {
     if (self.containerSegmentedControl.selectedSegmentIndex == 0) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"newsTapped" object:nil];
+        [self.view bringSubviewToFront:self.newsContainerView];
     } else if (self.containerSegmentedControl.selectedSegmentIndex == 1){
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"mediaTapped" object:nil];
+        [self.view bringSubviewToFront:self.mediaContainerView];
     } else if (self.containerSegmentedControl.selectedSegmentIndex == 2) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"volunteersTapped" object:nil];
+        [self.view bringSubviewToFront:self.volunteerContainerView];
     }
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -56,6 +56,13 @@
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"News"];
     [mixpanel flush];
+    
+    // Bug workaround - Required to set proper height of tableView for 3.5 inch screens
+    // I think this is necessary due to tableView within containerView not having a chance to update its
+    // autolayout constraints in time, which is why setNeedsUpdateContraints is required
+    [self.tableView setFrame:self.view.frame];
+    [self.tableView setContentInset:UIEdgeInsetsMake(64.0, 0.0, 54.0, 0.0)];
+    [self.tableView setNeedsUpdateConstraints];
 }
 
 #pragma mark - Helper Methods
@@ -162,8 +169,6 @@
     return cell;
 }
 
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // calculate a height based on a cell
@@ -245,15 +250,10 @@
     
     NSArray *urls = tweetEntity[@"urls"];
     
-    // temp
-    NSString *tweetText= [tweet[@"text"] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-    NSLog(@"%@", tweetText);
-    
-    
     if (urls.count > 0) {
         NSDictionary *url0 = urls[0];
         expandedURL = url0[@"expanded_url"];
-        NSLog(@"%@", expandedURL);
+        //NSLog(@"%@", expandedURL);
     }
     
     if ([expandedURL isEqualToString:@""]) {

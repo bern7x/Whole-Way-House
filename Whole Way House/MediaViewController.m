@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSMutableArray *mediaArray;
+@property (strong, nonatomic) NSMutableDictionary *cachedImages;
 
 @end
 
@@ -27,6 +28,15 @@
     }
     
     return _mediaArray;
+}
+
+- (NSMutableDictionary *)cachedImages
+{
+    if (!_cachedImages) {
+        _cachedImages = [[NSMutableDictionary alloc] init];
+    }
+    
+    return _cachedImages;
 }
 
 - (void)viewDidLoad
@@ -45,17 +55,19 @@
     
     // Fetch Media objects from Parse
     [self fetchMedia];
+    
+    // Bug workaround - Required to set proper height of tableView for 3.5 inch screens
+    // I think this is necessary due to tableView within containerView not having a chance to update its
+    // autolayout constraints in time, which is why setNeedsUpdateContraints is required
+    [self.tableView setFrame:self.view.frame];
+    [self.tableView setContentInset:UIEdgeInsetsMake(64.0, 0.0, 49.0, 0.0)];
+    [self.tableView setNeedsUpdateConstraints];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)viewDidLayoutSubviews
-{
-    [self.tableView setContentInset:UIEdgeInsetsMake(64.0, 0.0, 49.0, 0.0)];
 }
 
 #pragma mark - Helper Methods
@@ -96,6 +108,7 @@
                 media.title = object[@"title"];
                 media.subtitle = object[@"subtitle"];
                 media.website = object[@"website"];
+                media.color = object[@"color"];
                 [self.mediaArray addObject:media];
             }
             // Stop network activity indicator
@@ -127,14 +140,26 @@
     
     Media *media = self.mediaArray[indexPath.row];
     
-    // Setup background image
-    cell.mediaImageView.image = [UIImage imageNamed:@"MediaPlaceholder.png"];
-    PFQuery *query = [PFQuery queryWithClassName:@"Media"];
-    [query getObjectInBackgroundWithId:media.objectId block:^(PFObject *object, NSError *error) {
+    // Background image setup + caching
+    // Hints for designing this cache model: http://kemal.co/index.php/2013/02/loading-images-asynchronously-on-uitableview/
+    // Had to adapt to Parse model, which meant the GCD stuff really wasn't required
+    NSString *identifier = [NSString stringWithFormat:@"Cell%ld", (long)indexPath.row];
+    
+    if ([self.cachedImages objectForKey:identifier] != nil) {
+        cell.mediaImageView.image = [self.cachedImages valueForKey:identifier];
+    } else {
+        PFQuery *query = [PFQuery queryWithClassName:@"Media"];
+        [query getObjectInBackgroundWithId:media.objectId block:^(PFObject *object, NSError *error) {
             PFFile *photoFile = object[@"photoData"];
             cell.mediaImageView.file = photoFile;
-            [cell.mediaImageView loadInBackground];
-    }];
+            [cell.mediaImageView loadInBackground:^(UIImage *image, NSError *error) {
+                if ([tableView indexPathForCell:cell].row == indexPath.row) {
+                    [self.cachedImages setValue:image forKey:identifier];
+                    cell.mediaImageView.image = [self.cachedImages valueForKey:identifier];
+                }
+            }];
+        }];
+    }
     
     // Setup publish date
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -143,8 +168,12 @@
     cell.dateLabel.text = stringFromDate;
     
     // Setup background view color for date and main body text
-    cell.dateBackgroundView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.8];
-    cell.mainBackgroundView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.8];
+    NSNumber *red = media.color[@"red"];
+    NSNumber *green = media.color[@"green"];
+    NSNumber *blue = media.color[@"blue"];
+    NSNumber *alpha = media.color[@"alpha"];
+    cell.dateBackgroundView.layer.backgroundColor = [[UIColor colorWithRed:[red floatValue]/255.0 green:[green floatValue]/255.0 blue:[blue floatValue]/255.0 alpha:[alpha floatValue]] CGColor];
+    cell.mainBackgroundView.layer.backgroundColor = [[UIColor colorWithRed:[red floatValue]/255.0 green:[green floatValue]/255.0 blue:[blue floatValue]/255.0 alpha:[alpha floatValue]] CGColor];
     
     // Setup main body title and description text
     cell.titleLabel.text = media.title;

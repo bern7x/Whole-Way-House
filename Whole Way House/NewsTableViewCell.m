@@ -19,8 +19,6 @@
     return self;
 }
 
-
-
 - (void)awakeFromNib
 {
     // Initialization code
@@ -40,7 +38,6 @@
 
     // Configure the view for the selected state
 }
-
 
 // Creating space around each cell in the tableview
 // Source: http://stackoverflow.com/questions/10761744/spacing-between-cells-on-uitableview-with-custom-uitableviewcell

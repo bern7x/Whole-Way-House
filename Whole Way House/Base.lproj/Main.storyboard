@@ -3047,10 +3047,24 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                         <viewControllerLayoutGuide type="top" id="Rcl-et-Pav"/>
                         <viewControllerLayoutGuide type="bottom" id="8BW-tA-QFz"/>
                     </layoutGuides>
-                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="aS0-fF-1aG">
+                    <view key="view" contentMode="scaleToFill" id="aS0-fF-1aG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ck2-5U-e5F" userLabel="volunteerContainerView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="glf-Kc-qyV" kind="embed" id="U1Y-67-Jn6"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-fa-Chi" userLabel="mediaContainerView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="6yY-Id-pga" kind="embed" id="SqU-tu-wW8"/>
+                                </connections>
+                            </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-eK-9Ob" userLabel="newsContainerView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -3058,35 +3072,17 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                     <segue destination="7Uq-xJ-syC" kind="embed" id="gH7-5L-lul"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-fa-Chi" userLabel="mediaContainerView">
-                                <rect key="frame" x="320" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="6yY-Id-pga" kind="embed" id="SqU-tu-wW8"/>
-                                </connections>
-                            </containerView>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ck2-5U-e5F" userLabel="volunteerContainerView">
-                                <rect key="frame" x="640" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="glf-Kc-qyV" kind="embed" id="U1Y-67-Jn6"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hkb-eK-9Ob" firstAttribute="top" secondItem="aS0-fF-1aG" secondAttribute="top" id="8U8-Z6-upu"/>
-                            <constraint firstItem="S4r-fa-Chi" firstAttribute="top" secondItem="Rcl-et-Pav" secondAttribute="bottom" constant="-64" id="BUi-uc-Ao4"/>
-                            <constraint firstItem="S4r-fa-Chi" firstAttribute="leading" secondItem="aS0-fF-1aG" secondAttribute="leading" constant="320" id="DNe-41-6Wk"/>
-                            <constraint firstAttribute="trailing" secondItem="Ck2-5U-e5F" secondAttribute="trailing" constant="-640" id="Mr2-WB-Kwu"/>
-                            <constraint firstItem="8BW-tA-QFz" firstAttribute="top" secondItem="Ck2-5U-e5F" secondAttribute="bottom" constant="-49" id="NjC-Mh-rVK"/>
-                            <constraint firstAttribute="trailing" secondItem="S4r-fa-Chi" secondAttribute="trailing" constant="-320" id="QXB-Gd-Ua4"/>
-                            <constraint firstItem="Ck2-5U-e5F" firstAttribute="leading" secondItem="aS0-fF-1aG" secondAttribute="leading" constant="640" id="Xww-xc-v3x"/>
-                            <constraint firstItem="8BW-tA-QFz" firstAttribute="top" secondItem="hkb-eK-9Ob" secondAttribute="bottom" constant="-49" id="gG7-NE-uBd"/>
-                            <constraint firstItem="hkb-eK-9Ob" firstAttribute="leading" secondItem="aS0-fF-1aG" secondAttribute="leading" id="h4W-z6-TUP"/>
-                            <constraint firstAttribute="trailing" secondItem="hkb-eK-9Ob" secondAttribute="trailing" id="rmv-QD-uFd"/>
-                            <constraint firstItem="Ck2-5U-e5F" firstAttribute="top" secondItem="aS0-fF-1aG" secondAttribute="top" id="vJy-e9-I0C"/>
-                            <constraint firstItem="8BW-tA-QFz" firstAttribute="top" secondItem="S4r-fa-Chi" secondAttribute="bottom" constant="-49" id="vwt-6y-CeJ"/>
+                            <constraint firstAttribute="trailing" secondItem="hkb-eK-9Ob" secondAttribute="trailing" id="2yW-nQ-l4a"/>
+                            <constraint firstAttribute="trailing" secondItem="S4r-fa-Chi" secondAttribute="trailing" id="4cl-zi-za1"/>
+                            <constraint firstItem="hkb-eK-9Ob" firstAttribute="leading" secondItem="aS0-fF-1aG" secondAttribute="leading" id="NKr-Gx-3xH"/>
+                            <constraint firstAttribute="bottom" secondItem="S4r-fa-Chi" secondAttribute="bottom" id="OLX-zz-mO5"/>
+                            <constraint firstItem="hkb-eK-9Ob" firstAttribute="top" secondItem="Rcl-et-Pav" secondAttribute="bottom" constant="-64" id="UWa-XT-AL4"/>
+                            <constraint firstItem="S4r-fa-Chi" firstAttribute="leading" secondItem="aS0-fF-1aG" secondAttribute="leading" id="khP-WD-uki"/>
+                            <constraint firstItem="8BW-tA-QFz" firstAttribute="top" secondItem="hkb-eK-9Ob" secondAttribute="bottom" constant="-49" id="oHx-b3-KZQ"/>
+                            <constraint firstItem="S4r-fa-Chi" firstAttribute="top" secondItem="aS0-fF-1aG" secondAttribute="top" id="wF4-cB-qf8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1W9-uu-bEB">
@@ -3118,7 +3114,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
         <!--Navigation Controller - Latest-->
         <scene sceneID="7Rj-kW-deT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gn2-Ew-KJl" sceneMemberID="viewController">
+                <navigationController id="Gn2-Ew-KJl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Latest" image="TabBarIcon-Twitter" id="5HI-Dg-q5C"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="btf-yc-Lus">
@@ -3137,7 +3133,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
         <!--News View Controller-->
         <scene sceneID="WSM-8K-d0K">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="7Uq-xJ-syC" customClass="NewsViewController" sceneMemberID="viewController">
+                <viewController id="7Uq-xJ-syC" customClass="NewsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L6f-fu-hgd"/>
                         <viewControllerLayoutGuide type="bottom" id="QtF-Gd-WV2"/>
@@ -3146,7 +3142,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="125" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="t0q-ql-oXX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="125" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="t0q-ql-oXX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -3227,8 +3223,15 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="t0q-ql-oXX" secondAttribute="trailing" id="Cxf-Os-J1T"/>
+                            <constraint firstItem="t0q-ql-oXX" firstAttribute="leading" secondItem="jeF-de-1ak" secondAttribute="leading" id="DZL-94-Jr9"/>
+                            <constraint firstItem="t0q-ql-oXX" firstAttribute="top" secondItem="jeF-de-1ak" secondAttribute="top" id="FzK-kx-gwM"/>
+                            <constraint firstAttribute="bottom" secondItem="t0q-ql-oXX" secondAttribute="bottom" id="eE8-gn-GxG"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="t0q-ql-oXX" id="t83-o2-oAt"/>
                         <segue destination="yof-HY-q7N" kind="modal" identifier="toWebViewControllerSegue" modalTransitionStyle="coverVertical" id="eYn-mC-Hjj"/>
@@ -3246,11 +3249,11 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                         <viewControllerLayoutGuide type="top" id="Wvg-Rd-zmA"/>
                         <viewControllerLayoutGuide type="bottom" id="alY-tX-hvm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="V3g-16-x75">
+                    <view key="view" contentMode="center" id="V3g-16-x75">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J1G-AS-3PX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J1G-AS-3PX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3334,7 +3337,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateBackgroundView" destination="Zyh-iF-SJ2" id="atB-pG-mbA"/>
+                                            <outlet property="dateBackgroundView" destination="Xau-ah-YnM" id="Eg0-pQ-dwS"/>
                                             <outlet property="dateLabel" destination="3S4-AU-lVO" id="zQg-KO-HF5"/>
                                             <outlet property="descriptionLabel" destination="rSW-hV-GSC" id="aFa-Kf-cVg"/>
                                             <outlet property="mainBackgroundView" destination="Zyh-iF-SJ2" id="sYU-TN-Vu9"/>
@@ -3346,7 +3349,14 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J1G-AS-3PX" firstAttribute="top" secondItem="V3g-16-x75" secondAttribute="top" id="8f7-5l-hWy"/>
+                            <constraint firstAttribute="bottom" secondItem="J1G-AS-3PX" secondAttribute="bottom" id="aMi-PV-IMn"/>
+                            <constraint firstAttribute="trailing" secondItem="J1G-AS-3PX" secondAttribute="trailing" id="mZg-D0-cVJ"/>
+                            <constraint firstItem="J1G-AS-3PX" firstAttribute="leading" secondItem="V3g-16-x75" secondAttribute="leading" id="urM-eg-Qyh"/>
+                        </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="J1G-AS-3PX" id="wCq-il-Qdu"/>
                     </connections>

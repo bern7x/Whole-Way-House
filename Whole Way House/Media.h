@@ -16,5 +16,6 @@
 @property (strong, nonatomic) NSString *subtitle;
 @property (strong, nonatomic) NSString *website;
 @property (strong, nonatomic) UIImage *photoImage;
+@property (strong, nonatomic) NSDictionary *color;
 
 @end
