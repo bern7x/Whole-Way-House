@@ -1330,7 +1330,7 @@ If you would like to get involved, please get in touch with us.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oNB-QK-OWE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oNB-QK-OWE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1379,6 +1379,12 @@ If you would like to get involved, please get in touch with us.</string>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oNB-QK-OWE" firstAttribute="top" secondItem="Uet-SV-FbQ" secondAttribute="top" id="0B5-5k-kwp"/>
+                            <constraint firstAttribute="trailing" secondItem="oNB-QK-OWE" secondAttribute="trailing" id="B49-AV-2EK"/>
+                            <constraint firstAttribute="bottom" secondItem="oNB-QK-OWE" secondAttribute="bottom" id="U9o-UK-NuH"/>
+                            <constraint firstItem="oNB-QK-OWE" firstAttribute="leading" secondItem="Uet-SV-FbQ" secondAttribute="leading" id="u6Q-qj-kOY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Our Sponsors" id="bVk-8a-IaS">
                         <barButtonItem key="rightBarButtonItem" image="BarButtonIconHelp" id="bas-pV-W9H">
@@ -3055,7 +3061,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="glf-Kc-qyV" kind="embed" id="U1Y-67-Jn6"/>
+                                    <segue destination="Bii-ck-4Gw" kind="embed" id="d0P-w4-ZRp"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-fa-Chi" userLabel="mediaContainerView">
@@ -3069,7 +3075,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="7Uq-xJ-syC" kind="embed" id="gH7-5L-lul"/>
+                                    <segue destination="7Uq-xJ-syC" kind="embed" id="msS-n4-AVD"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -3109,7 +3115,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPD-Px-Ict" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="-1324"/>
+            <point key="canvasLocation" x="929" y="-619"/>
         </scene>
         <!--Navigation Controller - Latest-->
         <scene sceneID="7Rj-kW-deT">
@@ -3128,7 +3134,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wK3-wT-Zf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="465" y="-1324"/>
+            <point key="canvasLocation" x="465" y="-619"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="WSM-8K-d0K">
@@ -3239,7 +3245,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anW-t3-dpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1447" y="-1324"/>
+            <point key="canvasLocation" x="1413" y="-619"/>
         </scene>
         <!--Media View Controller-->
         <scene sceneID="Wmj-Nj-HXG">
@@ -3359,30 +3365,267 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="J1G-AS-3PX" id="wCq-il-Qdu"/>
+                        <segue destination="yof-HY-q7N" kind="modal" identifier="toWebViewControllerSegue" modalTransitionStyle="coverVertical" id="84U-t6-r2f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53o-a9-ZH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1922" y="-1324"/>
+            <point key="canvasLocation" x="1900" y="-619"/>
         </scene>
         <!--Volunteer View Controller-->
-        <scene sceneID="dUA-FN-eRe">
+        <scene sceneID="h6A-N8-NWx">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="glf-Kc-qyV" customClass="VolunteerViewController" sceneMemberID="viewController">
+                <viewController id="Bii-ck-4Gw" customClass="VolunteerViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dwt-Na-odl"/>
-                        <viewControllerLayoutGuide type="bottom" id="cOi-Q5-dU7"/>
+                        <viewControllerLayoutGuide type="top" id="Y1q-ck-khL"/>
+                        <viewControllerLayoutGuide type="bottom" id="nos-jD-B3L"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sa8-S9-T0v">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="QUR-eJ-hfF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODf-cq-e8A">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="558"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <userGuides>
+                                    <userLayoutGuide location="30" affinity="minX"/>
+                                </userGuides>
+                                <subviews>
+                                    <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Volunteers1" translatesAutoresizingMaskIntoConstraints="NO" id="ajI-Db-l4x">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="5Ku-PT-hwo"/>
+                                            <constraint firstAttribute="height" constant="215" id="Zfm-Gn-OKg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYY-CC-WXt">
+                                        <rect key="frame" x="0.0" y="215" width="320" height="95"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="h2P-tn-onj">
+                                                <rect key="frame" x="20" y="6" width="280" height="77"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">Do you have an ear to listen? Can your hands serve a cup of coffee? Can your lips give a smile? Then you qualify to be a volunteer.</string>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.21825175382653061" green="0.21825175382653061" blue="0.21825175382653061" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="95" id="Qy7-Zg-qUf"/>
+                                            <constraint firstAttribute="width" constant="320" id="znt-Bh-sPL"/>
+                                        </constraints>
+                                    </view>
+                                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="SEO-Ul-PXV">
+                                        <rect key="frame" x="20" y="318" width="280" height="96"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="Qwn-rF-LxT"/>
+                                            <constraint firstAttribute="height" constant="96" id="abk-a5-WZg"/>
+                                        </constraints>
+                                        <string key="text">We know life can be busy and it can be hard to take on one more commitment... that's why we don't ask you for one. At Whole Way House, we have an open-door policy with our volunteers.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Volunteers2" translatesAutoresizingMaskIntoConstraints="NO" id="tiU-Jt-VDg">
+                                        <rect key="frame" x="0.0" y="427" width="320" height="215"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="EHB-1v-brD"/>
+                                            <constraint firstAttribute="height" constant="215" id="zek-q1-JAl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="my2-ZW-1CS">
+                                        <rect key="frame" x="0.0" y="642" width="320" height="114"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="EJm-Tr-3cu">
+                                                <rect key="frame" x="20" y="6" width="280" height="96"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">Once you have completed a short orientation, you can come and go as you please. You can sign up for one or all of our programs or events to serve at and we will be pleased to have you. </string>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.2182517538" green="0.2182517538" blue="0.2182517538" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="114" id="qMB-uD-JyF"/>
+                                            <constraint firstAttribute="width" constant="320" id="yT0-tv-dyT"/>
+                                        </constraints>
+                                    </view>
+                                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Oku-BI-0tr">
+                                        <rect key="frame" x="20" y="764" width="280" height="96"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="4OM-u1-LEi"/>
+                                            <constraint firstAttribute="width" constant="280" id="mpL-OD-QIn"/>
+                                        </constraints>
+                                        <string key="text">Volunteering is a great way to meet new people, give back to your community and be a part of something that is changing lives. Join us and make someone's day just a little bit better.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWJ-5C-xyj">
+                                        <rect key="frame" x="0.0" y="1030" width="320" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coa-rn-unU" userLabel="Email Icon">
+                                                <rect key="frame" x="30" y="12" width="40" height="40"/>
+                                                <state key="normal" image="JenIconMail">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nE5-bx-L3g">
+                                                <rect key="frame" x="90" y="12" width="147" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="info@wholewayhouse.ca" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvU-oh-eJe">
+                                                <rect key="frame" x="90" y="35" width="148" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgs-yo-xv8" userLabel="Overlay Button">
+                                                <rect key="frame" x="30" y="12" width="270" height="40"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="emailButtonPressed:" destination="Bii-ck-4Gw" eventType="touchUpInside" id="U5u-9U-POf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="C4b-De-q1u"/>
+                                            <constraint firstAttribute="width" constant="320" id="uwe-7r-qCp"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ye-bT-yPj">
+                                        <rect key="frame" x="0.0" y="886" width="320" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9U-0a-Gyy" userLabel="Questionnaire Icon">
+                                                <rect key="frame" x="30" y="12" width="40" height="40"/>
+                                                <state key="normal" image="JenIconMouse">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volunteer Questionnaire" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRu-yp-m5V">
+                                                <rect key="frame" x="90" y="15" width="188" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="One-time survey form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-bl-XTG">
+                                                <rect key="frame" x="90" y="32" width="131" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YY-Hc-BDu" userLabel="Overlay Button">
+                                                <rect key="frame" x="31" y="12" width="270" height="40"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="volunteerQuestionnaireButtonPressed:" destination="Bii-ck-4Gw" eventType="touchUpInside" id="039-Xo-X6j"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="07l-8J-wDB"/>
+                                            <constraint firstAttribute="width" constant="320" id="jUm-if-Fih"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mR-aF-TWP">
+                                        <rect key="frame" x="0.0" y="958" width="320" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnE-N5-uEZ" userLabel="Schedule Icon">
+                                                <rect key="frame" x="30" y="12" width="40" height="40"/>
+                                                <state key="normal" image="JenIconCalendar">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volunteer Schedule" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXM-IS-Eog">
+                                                <rect key="frame" x="90" y="15" width="152" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View &amp; sign-up for activities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-eJ-bxa">
+                                                <rect key="frame" x="90" y="32" width="165" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uW4-2V-Dkc" userLabel="Overlay Button">
+                                                <rect key="frame" x="30" y="12" width="270" height="40"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="volunteerScheduleButtonPressed:" destination="Bii-ck-4Gw" eventType="touchUpInside" id="QHU-Tg-uho"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="QOZ-Je-y4w"/>
+                                            <constraint firstAttribute="height" constant="64" id="jx3-F1-b8J"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1mR-aF-TWP" firstAttribute="leading" secondItem="ODf-cq-e8A" secondAttribute="leading" id="0eB-S7-YRu"/>
+                                    <constraint firstItem="ajI-Db-l4x" firstAttribute="leading" secondItem="ODf-cq-e8A" secondAttribute="leading" id="93f-S4-yIF"/>
+                                    <constraint firstItem="Oku-BI-0tr" firstAttribute="top" secondItem="my2-ZW-1CS" secondAttribute="bottom" constant="8" id="Avk-Zv-IkF"/>
+                                    <constraint firstAttribute="trailing" secondItem="SEO-Ul-PXV" secondAttribute="trailing" constant="20" symbolic="YES" id="Bns-u6-yLU"/>
+                                    <constraint firstItem="tiU-Jt-VDg" firstAttribute="top" secondItem="SEO-Ul-PXV" secondAttribute="bottom" constant="13" id="FXa-OD-Ad7"/>
+                                    <constraint firstItem="SEO-Ul-PXV" firstAttribute="leading" secondItem="ODf-cq-e8A" secondAttribute="leading" constant="20" id="L1c-tb-SXl"/>
+                                    <constraint firstAttribute="bottom" secondItem="nWJ-5C-xyj" secondAttribute="bottom" constant="20" id="NAe-yG-KOh"/>
+                                    <constraint firstItem="nWJ-5C-xyj" firstAttribute="leading" secondItem="ODf-cq-e8A" secondAttribute="leading" id="Obk-MN-DO0"/>
+                                    <constraint firstItem="my2-ZW-1CS" firstAttribute="top" secondItem="tiU-Jt-VDg" secondAttribute="bottom" id="RGL-j2-yNV"/>
+                                    <constraint firstItem="ajI-Db-l4x" firstAttribute="top" secondItem="ODf-cq-e8A" secondAttribute="top" id="T0b-Ae-djs"/>
+                                    <constraint firstItem="2ye-bT-yPj" firstAttribute="leading" secondItem="ODf-cq-e8A" secondAttribute="leading" id="ToC-cH-EbP"/>
+                                    <constraint firstItem="1mR-aF-TWP" firstAttribute="top" secondItem="2ye-bT-yPj" secondAttribute="bottom" constant="8" id="cGx-mO-Pai"/>
+                                    <constraint firstItem="nWJ-5C-xyj" firstAttribute="top" secondItem="1mR-aF-TWP" secondAttribute="bottom" constant="8" id="kIL-Xp-BBG"/>
+                                    <constraint firstItem="WYY-CC-WXt" firstAttribute="leading" secondItem="ODf-cq-e8A" secondAttribute="leading" id="lnb-Jd-M1n"/>
+                                    <constraint firstItem="WYY-CC-WXt" firstAttribute="top" secondItem="ajI-Db-l4x" secondAttribute="bottom" id="mhu-Rg-YsR"/>
+                                    <constraint firstItem="2ye-bT-yPj" firstAttribute="top" secondItem="Oku-BI-0tr" secondAttribute="bottom" constant="26" id="qCe-x8-PdH"/>
+                                    <constraint firstItem="my2-ZW-1CS" firstAttribute="leading" secondItem="ODf-cq-e8A" secondAttribute="leading" id="sNB-Jf-32J"/>
+                                    <constraint firstItem="Oku-BI-0tr" firstAttribute="leading" secondItem="ODf-cq-e8A" secondAttribute="leading" constant="20" id="uC2-sU-pDh"/>
+                                    <constraint firstItem="tiU-Jt-VDg" firstAttribute="leading" secondItem="ODf-cq-e8A" secondAttribute="leading" id="vre-Xk-U6L"/>
+                                    <constraint firstAttribute="width" constant="320" id="xfF-Pg-tTS"/>
+                                    <constraint firstItem="SEO-Ul-PXV" firstAttribute="top" secondItem="WYY-CC-WXt" secondAttribute="bottom" constant="8" id="xtQ-CF-7Y3"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ODf-cq-e8A" firstAttribute="leading" secondItem="QUR-eJ-hfF" secondAttribute="leading" id="2aT-Ny-nWg"/>
+                            <constraint firstItem="ODf-cq-e8A" firstAttribute="top" secondItem="QUR-eJ-hfF" secondAttribute="top" id="3J7-Dd-ZZ4"/>
+                            <constraint firstAttribute="bottom" secondItem="ODf-cq-e8A" secondAttribute="bottom" constant="10" id="SyH-aD-eJj"/>
+                            <constraint firstAttribute="trailing" secondItem="ODf-cq-e8A" secondAttribute="trailing" id="jkH-4s-nbK"/>
+                        </constraints>
                     </view>
-                    <toolbarItems/>
+                    <size key="freeformSize" width="320" height="1200"/>
+                    <connections>
+                        <outlet property="scrollView" destination="ODf-cq-e8A" id="O20-FL-tEa"/>
+                        <segue destination="yof-HY-q7N" kind="modal" identifier="toWebViewControllerSegue" modalTransitionStyle="coverVertical" id="ITe-u7-duT"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Su-kf-7UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DsL-ef-46N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402" y="-1324"/>
+            <point key="canvasLocation" x="2364" y="-619"/>
         </scene>
     </scenes>
     <resources>
@@ -3395,6 +3638,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
         <image name="CalendarIconSmall" width="30" height="30"/>
         <image name="CheckmarkIcon" width="256" height="256"/>
         <image name="JenIconBoard" width="40" height="40"/>
+        <image name="JenIconCalendar" width="40" height="40"/>
         <image name="JenIconFacebook" width="40" height="40"/>
         <image name="JenIconInstagram" width="40" height="40"/>
         <image name="JenIconMail" width="40" height="40"/>
@@ -3427,6 +3671,8 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
         <image name="TabBarIcon-Sponsors" width="30" height="30"/>
         <image name="TabBarIcon-Twitter" width="30" height="30"/>
         <image name="VolunteerIconSmall20x20" width="20" height="20"/>
+        <image name="Volunteers1" width="570" height="370"/>
+        <image name="Volunteers2" width="640" height="430"/>
         <image name="WWHLogoLargeInset" width="175" height="175"/>
         <image name="WWHLogoTransparent" width="140" height="140"/>
         <image name="about1.png" width="240" height="160"/>
@@ -3440,6 +3686,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eYn-mC-Hjj"/>
+        <segue reference="9ZC-zh-4L7"/>
     </inferredMetricsTieBreakers>
 </document>

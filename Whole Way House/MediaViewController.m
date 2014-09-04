@@ -9,6 +9,7 @@
 #import "MediaViewController.h"
 #import "MediaPFTableViewCell.h"
 #import "Media.h"
+#import "DSWebViewController.h"
 
 @interface MediaViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -46,6 +47,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = [UIColor colorWithRed:174.0/255.0 green:216.0/255.0 blue:224.0/255.0 alpha:1];
     
     // Pull-to-Refresh
     self.refreshControl =[[UIRefreshControl alloc] init];
@@ -131,7 +133,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.mediaArray count];;
+    return [self.mediaArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -193,34 +195,14 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-//    NSDictionary *tweet = self.twitterFeed[indexPath.row];
-//    
-//    NSString *tweetAuthor = tweet[@"user"][@"screen_name"];
-//    NSString *tweetID = tweet[@"id_str"];
-//    NSString *expandedURL = @"";
-//    NSDictionary *tweetEntity = tweet[@"entities"];
-//    
-//    NSArray *urls = tweetEntity[@"urls"];
-//    
-//    // temp
-//    NSString *tweetText= [tweet[@"text"] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-//    NSLog(@"%@", tweetText);
-//    
-//    
-//    if (urls.count > 0) {
-//        NSDictionary *url0 = urls[0];
-//        expandedURL = url0[@"expanded_url"];
-//        NSLog(@"%@", expandedURL);
-//    }
-//    
-//    if ([expandedURL isEqualToString:@""]) {
-//        expandedURL = [NSString stringWithFormat:@"https://twitter.com/%@/status/%@", tweetAuthor, tweetID];
-//    }
-//    
-//    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:expandedURL];
+    Media *media = self.mediaArray[indexPath.row];
+    NSString *url = media.website;
+    
+    if (url) {
+        [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:url];
+    }
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -228,7 +210,15 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    NSString *url = (NSString *)sender;
+    if ([segue.identifier isEqualToString:@"toWebViewControllerSegue"]) {
+        if ([segue.destinationViewController isKindOfClass:[DSWebViewController class]]) {
+            DSWebViewController *nextViewController = (DSWebViewController *)segue.destinationViewController;
+            nextViewController.url = url;
+        }
+    }
 }
-*/
+
 
 @end
