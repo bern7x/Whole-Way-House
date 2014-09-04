@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "TwitterViewController.h"
 #import "ProgramsViewController.h"
 #import "SponsorsViewController.h"
 #import "AboutViewController.h"
@@ -70,10 +69,10 @@
             }
             
             // Scroll to top of Latest News tab
-            else if ([nav.visibleViewController isKindOfClass:[TwitterViewController class]]) {
-                TwitterViewController *tabViewController = (TwitterViewController *)nav.visibleViewController;
-                [tabViewController scrollToTop];
-            }
+//            else if ([nav.visibleViewController isKindOfClass:[TwitterViewController class]]) {
+//                TwitterViewController *tabViewController = (TwitterViewController *)nav.visibleViewController;
+//                [tabViewController scrollToTop];
+//            }
             
             // Scroll to top of Programs tab
             else if ([nav.visibleViewController isKindOfClass:[ProgramsViewController class]]) {

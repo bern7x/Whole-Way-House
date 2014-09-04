@@ -65,8 +65,16 @@
     self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg"]];
     self.tableView.backgroundColor = [UIColor clearColor];
     
-    UIEdgeInsets inset = UIEdgeInsetsMake(5, 0, 5, 0); // top, left, bottom, right
+    UIEdgeInsets inset = UIEdgeInsetsMake(5.0, 0.0, 5.0, 0.0); // top, left, bottom, right
     self.tableView.contentInset = inset;
+    
+//    // Bug workaround - Required to set proper height of tableView for 3.5 inch screens
+//    // I think this is necessary due to tableView within containerView not having a chance to update its
+//    // autolayout constraints in time, which is why setNeedsUpdateContraints is required
+//    if (self.view.frame.size.height == 480.0) {
+//        [self.tableView setContentInset:UIEdgeInsetsMake(5.0, 0.0, 90.0, 0.0)];
+//    }
+//    [self.tableView setNeedsUpdateConstraints];
     
     // Mixpanel Analytics
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
