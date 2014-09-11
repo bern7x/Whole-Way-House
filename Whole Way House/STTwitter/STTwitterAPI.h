@@ -23,7 +23,8 @@
 
 NS_ENUM(NSUInteger, STTwitterAPIErrorCode) {
     STTwitterAPICannotPostEmptyStatus,
-    STTwitterAPIMediaDataIsEmpty
+    STTwitterAPIMediaDataIsEmpty,
+    STTwitterAPIEmptyStream
 };
 
 extern NSString *kBaseURLStringAPI_1_1;
@@ -2050,5 +2051,9 @@ includeMessagesFromFollowedAccounts:(NSNumber *)includeMessagesFromFollowedAccou
               successBlock:(void(^)(NSDictionary *message))successBlock
                 errorBlock:(void(^)(NSError *error))errorBlock;
 
+// GET conversation/show/:id.json
+- (void)_getConversationShowWithTweetID:(NSString *)tweetID
+                           successBlock:(void(^)(id results))successBlock
+                             errorBlock:(void(^)(NSError *error))errorBlock;
 
 @end
