@@ -486,6 +486,8 @@ downloadProgressBlock:nil
                        r.errorBlock = ^(NSError *error) {
                            errorBlock(error);
                        };
+
+                       [r startAsynchronous];
                    } errorBlock:^(NSError *error) {
                        errorBlock(error);
                    }];
@@ -1252,6 +1254,12 @@ downloadProgressBlock:nil
             }
             
         } successBlock:^(NSDictionary *rateLimits, id response) {
+            if([response isKindOfClass:[NSString class]] && [response length] == 0) {
+                NSError *error = [NSError errorWithDomain:NSStringFromClass([self class]) code:STTwitterAPIEmptyStream userInfo:@{NSLocalizedDescriptionKey : @"stream is empty"}];
+                errorBlock(error);
+                return;
+            };
+            
             progressBlock(response);
         } errorBlock:^(NSError *error) {
             errorBlock(error);
@@ -4343,6 +4351,22 @@ includeMessagesFromFollowedAccounts:(NSNumber *)includeMessagesFromFollowedAccou
     if(sendErrorCodes) md[@"send_error_codes"] = @([sendErrorCodes boolValue]);
     
     [self getAPIResource:@"search/typeahead.json" parameters:md successBlock:^(NSDictionary *rateLimits, id response) {
+        successBlock(response);
+    } errorBlock:^(NSError *error) {
+        errorBlock(error);
+    }];
+}
+
+// GET conversation/show/:id.json
+- (void)_getConversationShowWithTweetID:(NSString *)tweetID
+                           successBlock:(void(^)(id results))successBlock
+                      errorBlock:(void(^)(NSError *error))errorBlock {
+    
+    NSParameterAssert(tweetID);
+    
+    NSString *ressource = [NSString stringWithFormat:@"conversation/show/%@.json", tweetID];
+    
+    [self getAPIResource:ressource parameters:nil successBlock:^(NSDictionary *rateLimits, id response) {
         successBlock(response);
     } errorBlock:^(NSError *error) {
         errorBlock(error);

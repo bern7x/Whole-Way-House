@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2L0-nB-gI9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2L0-nB-gI9">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-8" y="-619"/>
         </scene>
-        <!--Programs View Controller - Programs & Activities-->
+        <!--Programs & Activities-->
         <scene sceneID="lUA-xf-anY">
             <objects>
                 <viewController id="a9s-AB-w4D" customClass="ProgramsViewController" sceneMemberID="viewController">
@@ -1318,7 +1318,7 @@ If you would like to get involved, please get in touch with us.</string>
             </objects>
             <point key="canvasLocation" x="929" y="784"/>
         </scene>
-        <!--Sponsors View Controller - Our Sponsors-->
+        <!--Our Sponsors-->
         <scene sceneID="daz-Yn-cPP">
             <objects>
                 <viewController id="TkZ-33-GyD" customClass="SponsorsViewController" sceneMemberID="viewController">
@@ -1710,7 +1710,7 @@ If you would like to make a financial contribution, we have the following option
             </objects>
             <point key="canvasLocation" x="1413" y="1476"/>
         </scene>
-        <!--Contact View Controller - Contact-->
+        <!--Contact-->
         <scene sceneID="ElZ-gg-o7y">
             <objects>
                 <viewController id="HSS-se-g5X" customClass="ContactViewController" sceneMemberID="viewController">
@@ -2067,7 +2067,7 @@ If you would like to make a financial contribution, we have the following option
             </objects>
             <point key="canvasLocation" x="465" y="2167"/>
         </scene>
-        <!--About View Controller - Our Story-->
+        <!--Our Story-->
         <scene sceneID="4PW-Fd-03k">
             <objects>
                 <viewController id="ZYf-I5-IV1" customClass="AboutViewController" sceneMemberID="viewController">
@@ -3007,7 +3007,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
             </objects>
             <point key="canvasLocation" x="929" y="2167"/>
         </scene>
-        <!--Navigation Controller - Sponsors-->
+        <!--Sponsors-->
         <scene sceneID="gDO-9R-MM9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VVI-Ma-CLa" sceneMemberID="viewController">
@@ -3026,7 +3026,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
             </objects>
             <point key="canvasLocation" x="465" y="1476"/>
         </scene>
-        <!--Navigation Controller - Programs-->
+        <!--Programs-->
         <scene sceneID="dbT-I5-uxC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q7o-6O-Tdv" sceneMemberID="viewController">
@@ -3117,7 +3117,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
             </objects>
             <point key="canvasLocation" x="929" y="-619"/>
         </scene>
-        <!--Navigation Controller - Latest-->
+        <!--Latest-->
         <scene sceneID="7Rj-kW-deT">
             <objects>
                 <navigationController id="Gn2-Ew-KJl" sceneMemberID="viewController">
@@ -3166,7 +3166,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WWHLogoTransparent" translatesAutoresizingMaskIntoConstraints="NO" id="cff-Jw-j8s">
                                                     <rect key="frame" x="12" y="12" width="40" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="5IT-ia-9bS"/>
@@ -3175,7 +3174,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday, August 24, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yur-2d-Tia">
                                                     <rect key="frame" x="60" y="12" width="240" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="GPg-yK-4dq"/>
                                                     </constraints>
@@ -3185,7 +3183,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By @WholeWayHouse at 12:12pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95b-hL-rbe">
                                                     <rect key="frame" x="60" y="30" width="240" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="Tco-OX-LTL"/>
                                                     </constraints>
@@ -3195,7 +3192,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="248" translatesAutoresizingMaskIntoConstraints="NO" id="wYV-fs-MTt" customClass="THLabel">
                                                     <rect key="frame" x="60" y="52" width="248" height="65"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
                                                     </accessibility>
@@ -3259,9 +3255,8 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J1G-AS-3PX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J1G-AS-3PX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -3274,11 +3269,9 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                             <subviews>
                                                 <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MediaPlaceholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="lSp-jo-g52" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyh-iF-SJ2">
                                                     <rect key="frame" x="0.0" y="146" width="320" height="93"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <userGuides>
                                                         <userLayoutGuide location="10" affinity="minX"/>
                                                         <userLayoutGuide location="310" affinity="minX"/>
@@ -3288,7 +3281,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A place where everybody knows your name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25W-ra-3Uj">
                                                             <rect key="frame" x="10" y="10" width="300" height="17"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="300" id="Tzm-5n-Nal"/>
                                                             </constraints>
@@ -3298,7 +3290,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="rSW-hV-GSC">
                                                             <rect key="frame" x="10" y="32" width="300" height="49"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <string key="text">Tiffany Crawford features brother-sister duo tackling loneliness in the Downtown Eastside in this page 2 story in The Vancouver Sun.</string>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -3316,14 +3307,12 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                                 </view>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xau-ah-YnM">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <userGuides>
                                                         <userLayoutGuide location="10" affinity="minX"/>
                                                     </userGuides>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Monday, September 1, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3S4-AU-lVO">
                                                             <rect key="frame" x="10" y="4" width="213" height="15"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -3362,7 +3351,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                             <constraint firstItem="J1G-AS-3PX" firstAttribute="leading" secondItem="V3g-16-x75" secondAttribute="leading" id="urM-eg-Qyh"/>
                         </constraints>
                     </view>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="J1G-AS-3PX" id="wCq-il-Qdu"/>
                         <segue destination="yof-HY-q7N" kind="modal" identifier="toWebViewControllerSegue" modalTransitionStyle="coverVertical" id="84U-t6-r2f"/>
@@ -3386,14 +3374,12 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                         <subviews>
                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODf-cq-e8A">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="558"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <userGuides>
                                     <userLayoutGuide location="30" affinity="minX"/>
                                 </userGuides>
                                 <subviews>
                                     <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Volunteers1" translatesAutoresizingMaskIntoConstraints="NO" id="ajI-Db-l4x">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="5Ku-PT-hwo"/>
                                             <constraint firstAttribute="height" constant="215" id="Zfm-Gn-OKg"/>
@@ -3401,11 +3387,9 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                     </imageView>
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYY-CC-WXt">
                                         <rect key="frame" x="0.0" y="215" width="320" height="95"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="h2P-tn-onj">
                                                 <rect key="frame" x="20" y="6" width="280" height="77"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <string key="text">Do you have an ear to listen? Can your hands serve a cup of coffee? Can your lips give a smile? Then you qualify to be a volunteer.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3420,7 +3404,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                     </view>
                                     <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="SEO-Ul-PXV">
                                         <rect key="frame" x="20" y="318" width="280" height="96"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="Qwn-rF-LxT"/>
                                             <constraint firstAttribute="height" constant="96" id="abk-a5-WZg"/>
@@ -3432,7 +3415,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                     </label>
                                     <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Volunteers2" translatesAutoresizingMaskIntoConstraints="NO" id="tiU-Jt-VDg">
                                         <rect key="frame" x="0.0" y="427" width="320" height="215"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="EHB-1v-brD"/>
                                             <constraint firstAttribute="height" constant="215" id="zek-q1-JAl"/>
@@ -3440,11 +3422,9 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                     </imageView>
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="my2-ZW-1CS">
                                         <rect key="frame" x="0.0" y="642" width="320" height="114"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="EJm-Tr-3cu">
                                                 <rect key="frame" x="20" y="6" width="280" height="96"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <string key="text">Once you have completed a short orientation, you can come and go as you please. You can sign up for one or all of our programs or events to serve at and we will be pleased to have you. </string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3459,7 +3439,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                     </view>
                                     <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Oku-BI-0tr">
                                         <rect key="frame" x="20" y="764" width="280" height="96"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="96" id="4OM-u1-LEi"/>
                                             <constraint firstAttribute="width" constant="280" id="mpL-OD-QIn"/>
@@ -3469,9 +3448,82 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ye-bT-yPj">
+                                        <rect key="frame" x="0.0" y="886" width="320" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9U-0a-Gyy" userLabel="Questionnaire Icon">
+                                                <rect key="frame" x="30" y="12" width="40" height="40"/>
+                                                <state key="normal" image="JenIconMouse">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volunteer Questionnaire" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRu-yp-m5V">
+                                                <rect key="frame" x="90" y="12" width="188" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="One-time survey form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-bl-XTG">
+                                                <rect key="frame" x="90" y="35" width="131" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YY-Hc-BDu" userLabel="Overlay Button">
+                                                <rect key="frame" x="31" y="12" width="270" height="40"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="volunteerQuestionnaireButtonPressed:" destination="Bii-ck-4Gw" eventType="touchUpInside" id="039-Xo-X6j"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="07l-8J-wDB"/>
+                                            <constraint firstAttribute="width" constant="320" id="jUm-if-Fih"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mR-aF-TWP">
+                                        <rect key="frame" x="0.0" y="958" width="320" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnE-N5-uEZ" userLabel="Schedule Icon">
+                                                <rect key="frame" x="30" y="12" width="40" height="40"/>
+                                                <state key="normal" image="JenIconCalendar">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volunteer Schedule" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXM-IS-Eog">
+                                                <rect key="frame" x="90" y="12" width="152" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View &amp; sign-up for activities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-eJ-bxa">
+                                                <rect key="frame" x="90" y="35" width="165" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uW4-2V-Dkc" userLabel="Overlay Button">
+                                                <rect key="frame" x="30" y="12" width="270" height="40"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="volunteerScheduleButtonPressed:" destination="Bii-ck-4Gw" eventType="touchUpInside" id="QHU-Tg-uho"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="QOZ-Je-y4w"/>
+                                            <constraint firstAttribute="height" constant="64" id="jx3-F1-b8J"/>
+                                        </constraints>
+                                    </view>
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWJ-5C-xyj">
                                         <rect key="frame" x="0.0" y="1030" width="320" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coa-rn-unU" userLabel="Email Icon">
                                                 <rect key="frame" x="30" y="12" width="40" height="40"/>
@@ -3505,82 +3557,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="C4b-De-q1u"/>
                                             <constraint firstAttribute="width" constant="320" id="uwe-7r-qCp"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ye-bT-yPj">
-                                        <rect key="frame" x="0.0" y="886" width="320" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9U-0a-Gyy" userLabel="Questionnaire Icon">
-                                                <rect key="frame" x="30" y="12" width="40" height="40"/>
-                                                <state key="normal" image="JenIconMouse">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volunteer Questionnaire" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRu-yp-m5V">
-                                                <rect key="frame" x="90" y="15" width="188" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="One-time survey form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-bl-XTG">
-                                                <rect key="frame" x="90" y="32" width="131" height="17"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YY-Hc-BDu" userLabel="Overlay Button">
-                                                <rect key="frame" x="31" y="12" width="270" height="40"/>
-                                                <state key="normal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="volunteerQuestionnaireButtonPressed:" destination="Bii-ck-4Gw" eventType="touchUpInside" id="039-Xo-X6j"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="07l-8J-wDB"/>
-                                            <constraint firstAttribute="width" constant="320" id="jUm-if-Fih"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mR-aF-TWP">
-                                        <rect key="frame" x="0.0" y="958" width="320" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnE-N5-uEZ" userLabel="Schedule Icon">
-                                                <rect key="frame" x="30" y="12" width="40" height="40"/>
-                                                <state key="normal" image="JenIconCalendar">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volunteer Schedule" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXM-IS-Eog">
-                                                <rect key="frame" x="90" y="15" width="152" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View &amp; sign-up for activities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-eJ-bxa">
-                                                <rect key="frame" x="90" y="32" width="165" height="17"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uW4-2V-Dkc" userLabel="Overlay Button">
-                                                <rect key="frame" x="30" y="12" width="270" height="40"/>
-                                                <state key="normal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="volunteerScheduleButtonPressed:" destination="Bii-ck-4Gw" eventType="touchUpInside" id="QHU-Tg-uho"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="320" id="QOZ-Je-y4w"/>
-                                            <constraint firstAttribute="height" constant="64" id="jx3-F1-b8J"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -3617,7 +3593,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                             <constraint firstAttribute="trailing" secondItem="ODf-cq-e8A" secondAttribute="trailing" id="jkH-4s-nbK"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="320" height="1200"/>
                     <connections>
                         <outlet property="scrollView" destination="ODf-cq-e8A" id="O20-FL-tEa"/>
                         <segue destination="yof-HY-q7N" kind="modal" identifier="toWebViewControllerSegue" modalTransitionStyle="coverVertical" id="ITe-u7-duT"/>
@@ -3686,6 +3661,6 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9ZC-zh-4L7"/>
+        <segue reference="ITe-u7-duT"/>
     </inferredMetricsTieBreakers>
 </document>
