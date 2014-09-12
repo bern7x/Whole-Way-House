@@ -36,10 +36,10 @@
     // Bug workaround - Required to set proper height of tableView for 3.5 inch screens
     // I think this is necessary due to tableView within containerView not having a chance to update its
     // autolayout constraints in time, which is why setNeedsUpdateContraints is required
-    if (self.view.frame.size.height == 480.0) {
-        [self.scrollView setContentInset:UIEdgeInsetsMake(0, 0.0, 90.0, 0.0)];
-    }
-    [self.scrollView setNeedsUpdateConstraints];
+//    if (self.view.frame.size.height == 480.0) {
+//        [self.scrollView setContentInset:UIEdgeInsetsMake(0, 0.0, 90.0, 0.0)];
+//    }
+//    [self.scrollView setNeedsUpdateConstraints];
     
     // Load Dynamic Link Library
     self.links = [LinkLibrary sharedLinkLibrary];

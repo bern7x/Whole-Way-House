@@ -41,7 +41,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor colorWithRed:174.0/255.0 green:216.0/255.0 blue:224.0/255.0 alpha:1];
-//    [self.tableView setContentInset:UIEdgeInsetsMake(108, 0, 0, 0)];
+    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, 8.0, 0)];
     
     // Update Twitter Feed
     [self updateTwitterFeed];
@@ -60,9 +60,9 @@
     // Bug workaround - Required to set proper height of tableView for 3.5 inch screens
     // I think this is necessary due to tableView within containerView not having a chance to update its
     // autolayout constraints in time, which is why setNeedsUpdateContraints is required
-    [self.tableView setFrame:self.view.frame];
-    [self.tableView setContentInset:UIEdgeInsetsMake(64.0, 0.0, 54.0, 0.0)];
-    [self.tableView setNeedsUpdateConstraints];
+//    [self.tableView setFrame:self.view.frame];
+    //[self.tableView setContentInset:UIEdgeInsetsMake(64.0, 0.0, 54.0, 0.0)];
+//    [self.tableView setNeedsUpdateConstraints];
 }
 
 #pragma mark - Helper Methods

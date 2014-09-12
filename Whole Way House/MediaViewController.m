@@ -61,9 +61,9 @@
     // Bug workaround - Required to set proper height of tableView for 3.5 inch screens
     // I think this is necessary due to tableView within containerView not having a chance to update its
     // autolayout constraints in time, which is why setNeedsUpdateContraints is required
-    [self.tableView setFrame:self.view.frame];
-    [self.tableView setContentInset:UIEdgeInsetsMake(64.0, 0.0, 49.0, 0.0)];
-    [self.tableView setNeedsUpdateConstraints];
+//    [self.tableView setFrame:self.view.frame];
+//    [self.tableView setContentInset:UIEdgeInsetsMake(64.0, 0.0, 49.0, 0.0)];
+//    [self.tableView setNeedsUpdateConstraints];
 }
 
 - (void)didReceiveMemoryWarning
