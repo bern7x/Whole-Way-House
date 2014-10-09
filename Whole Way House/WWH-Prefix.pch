@@ -10,7 +10,7 @@
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
-#ifdef __OBJC__
+//#ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "Mixpanel.h"
@@ -18,7 +18,7 @@
     #import <Parse/Parse.h>
     #import "LinkLibrary.h"
     #import "THLabel.h"
-#endif
+//#endif
 
 //  APIKeys.h/m files are NOT included in the GitHub project
 //  To run the project successfully, you'll need to create your own APIKeys.h/m files
@@ -27,3 +27,7 @@
 //  #define TWITTER_CONSUMER_KEY @"GET-YOUR-OWN-FROM-TWITTER"
 //  #define TWITTER_CONSUMER_SECRET @"GET-YOUR-OWN-FROM-TWITTER"
 //  #define MIXPANEL_TOKEN @"GET-YOUR-OWN-FROM-MIXPANEL"
+
+// PCH files are no longer "in style" as of iOS 8
+// Refer to: http://stackoverflow.com/questions/24158648/why-isnt-projectname-prefix-pch-created-automatically-in-xcode-6
+// Will remove PCH in an upcoming update

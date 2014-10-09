@@ -10,4 +10,8 @@
 
 @interface VolunteerViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
+- (void)scrollToTop;
+
 @end

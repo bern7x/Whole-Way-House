@@ -10,4 +10,8 @@
 
 @interface MediaViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+- (void)scrollToTop;
+
 @end

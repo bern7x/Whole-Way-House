@@ -10,4 +10,9 @@
 
 @interface ContainerViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UISegmentedControl *containerSegmentedControl;
+@property (weak, nonatomic) IBOutlet UIView *newsContainerView;
+@property (weak, nonatomic) IBOutlet UIView *mediaContainerView;
+@property (weak, nonatomic) IBOutlet UIView *volunteerContainerView;
+
 @end

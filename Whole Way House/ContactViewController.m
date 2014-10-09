@@ -12,14 +12,14 @@
 #import "DSWebViewController.h"
 #import "BoardViewController.h"
 #import <MessageUI/MessageUI.h>
+#import "LinkLibrary.h"
 
-@interface ContactViewController () <MKMapViewDelegate, UIScrollViewDelegate, MFMailComposeViewControllerDelegate>
+@interface ContactViewController () <MKMapViewDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIImageView *wwhLogoImageView;
-@property (strong, nonatomic) IBOutlet UIScrollView *versesScrollView;
-@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) LinkLibrary *links;
 
 @end
 
@@ -42,16 +42,19 @@
     // Do any additional setup after loading the view.
     
     self.mapView.delegate = self;
-    self.versesScrollView.delegate = self;
-    //self.versesScrollView.contentSize = CGSizeMake(960.0, 150.0);
-    
     [self setupMap];
     [self setupLogo];
+    
+    // Load Dynamic Link Library
+    self.links = [LinkLibrary sharedLinkLibrary];
     
     // Mixpanel Analytics
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Contact Us"];
     [mixpanel flush];
+    
+    // Scroll-to-top
+    [self.scrollView setScrollsToTop:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,15 +98,11 @@
             BoardViewController *nextViewController = (BoardViewController *)segue.destinationViewController;
             nextViewController.url = sender;
         }
-    }
-}
-
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if (scrollView == self.versesScrollView) {
-        self.pageControl.currentPage = floorf(scrollView.contentOffset.x/320);
+    } else if ([segue.identifier isEqualToString:@"toWebViewControllerSegue"]) {
+        if ([segue.destinationViewController isKindOfClass:[DSWebViewController class]]) {
+            DSWebViewController *nextViewController = (DSWebViewController *)segue.destinationViewController;
+            nextViewController.url = sender;
+        }
     }
 }
 
@@ -182,6 +181,13 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneURL]];
 }
 
+- (IBAction)donationsButtonPressed:(UIButton *)sender
+{
+    NSString *donate = self.links.linkDictionary[@"donate"];
+    [self performSegueWithIdentifier:@"fromContactToWebViewControllerSegue" sender:donate];
+}
+
+
 - (IBAction)locationButtonPressed:(UIButton *)sender
 {
     [self mapsButtonPressed:nil];
@@ -240,6 +246,67 @@
     
     [self.scrollView setContentOffset:CGPointMake(0, -self.scrollView.contentInset.top) animated:YES];
 }
+
+#pragma IB Actions
+
+- (IBAction)donateBarButtonItemPressed:(UIBarButtonItem *)sender
+{
+    NSString *donate = self.links.linkDictionary[@"donate"];
+    [self performSegueWithIdentifier:@"fromContactToWebViewControllerSegue" sender:donate];
+}
+
+- (IBAction)volunteerBarButtonItemPressed:(UIBarButtonItem *)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Volunteer Sign-up Form", @"First-Time Questionnaire", nil];
+    actionSheet.tag = 1;
+    [actionSheet showInView:self.view];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Load Dynamic Link Library
+    LinkLibrary *links = [LinkLibrary sharedLinkLibrary];
+    NSString *signup = links.linkDictionary[@"signup"];
+    NSString *questionnaire = links.linkDictionary[@"questionnaire"];
+    
+    switch (actionSheet.tag) {
+        case 1: {
+            switch (buttonIndex) {
+                case 0:
+                    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:signup];
+                    //NSLog(@"Volunteer sign-up button pressed");
+                    break;
+                case 1:
+                    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:questionnaire];
+                    //NSLog(@"Open First-time Questionnaire button pressed");
+                    break;
+                    //                case 1:
+                    //                    [actionSheet dismissWithClickedButtonIndex:buttonIndex animated:YES];
+                    //                    NSLog(@"Cancel button pressed");
+                    //                    break;
+                default:
+                    break;
+            }
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

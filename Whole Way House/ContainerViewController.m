@@ -8,14 +8,13 @@
 
 #import "ContainerViewController.h"
 #import "ShareSetting.h"
+#import "NewsViewController.h"
+#import "MediaViewController.h"
+#import "VolunteerViewController.h"
 
 @interface ContainerViewController ()
 
-@property (weak, nonatomic) IBOutlet UIView *newsContainerView;
-@property (weak, nonatomic) IBOutlet UIView *mediaContainerView;
-@property (weak, nonatomic) IBOutlet UIView *volunteerContainerView;
 @property (strong, nonatomic) ShareSetting *shareSettings;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *containerSegmentedControl;
 
 @end
 
@@ -29,10 +28,80 @@
     self.shareSettings = [ShareSetting sharedSettings];
     self.shareSettings.currentView = @"News";
     
+    [self scrollToTopCleanUp];
+}
+
+- (void)scrollToTopCleanUp
+{
+    // Enabling scroll-to-top via status bar tap
+    // This clean-up routine is necessary due to multiple scrollviews being present on the screen at the same time
+    // This routine explains to the view controller which subview should scroll-to-top when user taps status bar
+    ContainerViewController *containerVC = self;
+    if (self.containerSegmentedControl.selectedSegmentIndex == 0) {
+        for (NewsViewController *childVC in containerVC.childViewControllers) {
+            if ([childVC isKindOfClass:[NewsViewController class]]) {
+                [childVC.tableView setScrollsToTop:YES];
+            }
+        }
+        for (MediaViewController *childVC in containerVC.childViewControllers) {
+            if ([childVC isKindOfClass:[MediaViewController class]]) {
+                [childVC.tableView setScrollsToTop:NO];
+            }
+        }
+        for (VolunteerViewController *childVC in containerVC.childViewControllers) {
+            if ([childVC isKindOfClass:[VolunteerViewController class]]) {
+                [childVC.scrollView setScrollsToTop:NO];
+            }
+        }
+    }
+    if (self.containerSegmentedControl.selectedSegmentIndex == 1) {
+        for (NewsViewController *childVC in containerVC.childViewControllers) {
+            if ([childVC isKindOfClass:[NewsViewController class]]) {
+                [childVC.tableView setScrollsToTop:NO];
+            }
+        }
+        for (MediaViewController *childVC in containerVC.childViewControllers) {
+            if ([childVC isKindOfClass:[MediaViewController class]]) {
+                [childVC.tableView setScrollsToTop:YES];
+            }
+        }
+        for (VolunteerViewController *childVC in containerVC.childViewControllers) {
+            if ([childVC isKindOfClass:[VolunteerViewController class]]) {
+                [childVC.scrollView setScrollsToTop:NO];
+            }
+        }
+    }
+    if (self.containerSegmentedControl.selectedSegmentIndex == 2) {
+        for (NewsViewController *childVC in containerVC.childViewControllers) {
+            if ([childVC isKindOfClass:[NewsViewController class]]) {
+                [childVC.tableView setScrollsToTop:NO];
+            }
+        }
+        for (MediaViewController *childVC in containerVC.childViewControllers) {
+            if ([childVC isKindOfClass:[MediaViewController class]]) {
+                [childVC.tableView setScrollsToTop:NO];
+            }
+        }
+        for (VolunteerViewController *childVC in containerVC.childViewControllers) {
+            if ([childVC isKindOfClass:[VolunteerViewController class]]) {
+                [childVC.scrollView setScrollsToTop:YES];
+            }
+        }
+    }
 }
 
 /*
-    Using tab bar navigation, when user returns to the "Latest" tab, the app always reverts back to the initial default position of the container 
+// Scroll to top of Latest tab
+else if ([nav.visibleViewController isKindOfClass:[ContainerViewController class]]) {
+    ContainerViewController *tabViewController = (ContainerViewController *)nav.visibleViewController;
+    if (tabViewController.containerSegmentedControl.selectedSegmentIndex == 0) {
+        for (NewsViewController *childVC in tabViewController.childViewControllers) {
+            if ([childVC isKindOfClass:[NewsViewController class]]) {
+                [childVC performSelector:@selector(scrollToTop)];
+*/
+
+/*
+    Using tab bar navigation, when user returns to the "Latest" tab, the app always reverts back to the initial default position of the container
     views. Therefore, need to manually set the positions of the container views according to the current value of self.shareSettings.currentView 
     or the segmented control.
  */
@@ -164,9 +233,37 @@
     } else if (self.containerSegmentedControl.selectedSegmentIndex == 2) {
         [self.view bringSubviewToFront:self.volunteerContainerView];
     }
+    [self scrollToTopCleanUp];
+}
+
+- (IBAction)swipeRightGesture:(UISwipeGestureRecognizer *)sender
+{
+    if (self.containerSegmentedControl.selectedSegmentIndex == 0) {
+        // Do nothing
+    } else if (self.containerSegmentedControl.selectedSegmentIndex == 1) {
+        [self.view bringSubviewToFront:self.newsContainerView];
+        [self.containerSegmentedControl setSelectedSegmentIndex:0];
+    } else if (self.containerSegmentedControl.selectedSegmentIndex == 2) {
+        [self.view bringSubviewToFront:self.mediaContainerView];
+        [self.containerSegmentedControl setSelectedSegmentIndex:1];
+    }
+    [self scrollToTopCleanUp];
 }
 
 
+- (IBAction)swipeLeftGesture:(UISwipeGestureRecognizer *)sender
+{
+    if (self.containerSegmentedControl.selectedSegmentIndex == 0) {
+        [self.view bringSubviewToFront:self.mediaContainerView];
+        [self.containerSegmentedControl setSelectedSegmentIndex:1];
+    } else if (self.containerSegmentedControl.selectedSegmentIndex == 1){
+        [self.view bringSubviewToFront:self.volunteerContainerView];
+        [self.containerSegmentedControl setSelectedSegmentIndex:2];
+    } else if (self.containerSegmentedControl.selectedSegmentIndex == 2) {
+        // Do nothing
+    }
+    [self scrollToTopCleanUp];
+}
 
 
 

@@ -24,33 +24,27 @@
     // Initialization code
     self.logoImageView.layer.cornerRadius = 20.0;
     
-    self.layer.cornerRadius = 10.0;
-    self.layer.masksToBounds = YES;
-    self.contentView.backgroundColor = [UIColor whiteColor];
-    [self.layer setBorderColor:[UIColor colorWithRed:87.0/255.0 green:175.0/255.0 blue:193.0/255.0 alpha:1].CGColor];
-    [self.layer setBorderWidth:1.0f];
-    
+}
+
+// Override needed to overcome bug with losing UIView background color
+// Source: http://stackoverflow.com/questions/5222736/uiview-backgroundcolor-disappears-when-uitableviewcell-is-selected
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+    UIColor *backgroundColor = self.innerContentView.backgroundColor;
+    [super setHighlighted:highlighted animated:animated];
+    self.innerContentView.backgroundColor = backgroundColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
+    UIColor *backgroundColor = self.innerContentView.backgroundColor;
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    self.innerContentView.backgroundColor = backgroundColor;
 }
 
 // Creating space around each cell in the tableview
 // Source: http://stackoverflow.com/questions/10761744/spacing-between-cells-on-uitableview-with-custom-uitableviewcell
-
-#define CELL_PADDING 8.0
-
-- (void)setFrame:(CGRect)frame
-{
-    frame.origin.y += CELL_PADDING;
-    frame.origin.x += CELL_PADDING;
-    frame.size.height -= CELL_PADDING;
-    frame.size.width -= 2 * CELL_PADDING;
-    [super setFrame:frame];
-}
+// Update for 2.0: No longer needed - I'm using a UIView with Auto Layout within a custom UITableViewCell
 
 @end

@@ -36,6 +36,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    
     self.webView.delegate = self;
     
     //NSLog(@"%@", self.url);
@@ -46,8 +48,8 @@
     
     // Mixpanel Analytics
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    NSString *mixpanelTracking = [NSString stringWithFormat:@"Webview: %@", self.url];
-    [mixpanel track:mixpanelTracking];
+    //NSString *mixpanelTracking = [NSString stringWithFormat:@"Webview: %@", self.url];
+    [mixpanel track:@"Webview"];
     [mixpanel flush];
 }
 
@@ -128,7 +130,7 @@
             switch (buttonIndex) {
                 case 0:
                     [self openInSafari];
-                    NSLog(@"Open in Safari button pressed");
+                    //NSLog(@"Open in Safari button pressed");
                     break;
 //                case 1:
 //                    [actionSheet dismissWithClickedButtonIndex:buttonIndex animated:YES];

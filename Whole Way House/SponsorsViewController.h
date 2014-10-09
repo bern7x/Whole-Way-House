@@ -10,7 +10,6 @@
 
 @interface SponsorsViewController : UIViewController
 
-- (IBAction)sponsorBarButtonItemPressed:(UIBarButtonItem *)sender;
 - (void)scrollToTop;
 
 @end
