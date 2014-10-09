@@ -13,7 +13,7 @@
 
 @interface NewsViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 @property (strong, nonatomic) NewsTableViewCell *customCell;
 @property (strong, nonatomic) NSMutableArray *twitterFeed;
 @property (strong, nonatomic) NSString *tweetURL;
@@ -41,7 +41,9 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor colorWithRed:174.0/255.0 green:216.0/255.0 blue:224.0/255.0 alpha:1];
-    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, 8.0, 0)];
+    
+    [self.tableView setContentInset:UIEdgeInsetsMake(5.0, 0, 5.0, 0)];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // Update Twitter Feed
     [self updateTwitterFeed];
@@ -133,10 +135,6 @@
 {
     NewsTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-//    cell.alphaLabel.text = @"Sunday, August 24, 2014";
-//    cell.betaLabel.text = @"By @WholeWayHouse at 12:12pm";
-//    cell.charlieLabel.text = @"Have you seen how many awesome peeps are helping make #WWHPicnic2014 more awesome? #thankyou #givingback... http://fb.me/33xktu3xP";
-    
     NSDictionary *tweet = self.twitterFeed[indexPath.row];
     NSString *tweetAuthor = tweet[@"user"][@"screen_name"];
     NSString *date = tweet[@"created_at"];
@@ -169,6 +167,7 @@
     return cell;
 }
 
+/*
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // calculate a height based on a cell
@@ -212,7 +211,7 @@
     self.customCell.betaLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:FONT_SIZE];
     self.customCell.betaLabel.text = [NSString stringWithFormat:@"By @%@ at %@", tweetAuthor, timeFromDate];
     
-    self.customCell.charlieLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16.5]; // can't figure out what is causing label to truncate ever so slightly early - therefore setting font size to be slightly larger to ensure no truncation
+    self.customCell.charlieLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16.0];
     self.customCell.charlieLabel.contentMode = UIViewContentModeTop;
     self.customCell.charlieLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.customCell.charlieLabel.text = tweetText;
@@ -227,8 +226,11 @@
     
     // padding of 1 point (cell separator) + CELL_PADDING
     
-    return height + 1 + 10;
+    return height + 1;
 }
+*/
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -237,10 +239,21 @@
 
 #pragma mark - UITableViewDelegate
 
+//- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return NO;
+//}
+
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(NewsTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    cell.backgroundColor = [UIColor redColor];
+//    cell.innerContentView.backgroundColor = [UIColor whiteColor];
+//}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+        
     NSDictionary *tweet = self.twitterFeed[indexPath.row];
     
     NSString *tweetAuthor = tweet[@"user"][@"screen_name"];

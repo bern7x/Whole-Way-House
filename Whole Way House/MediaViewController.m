@@ -13,7 +13,6 @@
 
 @interface MediaViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSMutableArray *mediaArray;
 @property (strong, nonatomic) NSMutableDictionary *cachedImages;
@@ -122,6 +121,14 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+}
+
+// Scroll to top
+- (void)scrollToTop
+{
+    // Source: http://stackoverflow.com/questions/9450302/tell-uiscrollview-to-scroll-to-the-top?rq=1
+    
+    [self.tableView setContentOffset:CGPointMake(0, -self.tableView.contentInset.top) animated:YES];
 }
 
 #pragma mark - UITableViewDataSource

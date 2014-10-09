@@ -10,13 +10,11 @@
 #import "SponsorData.h"
 #import "Sponsor.h"
 #import "DSWebViewController.h"
-#import "SponsorsSliderViewController.h"
 
-@interface SponsorsViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate>
+@interface SponsorsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *sponsors;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UIView *containerView;
 
 @end
 
@@ -48,8 +46,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.containerView.hidden = YES;
-    
 /*  
     // Loading sponsors from locally stored data
     for (NSMutableDictionary *sponsorData in [SponsorData allSponsors]) {
@@ -65,8 +61,8 @@
     self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg"]];
     self.tableView.backgroundColor = [UIColor clearColor];
     
-    UIEdgeInsets inset = UIEdgeInsetsMake(5.0, 0.0, 5.0, 0.0); // top, left, bottom, right
-    self.tableView.contentInset = inset;
+    //UIEdgeInsets inset = UIEdgeInsetsMake(5.0, 0.0, 5.0, 0.0); // top, left, bottom, right
+    //self.tableView.contentInset = inset;
     
 //    // Bug workaround - Required to set proper height of tableView for 3.5 inch screens
 //    // I think this is necessary due to tableView within containerView not having a chance to update its
@@ -80,13 +76,6 @@
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Sponsors"];
     [mixpanel flush];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    if (self.containerView.hidden == NO) {
-        [self sponsorBarButtonItemPressed:nil];
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,14 +93,6 @@
         if ([segue.destinationViewController isKindOfClass:[DSWebViewController class]]) {
             DSWebViewController *nextViewController = (DSWebViewController *)segue.destinationViewController;
             nextViewController.url = sender;
-        }
-    }
-    
-    if ([segue.identifier isEqualToString:@"sponsorsSliderViewControllerSegue"]) {
-        if ([segue.destinationViewController isKindOfClass:[SponsorsSliderViewController class]]) {
-            SponsorsSliderViewController *nextViewController = (SponsorsSliderViewController *)segue.destinationViewController;
-            nextViewController.transitioningDelegate = self;
-            nextViewController.modalPresentationStyle = UIModalPresentationCustom;
         }
     }
 }
@@ -189,34 +170,7 @@
 
 #pragma mark - IB Actions
 
-- (IBAction)sponsorBarButtonItemPressed:(UIBarButtonItem *)sender
-{
-    //self.containerView.hidden = !self.containerView.hidden;
-    if (self.containerView.hidden == YES) {
-        self.containerView.hidden = NO;
-        [UIView animateWithDuration:0.2f
-                              delay:0.0f
-                            options:UIViewAnimationOptionCurveEaseIn
-                         animations:^{
-                             self.containerView.frame = CGRectMake(0, 64, 320, 350);
-                         }
-                         completion:^(BOOL finished) {
-                             //
-                         }
-         ];
-    } else {
-        [UIView animateWithDuration:0.2f
-                              delay:0.0f
-                            options:UIViewAnimationOptionCurveEaseIn
-                         animations:^{
-                             self.containerView.frame = CGRectMake(0, -286, 320, 350);
-                         }
-                         completion:^(BOOL finished) {
-                             self.containerView.hidden = YES;
-                         }
-         ];
-    }
-}
+
 
 #pragma mark - Helper Methods
 

@@ -8,17 +8,16 @@
 
 #import "AboutViewController.h"
 #import "UIImageViewAligned.h"
+#import "DSWebViewController.h"
 
-@interface AboutViewController () <UIScrollViewDelegate>
+@interface AboutViewController () <UIScrollViewDelegate, UIActionSheetDelegate>
 
 // IB Outlets
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIScrollView *topScrollView;
-@property (strong, nonatomic) IBOutlet UIScrollView *missionScrollView;
 @property (strong, nonatomic) IBOutlet UIImageView *wwhLogoImageView;
 @property (strong, nonatomic) IBOutlet UIWebView *youtubeWebView;
 @property (strong, nonatomic) IBOutlet UIImageView *topImageView;
-@property (strong, nonatomic) IBOutlet UIPageControl *missionPageControl;
 @property (strong, nonatomic) IBOutlet UIWebView *breakfastTelevisionWebView;
 
 // Instance Variables
@@ -45,7 +44,6 @@
     // Do any additional setup after loading the view.
     
     self.scrollView.delegate = self;
-    self.missionScrollView.delegate = self;
     
     self.wwhLogoImageView.layer.cornerRadius = 50.0;
     self.wwhLogoImageView.layer.backgroundColor = [[UIColor whiteColor] CGColor];
@@ -76,6 +74,12 @@
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Our Story"];
     [mixpanel flush];
+    
+    // Scroll-to-top
+    [self.scrollView setScrollsToTop:YES];
+    [self.topScrollView setScrollsToTop:NO];
+    [self.youtubeWebView.scrollView setScrollsToTop:NO];
+    [self.breakfastTelevisionWebView.scrollView setScrollsToTop:NO];
 }
 
 - (void)handleRefresh:(UIRefreshControl *)refreshControl
@@ -102,11 +106,6 @@
     CGPoint offset = self.topScrollView.contentOffset;
     offset.y = self.scrollView.contentOffset.y * 0.2;
     [self.topScrollView setContentOffset:offset];
-    
-    // Use to update page control for missionScrollView
-    if (scrollView == self.missionScrollView) {
-        self.missionPageControl.currentPage = floorf(scrollView.contentOffset.x/320);
-    }
 }
 
 #define NUMBER_OF_WWH_PHOTOS 5
@@ -131,23 +130,24 @@
     //NSLog(@"Image set to #%@", imageRef);
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"toWebViewControllerSegue"]) {
+        if ([segue.destinationViewController isKindOfClass:[DSWebViewController class]]) {
+            DSWebViewController *nextViewController = (DSWebViewController *)segue.destinationViewController;
+            nextViewController.url = sender;
+        }
+    }
 }
-*/
+
+#pragma mark - Helper Methods
 
 - (IBAction)topImageButtonPressed:(UIButton *)sender
 {
     [self randomTopImage:self.imageNumber];
 }
-
-#pragma mark - Helper Methods
 
 // Scroll-to-top (triggered by TabBarController)
 - (void)scrollToTop
@@ -157,5 +157,89 @@
     [self.scrollView setContentOffset:CGPointMake(0, -self.scrollView.contentInset.top) animated:YES];
 }
 
+#pragma mark - IB Actions
+
+- (IBAction)donateBarButtonItemPressed:(UIBarButtonItem *)sender
+{
+    NSString *donate = self.links.linkDictionary[@"donate"];
+    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:donate];
+}
+
+- (IBAction)volunteerBarButtonItemPressed:(UIBarButtonItem *)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Volunteer Sign-up Form", @"First-Time Questionnaire", nil];
+    actionSheet.tag = 1;
+    [actionSheet showInView:self.view];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Load Dynamic Link Library
+    LinkLibrary *links = [LinkLibrary sharedLinkLibrary];
+    NSString *signup = links.linkDictionary[@"signup"];
+    NSString *questionnaire = links.linkDictionary[@"questionnaire"];
+    
+    switch (actionSheet.tag) {
+        case 1: {
+            switch (buttonIndex) {
+                case 0:
+                    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:signup];
+                    //NSLog(@"Volunteer sign-up button pressed");
+                    break;
+                case 1:
+                    [self performSegueWithIdentifier:@"toWebViewControllerSegue" sender:questionnaire];
+                    //NSLog(@"Open First-time Questionnaire button pressed");
+                    break;
+                    //                case 1:
+                    //                    [actionSheet dismissWithClickedButtonIndex:buttonIndex animated:YES];
+                    //                    NSLog(@"Cancel button pressed");
+                    //                    break;
+                default:
+                    break;
+            }
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+
+/*
+
+#pragma - ScrollsToTop Troubleshooting Code
+// Source: http://stackoverflow.com/questions/8527801/how-to-find-out-which-other-uiscrollview-interferes-with-scrollstotop
+ 
+- (IBAction)findProblemsButtonPressed:(UIBarButtonItem *)sender
+{
+    [self findMisbehavingScrollViews];
+}
+
+- (void)findMisbehavingScrollViews
+{
+    //UIView *view = [[UIApplication sharedApplication] keyWindow];
+    UIView *view = self.view;
+    [self findMisbehavingScrollViewsIn:view];
+}
+
+- (void)findMisbehavingScrollViewsIn:(UIView *)view
+{
+    if ([view isKindOfClass:[UIScrollView class]])
+    {
+        NSLog(@"Found UIScrollView: %@", view);
+        if ([(UIScrollView *)view scrollsToTop])
+        {
+            NSLog(@"scrollsToTop = YES!");
+        }
+    }
+    for (UIView *subview in [view subviews])
+    {
+        [self findMisbehavingScrollViewsIn:subview];
+    }
+}
+
+*/
 
 @end

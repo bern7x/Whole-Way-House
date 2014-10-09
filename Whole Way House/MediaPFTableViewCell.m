@@ -28,4 +28,9 @@
 }
 */
 
+- (void)prepareForReuse
+{
+    self.mediaImageView.image = nil;
+}
+
 @end

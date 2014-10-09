@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *boardScrollView;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (nonatomic) int currentPage;
 
 @end
 
@@ -56,6 +57,18 @@
 }
 */
 
+#pragma - UIScrollView Device Rotation Handling
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    self.currentPage = self.boardScrollView.contentOffset.x / self.boardScrollView.bounds.size.width;
+}
+
+- (void)viewWillLayoutSubviews
+{
+    self.boardScrollView.contentOffset = CGPointMake(self.currentPage * self.boardScrollView.bounds.size.width, 0);
+}
+
 #pragma mark - IB Actions
 
 - (IBAction)dismissBarButtonItemPressed:(UIBarButtonItem *)sender
@@ -67,8 +80,9 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    CGFloat screenWidth = self.view.frame.size.width;
     if (scrollView == self.boardScrollView) {
-        self.pageControl.currentPage = floorf(scrollView.contentOffset.x/320);
+        self.pageControl.currentPage = floorf(scrollView.contentOffset.x/screenWidth);
     }
 }
 

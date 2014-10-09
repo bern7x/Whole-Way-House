@@ -11,7 +11,13 @@
 #import "SponsorsViewController.h"
 #import "AboutViewController.h"
 #import "ContactViewController.h"
+#import "ContainerViewController.h"
+#import "NewsViewController.h"
+#import "MediaViewController.h"
+#import "VolunteerViewController.h"
 #import <Parse/Parse.h>
+#import "APIKeys.h"
+//#import "Mixpanel.h"
 
 @implementation AppDelegate
 
@@ -33,8 +39,8 @@
     tabController.delegate = self;
     
     // Initialize Parse integration & analytics
-    [Parse setApplicationId:@"TbrLNwhpeIqa3t5jDzottKMo07chJ54YQk4rvuwU"
-                  clientKey:@"8dmblwnEzP1ndWQG97anIupgAPNko71L94P8kgMS"];
+    [Parse setApplicationId:PARSE_APPLICATION_ID
+                  clientKey:PARSE_CLIENT_KEY];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     // Initialize Dynamic Link Library using a singleton
@@ -68,11 +74,29 @@
                 [[(UITableViewController *)nav.visibleViewController tableView] setContentOffset:CGPointZero animated:YES];
             }
             
-            // Scroll to top of Latest News tab
-//            else if ([nav.visibleViewController isKindOfClass:[TwitterViewController class]]) {
-//                TwitterViewController *tabViewController = (TwitterViewController *)nav.visibleViewController;
-//                [tabViewController scrollToTop];
-//            }
+            // Scroll to top of Latest tab
+            else if ([nav.visibleViewController isKindOfClass:[ContainerViewController class]]) {
+                ContainerViewController *tabViewController = (ContainerViewController *)nav.visibleViewController;
+                if (tabViewController.containerSegmentedControl.selectedSegmentIndex == 0) {
+                    for (NewsViewController *childVC in tabViewController.childViewControllers) {
+                        if ([childVC isKindOfClass:[NewsViewController class]]) {
+                            [childVC performSelector:@selector(scrollToTop)];
+                        }
+                    }
+                } else if (tabViewController.containerSegmentedControl.selectedSegmentIndex == 1) {
+                    for (MediaViewController *childVC in tabViewController.childViewControllers) {
+                        if ([childVC isKindOfClass:[MediaViewController class]]) {
+                            [childVC performSelector:@selector(scrollToTop)];
+                        }
+                    }
+                } else if (tabViewController.containerSegmentedControl.selectedSegmentIndex == 2) {
+                    for (VolunteerViewController *childVC in tabViewController.childViewControllers) {
+                        if ([childVC isKindOfClass:[VolunteerViewController class]]) {
+                            [childVC performSelector:@selector(scrollToTop)];
+                        }
+                    }
+                }
+            }
             
             // Scroll to top of Programs tab
             else if ([nav.visibleViewController isKindOfClass:[ProgramsViewController class]]) {
@@ -85,6 +109,19 @@
                 SponsorsViewController *tabViewController = (SponsorsViewController *)nav.visibleViewController;
                 [tabViewController scrollToTop];
             }
+            
+            // Scroll to top of Our Story tab
+            else if ([nav.visibleViewController isKindOfClass:[AboutViewController class]]) {
+                AboutViewController *tabViewController = (AboutViewController *)nav.visibleViewController;
+                [tabViewController scrollToTop];
+            }
+            
+            // Scroll to top of Contact tab
+            else if ([nav.visibleViewController isKindOfClass:[ContactViewController class]]) {
+                ContactViewController *tabViewController = (ContactViewController *)nav.visibleViewController;
+                [tabViewController scrollToTop];
+            }
+            
         }
         // Use the following to handle tabs that are using plain UIViewControllers
         else if ([viewController isKindOfClass:[AboutViewController class]]) {
