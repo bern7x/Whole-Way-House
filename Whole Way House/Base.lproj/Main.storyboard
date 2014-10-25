@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2L0-nB-gI9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2L0-nB-gI9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1284,7 +1285,7 @@ If you would like to get involved, please get in touch with us.</string>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCb-Bh-zOv" userLabel="Contact Buttons View">
-                                                <rect key="frame" x="-1" y="330" width="321" height="680"/>
+                                                <rect key="frame" x="0.0" y="330" width="320" height="680"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-xP-jx0" userLabel="Call Office">
                                                         <rect key="frame" x="0.0" y="10" width="320" height="64"/>
@@ -1670,7 +1671,7 @@ If you would like to get involved, please get in touch with us.</string>
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9o7-nz-2z0" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="2763"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="2761"/>
                                         <subviews>
                                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIp-rv-GEl" userLabel="topScrollView">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
@@ -1715,7 +1716,7 @@ If you would like to get involved, please get in touch with us.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esU-n1-kit">
-                                                <rect key="frame" x="20" y="311" width="280" height="321"/>
+                                                <rect key="frame" x="20" y="310" width="280" height="321"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="10" id="Zp8-pF-ajX"/>
                                                 </constraints>
@@ -1727,13 +1728,13 @@ We believe that when a person feels loved and valued, they are able to find purp
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Mission" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="dcA-M1-38U">
-                                                <rect key="frame" x="85" y="648" width="150" height="25"/>
+                                                <rect key="frame" x="85" y="647" width="150" height="25"/>
                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="24"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-Cb-VYS" userLabel="Mission Container View">
-                                                <rect key="frame" x="0.0" y="681" width="320" height="200"/>
+                                                <rect key="frame" x="0.0" y="680" width="320" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="qLV-yv-r8B"/>
                                                 </constraints>
@@ -1742,7 +1743,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                                 </connections>
                                             </containerView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="273" translatesAutoresizingMaskIntoConstraints="NO" id="rLp-z6-fQI">
-                                                <rect key="frame" x="20" y="897" width="280" height="81"/>
+                                                <rect key="frame" x="20" y="896" width="280" height="81"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="10" id="4J4-vM-gVq"/>
                                                 </constraints>
@@ -1752,7 +1753,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <webView autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anG-Pb-f5f">
-                                                <rect key="frame" x="0.0" y="994" width="320" height="180"/>
+                                                <rect key="frame" x="0.0" y="992" width="320" height="180"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="anG-Pb-f5f" secondAttribute="height" multiplier="16:9" id="gPU-xq-VwW"/>
@@ -1760,7 +1761,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                                 </constraints>
                                             </webView>
                                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3B-5k-3GE" userLabel="BT Caption View">
-                                                <rect key="frame" x="0.0" y="1174" width="320" height="30"/>
+                                                <rect key="frame" x="0.0" y="1172" width="320" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenny Konkin on Breakfast Television" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elA-ea-QPr">
                                                         <rect key="frame" x="32" y="6" width="258" height="18"/>
@@ -1777,7 +1778,7 @@ We believe that when a person feels loved and valued, they are able to find purp
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXX-QS-7LY" userLabel="Our Family &amp;  the Avalon Hotel">
-                                                <rect key="frame" x="53" y="1220" width="215" height="49"/>
+                                                <rect key="frame" x="53" y="1218" width="215" height="49"/>
                                                 <string key="text">Our Family &amp; 
 the Avalon Hotel</string>
                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="24"/>
@@ -1785,7 +1786,7 @@ the Avalon Hotel</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCI-UC-Wfz">
-                                                <rect key="frame" x="20" y="1277" width="280" height="141"/>
+                                                <rect key="frame" x="20" y="1275" width="280" height="141"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="10" id="aqw-YI-DJu"/>
                                                 </constraints>
@@ -1795,7 +1796,7 @@ the Avalon Hotel</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kp3-TI-6Fq">
-                                                <rect key="frame" x="0.0" y="1434" width="320" height="215"/>
+                                                <rect key="frame" x="0.0" y="1432" width="320" height="215"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about1.png" translatesAutoresizingMaskIntoConstraints="NO" id="wkF-V0-znR">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
@@ -1832,7 +1833,7 @@ the Avalon Hotel</string>
                                                 </constraints>
                                             </view>
                                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tox-q8-XEz">
-                                                <rect key="frame" x="0.0" y="1942" width="320" height="238"/>
+                                                <rect key="frame" x="0.0" y="1940" width="320" height="238"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="95m-ct-fYG">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="238"/>
@@ -1869,7 +1870,7 @@ the Avalon Hotel</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvf-Q4-dQc">
-                                                <rect key="frame" x="20" y="2195" width="280" height="342"/>
+                                                <rect key="frame" x="20" y="2193" width="280" height="342"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="10" id="FvF-N1-wNF"/>
                                                 </constraints>
@@ -1881,7 +1882,7 @@ We would also like to thank and honour Ron Konkin, our father, who went home to 
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQF-4v-Sku" userLabel="YouTube Caption View">
-                                                <rect key="frame" x="0.0" y="2733" width="320" height="30"/>
+                                                <rect key="frame" x="0.0" y="2730" width="320" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ron Konkin &amp; WWH - Amazing Grace" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqh-q0-xMx">
                                                         <rect key="frame" x="31" y="6" width="258" height="18"/>
@@ -1898,7 +1899,7 @@ We would also like to thank and honour Ron Konkin, our father, who went home to 
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyS-LF-mWA">
-                                                <rect key="frame" x="20" y="1665" width="280" height="261"/>
+                                                <rect key="frame" x="20" y="1663" width="280" height="261"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="10" id="TnE-eh-njo"/>
                                                 </constraints>
@@ -1910,7 +1911,7 @@ Josh &amp; Jenny have been managing the Avalon since 2010 and founded Whole Way 
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <webView autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQQ-zU-xxZ">
-                                                <rect key="frame" x="0.0" y="2553" width="320" height="180"/>
+                                                <rect key="frame" x="0.0" y="2550" width="320" height="180"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="180" id="G7M-Ye-jji"/>
@@ -2559,7 +2560,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                     <navigationItem key="navigationItem" id="1W9-uu-bEB">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Jd2-Hk-yXB">
-                            <rect key="frame" x="44" y="7" width="233" height="30"/>
+                            <rect key="frame" x="43.5" y="7" width="233" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="News"/>
@@ -2787,7 +2788,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                                     </constraints>
                                                 </view>
                                                 <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyh-iF-SJ2" userLabel="Body View">
-                                                    <rect key="frame" x="0.0" y="114" width="320" height="125"/>
+                                                    <rect key="frame" x="0.0" y="115" width="320" height="124"/>
                                                     <userGuides>
                                                         <userLayoutGuide location="20" affinity="minX"/>
                                                         <userLayoutGuide location="355" affinity="minX"/>
@@ -2805,7 +2806,7 @@ Walter is an active member at Coastal Church in the Downtown core of Vancouver, 
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSW-hV-GSC">
-                                                            <rect key="frame" x="20" y="49" width="280" height="66"/>
+                                                            <rect key="frame" x="20" y="48" width="280" height="66"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" priority="250" constant="10" id="uzq-9i-R9Z"/>
                                                             </constraints>
@@ -2975,7 +2976,7 @@ At Whole Way House, we have an open-door policy with our volunteers.</string>
                                         </constraints>
                                     </view>
                                     <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oku-BI-0tr">
-                                        <rect key="frame" x="20" y="845" width="280" height="139"/>
+                                        <rect key="frame" x="20" y="844" width="280" height="139"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="10" id="ruJ-vo-1VS"/>
                                         </constraints>
@@ -2986,7 +2987,7 @@ Join us and make someone's day just a little bit better!</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ye-bT-yPj" userLabel="Questionnaire View">
-                                        <rect key="frame" x="0.0" y="999" width="320" height="64"/>
+                                        <rect key="frame" x="0.0" y="998" width="320" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9U-0a-Gyy" userLabel="Questionnaire Icon">
                                                 <rect key="frame" x="30" y="12" width="40" height="40"/>
@@ -3039,7 +3040,7 @@ Join us and make someone's day just a little bit better!</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mR-aF-TWP" userLabel="Schedule View">
-                                        <rect key="frame" x="0.0" y="1073" width="320" height="64"/>
+                                        <rect key="frame" x="0.0" y="1072" width="320" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnE-N5-uEZ" userLabel="Schedule Icon">
                                                 <rect key="frame" x="30" y="12" width="40" height="40"/>
@@ -3092,7 +3093,7 @@ Join us and make someone's day just a little bit better!</string>
                                         </constraints>
                                     </view>
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWJ-5C-xyj" userLabel="Email View">
-                                        <rect key="frame" x="0.0" y="1147" width="320" height="64"/>
+                                        <rect key="frame" x="0.0" y="1146" width="320" height="64"/>
                                         <subviews>
                                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coa-rn-unU" userLabel="Email Icon">
                                                 <rect key="frame" x="30" y="12" width="40" height="40"/>
@@ -3399,7 +3400,7 @@ Join us and make someone's day just a little bit better!</string>
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCC-yt-UeY" userLabel="Content View" customClass="GradientView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="742"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="739"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WWHLogoTransparent" translatesAutoresizingMaskIntoConstraints="NO" id="zLb-cG-Bxw" userLabel=" WWHLogoTransparent">
                                                 <rect key="frame" x="130" y="10" width="60" height="60"/>
@@ -3448,7 +3449,7 @@ If you would like to make a financial contribution, we have the following option
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly donations can be setup by calling us or sending us an email." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQW-vv-hHx">
-                                                <rect key="frame" x="20" y="559" width="280" height="41"/>
+                                                <rect key="frame" x="20" y="558" width="280" height="41"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="10" id="S6r-LM-ri2"/>
                                                 </constraints>
@@ -3457,7 +3458,7 @@ If you would like to make a financial contribution, we have the following option
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online donations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKk-Dn-bOs">
-                                                <rect key="frame" x="20" y="620" width="280" height="21"/>
+                                                <rect key="frame" x="20" y="618" width="280" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="10" id="r1U-vT-ep8"/>
                                                 </constraints>
@@ -3466,7 +3467,7 @@ If you would like to make a financial contribution, we have the following option
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online donations can be made via Chimp or PayPal. Visit the WWH website to donate by PayPal." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpf-Wz-U5S">
-                                                <rect key="frame" x="20" y="651" width="280" height="61"/>
+                                                <rect key="frame" x="20" y="649" width="280" height="61"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="10" id="xEs-ER-8qk"/>
                                                 </constraints>
@@ -3475,7 +3476,7 @@ If you would like to make a financial contribution, we have the following option
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly donations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjO-0M-U1u">
-                                                <rect key="frame" x="20" y="528" width="280" height="21"/>
+                                                <rect key="frame" x="20" y="527" width="280" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="10" id="Oep-Ip-tII"/>
                                                 </constraints>
@@ -3799,6 +3800,6 @@ If you would like to make a financial contribution, we have the following option
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="22Y-Lj-dWL"/>
+        <segue reference="nEf-dl-cut"/>
     </inferredMetricsTieBreakers>
 </document>
