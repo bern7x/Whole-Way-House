@@ -252,7 +252,11 @@
 - (IBAction)donateBarButtonItemPressed:(UIBarButtonItem *)sender
 {
     NSString *donate = self.links.linkDictionary[@"donate"];
-    [self performSegueWithIdentifier:@"fromContactToWebViewControllerSegue" sender:donate];
+    //[self performSegueWithIdentifier:@"fromContactToWebViewControllerSegue" sender:donate];
+    
+    NSURL *url =[NSURL URLWithString:donate];
+    if(![[UIApplication sharedApplication] openURL:url])
+        NSLog(@"%@%@",@"Failed to open url:",[url description]);
 }
 
 - (IBAction)volunteerBarButtonItemPressed:(UIBarButtonItem *)sender

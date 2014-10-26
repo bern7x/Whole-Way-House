@@ -54,7 +54,11 @@
 - (IBAction)testBarButtonItemPressed:(UIBarButtonItem *)sender
 {
     NSString *donate = self.links.linkDictionary[@"donate"];
-    [self performSegueWithIdentifier:@"fromSponsorsInfoToWebViewControllerSegue" sender:donate];
+    //[self performSegueWithIdentifier:@"fromSponsorsInfoToWebViewControllerSegue" sender:donate];
+    
+    NSURL *url =[NSURL URLWithString:donate];
+    if(![[UIApplication sharedApplication] openURL:url])
+        NSLog(@"%@%@",@"Failed to open url:",[url description]);
 }
 
 
